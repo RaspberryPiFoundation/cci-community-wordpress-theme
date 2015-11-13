@@ -1,2 +1,1 @@
-# ccw-wordpress
-Code Club World Wordpress Theme
+# Code Club World Base Wordpress Theme
