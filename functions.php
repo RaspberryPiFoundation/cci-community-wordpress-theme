@@ -115,9 +115,9 @@ add_action( 'widgets_init', 'ccw_countries_widgets_init' );
  */
 function ccw_countries_scripts() {
 	// enqueue the Code Club style guide
-	wp_enqueue_style( 'CCW_Countries-style-guide-style', get_template_directory_uri() . '/bower_components/code-club/dist/stylesheets/code-club.min.css' );
+	wp_enqueue_style( 'ccw-countries-style-guide-style', get_template_directory_uri() . '/bower_components/code-club/dist/stylesheets/code-club.min.css' );
 
-	wp_enqueue_style( 'CCW_Countries-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'ccw-countries-style', get_stylesheet_uri() );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
