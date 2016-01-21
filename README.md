@@ -1,1 +1,1 @@
-# Code Club Countries Base Wordpress Theme
+# Code Club World Countries Base Wordpress Theme
