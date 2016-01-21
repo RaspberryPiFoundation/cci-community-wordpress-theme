@@ -1,13 +1,13 @@
 <?php
 /**
- * ccw functions and definitions.
+ * CCW_Countries functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package CCW
+ * @package CCW_Countries
  */
 
-if ( ! function_exists( 'ccw_setup' ) ) :
+if ( ! function_exists( 'ccw_countries_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'ccw_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function ccw_setup() {
+function ccw_countries_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on ccw, use a find and replace
-	 * to change 'ccw' to the name of your theme in all the template files.
+	 * If you're building a theme based on CCW_Countries, use a find and replace
+	 * to change 'ccw_countries' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'ccw', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'ccw_countries', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ function ccw_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'ccw' ),
+		'primary' => esc_html__( 'Primary', 'ccw_countries' ),
 	) );
 
 	/*
@@ -72,13 +72,13 @@ function ccw_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'ccw_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'ccw_countries_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
-endif; // ccw_setup
-add_action( 'after_setup_theme', 'ccw_setup' );
+endif;
+add_action( 'after_setup_theme', 'ccw_countries_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -87,44 +87,43 @@ add_action( 'after_setup_theme', 'ccw_setup' );
  *
  * @global int $content_width
  */
-function ccw_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'ccw_content_width', 640 );
+function ccw_countries_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'ccw_countries_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'ccw_content_width', 0 );
+add_action( 'after_setup_theme', 'ccw_countries_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function ccw_widgets_init() {
+function ccw_countries_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'ccw' ),
+		'name'          => esc_html__( 'Sidebar', 'ccw_countries' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'ccw_widgets_init' );
+add_action( 'widgets_init', 'ccw_countries_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function ccw_scripts() {
-	wp_enqueue_style( 'ccw-style', get_stylesheet_uri() );
+function ccw_countries_scripts() {
+	// enqueue the Code Club style guide
+	wp_enqueue_style( 'CCW_Countries-style-guide-style', get_template_directory_uri() . '/bower_components/code-club/dist/stylesheets/code-club.min.css' );
 
-	wp_enqueue_script( 'ccw-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
-	wp_enqueue_script( 'ccw-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_style( 'CCW_Countries-style', get_stylesheet_uri() );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'ccw_scripts' );
+add_action( 'wp_enqueue_scripts', 'ccw_countries_scripts' );
 
 /**
  * Implement the Custom Header feature.
