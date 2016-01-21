@@ -1,8 +1,8 @@
 <?php
 /**
- * ccw Theme Customizer.
+ * CCW_Countries Theme Customizer.
  *
- * @package CCW
+ * @package CCW_Countries
  */
 
 /**
@@ -10,17 +10,17 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function ccw_customize_register( $wp_customize ) {
+function ccw_countries_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 }
-add_action( 'customize_register', 'ccw_customize_register' );
+add_action( 'customize_register', 'ccw_countries_customize_register' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function ccw_customize_preview_js() {
-	wp_enqueue_script( 'ccw_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+function ccw_countries_customize_preview_js() {
+	wp_enqueue_script( 'ccw_countries_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
-add_action( 'customize_preview_init', 'ccw_customize_preview_js' );
+add_action( 'customize_preview_init', 'ccw_countries_customize_preview_js' );

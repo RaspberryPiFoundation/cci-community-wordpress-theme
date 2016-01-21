@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package CCW
+ * @package CCW_Countries
  */
 
 ?>
@@ -15,10 +15,11 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_content(); ?>
 		<?php
+			the_content();
+
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ccw' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ccw_countries' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -29,7 +30,7 @@
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'ccw' ),
+					esc_html__( 'Edit %s', 'ccw_countries' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
 				'<span class="edit-link">',
@@ -38,4 +39,3 @@
 		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
-
