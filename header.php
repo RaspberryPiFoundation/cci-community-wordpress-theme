@@ -21,30 +21,27 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ccw_countries' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+<header class="o-banner" role="banner">
+  <div class="o-banner__inner">
+    <figure class="c-logo">
+      <a href="<?= esc_url(home_url('/')); ?>" class="c-logo__link">
+        <img alt="" class="c-logo__image" src="<?php echo get_template_directory_uri(); ?>/bower_components/code-club/dist/images/code-club-logo.svg">
+        <figcaption class="c-logo__appendix"><?php bloginfo('name'); ?></figcaption>
+      </a>
+    </figure>
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+    <nav class="o-nav" role="navigation">
+      <?php
+      if (has_nav_menu('primary_navigation')) :
+        wp_nav_menu([
+          'theme_location' => 'primary_navigation',
+          'menu_class' => 'o-nav__list'
+        ]);
+      endif;
+      ?>
+    </nav>
+  </div>
+</header>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ccw_countries' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+<div class="wrap container" role="document">
