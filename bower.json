@@ -1,0 +1,13 @@
+{
+  "name": "ccw-countries-wordpress-theme",
+  "homepage": "https://github.com/CodeClub/ccw-countries-wordpress-theme",
+  "authors": [
+    "Code Club World Ltd"
+  ],
+  "description": "",
+  "main": "",
+  "private": true,
+  "dependencies": {
+    "code-club": "~0.0.1-16"
+  }
+}
