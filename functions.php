@@ -44,7 +44,7 @@ function ccw_countries_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'ccw_countries' ),
+		'primary_navigation' => esc_html__( 'Primary Navigation', 'ccw_countries' ),
 	) );
 
 	/*
@@ -146,3 +146,25 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Theme nav overrides
+ */
+add_filter('nav_menu_css_class', 'primary_nav_li', 1, 3);
+function primary_nav_li($classes, $item, $args) {
+  $classes[] = 'o-nav__item';
+  return $classes;
+}
+
+add_filter('wp_nav_menu', 'primary_nav_anchors');
+function primary_nav_anchors($anchorclass) {
+  return preg_replace('/<a /', '<a class="o-nav__link" ', $anchorclass);
+}
+
+add_filter('nav_menu_css_class', 'current_nav_class', 10, 2);
+function current_nav_class($classes, $item) {
+  if (in_array('current-menu-item', $classes)) {
+    $classes[] = 'is-current ';
+  }
+  return $classes;
+}
