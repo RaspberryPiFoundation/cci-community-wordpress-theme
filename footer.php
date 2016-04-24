@@ -11,13 +11,80 @@
 
 ?>
 
-	</div><!-- .wrap .container -->
+</main>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<footer class="o-footer">
+  <div class="c-grid c-grid--v-top">
+    <div class="c-col--3">
+        <p class="o-footer__heading">Nav 1</p>
+        <?php
+        if (has_nav_menu('footer_navigation_1')) :
+            wp_nav_menu([
+                'theme_location' => 'footer_navigation_1',
+                'menu_class' => 'o-footer__list',
+                'container' => false
+            ]);
+        endif;
+        ?>
+    </div>
+    <div class="c-col--3">
+        <p class="o-footer__heading">Nav 2</p>
+        <?php
+        if (has_nav_menu('footer_navigation_2')) :
+            wp_nav_menu([
+                'theme_location' => 'footer_navigation_2',
+                'menu_class' => 'o-footer__list',
+                'container' => false
+            ]);
+        endif;
+        ?>
+    </div>
+    <div class="c-col--3">
+        <p class="o-footer__heading">Nav 3</p>
+        <?php
+        if (has_nav_menu('footer_navigation_3')) :
+            wp_nav_menu([
+                'theme_location' => 'footer_navigation_3',
+                'menu_class' => 'o-footer__list',
+                'container' => false
+            ]);
+        endif;
+        ?>
+    </div>
+    <div class="c-col--3">
+      <p class="o-footer__heading">Nav 4</p>
+      <?php
+      if (has_nav_menu('footer_navigation_4')) :
+        wp_nav_menu([
+            'theme_location' => 'footer_navigation_4',
+            'menu_class' => 'o-footer__list',
+            'container' => false
+        ]);
+      endif;
+      ?>
+    </div>
+  </div>
+  <div class="c-grid">
+    <div class="c-col--9">
+        &copy; 2012–<?php echo date('Y') ?>
+    </div>
+    <div class="c-col--2">
+        <ul class="o-footer__social-list">
+            <li class="o-footer__social-list-item">
+                <a class="o-footer__social-list-link" href="https://www.facebook.com/" target="_blank">
+                    <span class="c-icon c-icon--social-facebook c-icon--white"></span>
+                </a>
+            </li>
+            <li class="o-footer__social-list-item">
+                <a class="o-footer__social-list-link" href="https://twitter.com/" target="_blank">
+                    <span class="c-icon c-icon--social-twitter c-icon--white"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+  </div>
+  <?php dynamic_sidebar('sidebar-footer'); ?>
+</footer>
 
 <?php wp_footer(); ?>
 
