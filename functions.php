@@ -114,12 +114,15 @@ add_action( 'widgets_init', 'ccw_countries_widgets_init' );
  * Enqueue scripts and styles.
  */
 function ccw_countries_scripts() {
+	// set style guide version, or default to false (see https://developer.wordpress.org/reference/functions/wp_enqueue_style/)
+	$styleguide_meta = file_get_contents(get_template_directory() . '/bower_components/code-club/.bower.json');
+	$styleguide_meta_json = json_decode($styleguide_meta, true);
+	$styleguide_version = $styleguide_meta_json['version'] ?: false;
+
 	// enqueue the Code Club style guide
-	wp_enqueue_style( 'ccw-countries-style-guide-style', get_template_directory_uri() . '/bower_components/code-club/dist/stylesheets/code-club.min.css' );
-
+	wp_enqueue_style( 'ccw-countries-style-guide-style', get_template_directory_uri() . '/bower_components/code-club/dist/stylesheets/code-club.min.css', false, $styleguide_version );
 	wp_enqueue_style( 'ccw-countries-style', get_stylesheet_uri() );
-
-	wp_enqueue_script('ccw-countries-style-guide-script', get_template_directory_uri() . '/bower_components/code-club/dist/javascripts/code-club.min.js', ['jquery'], null, true);
+	wp_enqueue_script( 'ccw-countries-style-guide-script', get_template_directory_uri() . '/bower_components/code-club/dist/javascripts/code-club.min.js', ['jquery'], $styleguide_version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -152,19 +155,19 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 add_filter('nav_menu_css_class', 'primary_nav_li', 1, 3);
 function primary_nav_li($classes, $item, $args) {
-  $classes[] = 'o-nav__item';
-  return $classes;
+	$classes[] = 'o-nav__item';
+	return $classes;
 }
 
 add_filter('wp_nav_menu', 'primary_nav_anchors');
 function primary_nav_anchors($anchorclass) {
-  return preg_replace('/<a /', '<a class="o-nav__link" ', $anchorclass);
+	return preg_replace('/<a /', '<a class="o-nav__link" ', $anchorclass);
 }
 
 add_filter('nav_menu_css_class', 'current_nav_class', 10, 2);
 function current_nav_class($classes, $item) {
-  if (in_array('current-menu-item', $classes)) {
-    $classes[] = 'is-current ';
-  }
-  return $classes;
+	if (in_array('current-menu-item', $classes)) {
+		$classes[] = 'is-current ';
+	}
+	return $classes;
 }
