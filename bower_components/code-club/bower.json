@@ -9,6 +9,7 @@
     "Code Club World Ltd"
   ],
   "homepage": "https://github.com/CodeClubWorld/style-guide.git",
+  "license": "GPL-3.0",
   "moduleType": [],
   "private": false,
   "ignore": [
@@ -21,13 +22,13 @@
     "packages.json",
     "Procfile",
     "Rakefile",
-    "README.rdoc",
     "bower_components",
     "app",
     "bin",
     "config",
     "db",
     "lib",
+    "log",
     "node_modules",
     "public",
     "test",

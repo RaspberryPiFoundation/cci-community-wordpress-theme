@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>document.documentElement.className += ' wf-loading';</script>
+
+    <meta charset="UTF-8">
+
+    <title>Page Title Here - Code Club Country Name Here</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/bower_components/code-club/dist/images/favicons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="/bower_components/code-club/dist/images/favicons/icon.png">
+    <meta name="msapplication-TileColor" content="#F5F6F9">
+    <meta name="msapplication-TileImage" content="/bower_components/code-club/dist/images/favicons/icon.png">
+    <link rel="icon" href="/bower_components/code-club/dist/images/favicons/icon.png" sizes="32x32">
+
+    <!-- Add any additional styles after the code-club.min.css styles -->
+    <link href="/bower_components/code-club/dist/stylesheets/code-club.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class="o-nav">
+      <div class="o-nav__container">
+        <div class="c-logo">
+          <a href="/" class="c-logo__link">
+            <img alt="Code Club" class="c-logo__image" src="/assets/code-club/images/code-club-logo.svg">
+            <div class="c-logo__appendix">United Kingdom</div>
+          </a>
+        </div>
+
+        <input class="o-nav__toggle-input" id="off-canvas-nav-toggle-input" type="checkbox">
+        <label class="o-nav__toggle-label" for="off-canvas-nav-toggle-input"><span></span></label>
+
+        <nav class="o-nav__list-container">
+          <ul class="o-nav__list">
+            <li class="o-nav__item"><a class="o-nav__link" href="#">About</a></li>
+            <li class="o-nav__item"><a class="o-nav__link" href="#">Projects</a></li>
+            <li class="o-nav__item"><a class="o-nav__link" href="#">Contact</a></li>
+            <li class="o-nav__item"><a class="o-nav__link" href="#">Your Club Hub</a></li>
+            <li class="o-nav__item"><a class="o-nav__link" href="#">Sign Out</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <main class="o-main">
+      <!-- YOUR PAGE CONTENTS HERE -->
+    </main>
+
+    <footer class="o-footer">
+      <div class="c-grid c-grid--v-top">
+        <div class="c-col--3">
+          <p class="o-footer__heading">About</p>
+
+          <ul class="o-footer__list">
+            <li class="o-footer__list-item"><a href="#" class="o-footer__list-link">About Code Club</a></li>
+            <li class="o-footer__list-item"><a href="#" class="o-footer__list-link">Creating a Code Club</a></li>
+            <li class="o-footer__list-item"><a href="#" class="o-footer__list-link">Becoming a Coordinator</a></li>
+          </ul>
+        </div>
+
+        <div class="c-col--3">
+          <p class="o-footer__heading">Support Code Club</p>
+
+          <ul class="o-footer__list">
+            <li class="o-footer__list-item"><a href="#" class="o-footer__list-link">Donate</a></li>
+            <li class="o-footer__list-item"><a href="#" class="o-footer__list-link">Shop</a></li>
+          </ul>
+        </div>
+
+        <div class="c-col--3">
+          <p class="o-footer__heading">Help</p>
+
+          <ul class="o-footer__list">
+            <li class="o-footer__list-item"><a href="#" class="o-footer__list-link">FAQ</a></li>
+            <li class="o-footer__list-item"><a href="#" class="o-footer__list-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="c-col--3">
+          <p class="o-footer__heading">Useful Links</p>
+
+          <ul class="o-footer__list">
+            <li class="o-footer__list-item"><a href="#" class="o-footer__list-link">Code Club Projects</a></li>
+            <li class="o-footer__list-item"><a href="#" class="o-footer__list-link">Download Scrach 2</a></li>
+            <li class="o-footer__list-item"><a href="#" class="o-footer__list-link">Code Club World on Github</a></li>
+            <li class="o-footer__list-item"><a href="#" class="o-footer__list-link">Code Club UK</a></li>
+          </ul>
+        </div>
+
+        <div class="c-col--9">
+          &copy; Code Club World Limited 2012–2016.
+          All Rights Reserved.
+          Company No. 081440247. Hosting by <a href="#">Whatevers Hosting</a>
+        </div>
+
+        <div class="c-col--3">
+          <ul class="o-footer__social-list">
+            <li class="o-footer__social-list-item">
+              <a class="o-footer__social-list-link" href="#">
+                <span class="c-icon c-icon--social-facebook c-icon--white"></span>
+              </a>
+            </li>
+
+            <li class="o-footer__social-list-item">
+              <a class="o-footer__social-list-link" href="#">
+                <span class="c-icon c-icon--social-google c-icon--white"></span>
+              </a>
+            </li>
+
+            <li class="o-footer__social-list-item">
+              <a class="o-footer__social-list-link" href="#">
+                <span class="c-icon c-icon--social-twitter c-icon--white"></span>
+              </a>
+            </li>
+
+            <li class="o-footer__social-list-item">
+              <a class="o-footer__social-list-link" href="#">
+                <span class="c-icon c-icon--social-youtube c-icon--white"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Load fonts from Typekit -->
+    <script>
+      (function(d){
+        var config = {kitId: 'pus1ntw',scriptTimeout: 3000,async: true},
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+    <!-- Include jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <!-- Add any additional scripts after the code-club.min.js script -->
+    <script src="/bower_components/code-club/dist/javascripts/code-club.min.js"></script>
+  </body>
+</html>

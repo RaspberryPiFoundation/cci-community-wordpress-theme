@@ -1,15 +1,15 @@
 {
-  "name": "code-club-style-guide",
-  "version": "0.0.1-16",
-  "description": "A collection of UI components for styling Code Club websites",
   "author": "Code Club World Ltd",
+  "description": "A collection of UI components for styling Code Club websites",
   "homepage": "https://styleguide.codeclubworld.org/",
   "friendly_name": "Code Club Style Guide",
+  "license": "GPL-3.0",
+  "name": "code-club",
+  "version": "1.0.10",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/style-guide.git"
+    "url": "git+https://github.com/CodeClub/style-guide.git"
   },
-  "license": "UNLICENSED",
   "devDependencies": {
     "babel-preset-es2015": "^6.1.2",
     "gulp": "^3.9.0",
@@ -27,6 +27,8 @@
     "gulp-uglify": "^1.4.2",
     "gulp-util": "^3.0.7",
     "imagemin-pngquant": "^4.2.0",
+    "optipng-bin": "^3.0.4",
+    "pngquant-bin": "^3.0.1",
     "require-reload": "^0.2.2"
   }
 }
