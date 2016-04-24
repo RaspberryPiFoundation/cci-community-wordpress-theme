@@ -8,6 +8,6 @@
   "main": "",
   "private": true,
   "dependencies": {
-    "code-club": "~0.0.1-16"
+    "code-club": "~1.0.0"
   }
 }
