@@ -81,21 +81,10 @@ endif;
 add_action( 'after_setup_theme', 'ccw_countries_setup' );
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
+ * Register navigation menus
  */
-function ccw_countries_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'ccw_countries_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'ccw_countries_content_width', 0 );
-
-// Register wp_nav_menu() menus
-// http://codex.wordpress.org/Function_Reference/register_nav_menus
 register_nav_menus([
-  'primary_navigation' => 'Primary Navigation',
+  'primary_navigation'  => 'Primary Navigation',
   'footer_navigation_1' => 'Footer Nav 1',
   'footer_navigation_2' => 'Footer Nav 2',
   'footer_navigation_3' => 'Footer Nav 3',
