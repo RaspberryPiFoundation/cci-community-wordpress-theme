@@ -171,3 +171,8 @@ function get_nav_menu_by_location( $location ) {
 	$menu_id = $locations[ $location ] ;
 	return wp_get_nav_menu_object( $menu_id );
 }
+
+function nav_menu_name_by_location( $location ) {
+	$nav_menu = get_nav_menu_by_location( $location );
+	echo $nav_menu->name;
+}
