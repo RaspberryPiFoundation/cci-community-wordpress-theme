@@ -15,17 +15,11 @@
 
 <footer class="o-footer">
     <div class="c-grid c-grid--v-top">
-
-        <?php
-        if (has_nav_menu('footer_navigation_1')) :
-        ?>
+        <?php if (has_nav_menu('footer_navigation_1')) : ?>
         <div class="c-col--3">
             <p class="o-footer__heading">
             <?php
-            $menu_name = 'footer_navigation_1';
-            $locations = get_nav_menu_locations();
-            $menu_id = $locations[ $menu_name ] ;
-            $nav_menu = wp_get_nav_menu_object($menu_id);
+            $nav_menu = get_nav_menu_by_location('footer_navigation_1');
             echo $nav_menu->name;
             ?>
             </p>
@@ -37,20 +31,13 @@
             ]);
             ?>
         </div>
-        <?php
-        endif;
-        ?>
+        <?php endif; ?>
 
-        <?php
-        if (has_nav_menu('footer_navigation_2')) :
-        ?>
+        <?php if (has_nav_menu('footer_navigation_2')) : ?>
         <div class="c-col--3">
             <p class="o-footer__heading">
             <?php
-            $menu_name = 'footer_navigation_2';
-            $locations = get_nav_menu_locations();
-            $menu_id = $locations[ $menu_name ] ;
-            $nav_menu = wp_get_nav_menu_object($menu_id);
+            $nav_menu = get_nav_menu_by_location('footer_navigation_2');
             echo $nav_menu->name;
             ?>
             </p>
@@ -62,20 +49,13 @@
             ]);
             ?>
         </div>
-        <?php
-        endif;
-        ?>
+        <?php endif; ?>
 
-        <?php
-        if (has_nav_menu('footer_navigation_3')) :
-        ?>
+        <?php if (has_nav_menu('footer_navigation_3')) : ?>
         <div class="c-col--3">
             <p class="o-footer__heading">
             <?php
-            $menu_name = 'footer_navigation_3';
-            $locations = get_nav_menu_locations();
-            $menu_id = $locations[ $menu_name ] ;
-            $nav_menu = wp_get_nav_menu_object($menu_id);
+            $nav_menu = get_nav_menu_by_location('footer_navigation_3');
             echo $nav_menu->name;
             ?>
             </p>
@@ -87,20 +67,13 @@
             ]);
             ?>
         </div>
-        <?php
-        endif;
-        ?>
+        <?php endif; ?>
 
-        <?php
-        if (has_nav_menu('footer_navigation_4')) :
-        ?>
+        <?php if (has_nav_menu('footer_navigation_4')) : ?>
         <div class="c-col--3">
             <p class="o-footer__heading">
             <?php
-            $menu_name = 'footer_navigation_4';
-            $locations = get_nav_menu_locations();
-            $menu_id = $locations[ $menu_name ] ;
-            $nav_menu = wp_get_nav_menu_object($menu_id);
+            $nav_menu = get_nav_menu_by_location('footer_navigation_4');
             echo $nav_menu->name;
             ?>
             </p>
@@ -112,10 +85,7 @@
             ]);
             ?>
         </div>
-        <?php
-        endif;
-        ?>
-
+        <?php endif; ?>
     </div>
 
     <div class="c-grid">
