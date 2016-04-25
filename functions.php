@@ -92,23 +92,15 @@ function ccw_countries_content_width() {
 }
 add_action( 'after_setup_theme', 'ccw_countries_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function ccw_countries_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'ccw_countries' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'ccw_countries_widgets_init' );
+// Register wp_nav_menu() menus
+// http://codex.wordpress.org/Function_Reference/register_nav_menus
+register_nav_menus([
+  'primary_navigation' => 'Primary Navigation',
+  'footer_navigation_1' => 'Footer Nav 1',
+  'footer_navigation_2' => 'Footer Nav 2',
+  'footer_navigation_3' => 'Footer Nav 3',
+  'footer_navigation_4' => 'Footer Nav 4'
+]);
 
 /**
  * Enqueue scripts and styles.
