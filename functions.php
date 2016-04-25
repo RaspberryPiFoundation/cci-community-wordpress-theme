@@ -42,9 +42,13 @@ function ccw_countries_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses multiple nav menus
 	register_nav_menus( array(
-		'primary_navigation' => esc_html__( 'Primary Navigation', 'ccw_countries' ),
+		'primary_navigation'  => esc_html__( 'Primary Navigation', 'ccw_countries' ),
+		'footer_navigation_1' => esc_html__( 'Footer Nav 1', 'ccw_countries' ),
+		'footer_navigation_2' => esc_html__( 'Footer Nav 2', 'ccw_countries' ),
+		'footer_navigation_3' => esc_html__( 'Footer Nav 3', 'ccw_countries' ),
+		'footer_navigation_4' => esc_html__( 'Footer Nav 4', 'ccw_countries' ),
 	) );
 
 	/*
@@ -81,28 +85,19 @@ endif;
 add_action( 'after_setup_theme', 'ccw_countries_setup' );
 
 /**
- * Register navigation menus
- */
-register_nav_menus([
-  'primary_navigation'  => 'Primary Navigation',
-  'footer_navigation_1' => 'Footer Nav 1',
-  'footer_navigation_2' => 'Footer Nav 2',
-  'footer_navigation_3' => 'Footer Nav 3',
-  'footer_navigation_4' => 'Footer Nav 4'
-]);
-
-/**
  * Enqueue scripts and styles.
  */
 function ccw_countries_scripts() {
 	// set style guide version, or default to false (see https://developer.wordpress.org/reference/functions/wp_enqueue_style/)
-	$styleguide_meta = file_get_contents(get_template_directory() . '/bower_components/code-club/.bower.json');
-	$styleguide_meta_json = json_decode($styleguide_meta, true);
+	$styleguide_meta = file_get_contents( get_template_directory() . '/bower_components/code-club/.bower.json' );
+	$styleguide_meta_json = json_decode( $styleguide_meta, true );
 	$styleguide_version = $styleguide_meta_json['version'] ?: false;
 
-	// enqueue the Code Club style guide
+	// enqueue the Code Club style guide styles
 	wp_enqueue_style( 'ccw-countries-style-guide-style', get_template_directory_uri() . '/bower_components/code-club/dist/stylesheets/code-club.min.css', false, $styleguide_version );
 	wp_enqueue_style( 'ccw-countries-style', get_stylesheet_uri() );
+
+	// enqueue the Code Club style guide scripts
 	wp_enqueue_script( 'ccw-countries-style-guide-script', get_template_directory_uri() . '/bower_components/code-club/dist/javascripts/code-club.min.js', ['jquery'], $styleguide_version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -134,36 +129,45 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Theme nav overrides
  */
-add_filter('nav_menu_css_class', 'primary_nav_li', 1, 3);
-function primary_nav_li($classes, $item, $args) {
-	switch($args->theme_location) {
+add_filter( 'nav_menu_css_class', 'primary_nav_li', 1, 3 );
+function primary_nav_li( $classes, $item, $args ) {
+	switch( $args->theme_location ) {
 		case 'primary_navigation':
 			$classes[] = 'o-nav__item';
 			break;
-		case (preg_match('/footer_navigation_.*/', $args->theme_location) ? true : false):
+		case ( preg_match( '/footer_navigation_.*/', $args->theme_location ) ? true : false ):
 			$classes[] = 'o-footer__list-item';
 			break;
 	}
 	return $classes;
 }
 
-add_filter('nav_menu_link_attributes', 'add_menu_link_classes', 10, 3);
-function add_menu_link_classes($atts, $item, $args) {
-	switch($args->theme_location) {
+add_filter( 'nav_menu_link_attributes', 'add_menu_link_classes', 10, 3 );
+function add_menu_link_classes( $atts, $item, $args ) {
+	switch( $args->theme_location ) {
 		case 'primary_navigation':
 			$atts['class'] = 'o-nav__link';
 			break;
-		case (preg_match('/footer_navigation_.*/', $args->theme_location) ? true : false):
+		case ( preg_match( '/footer_navigation_.*/', $args->theme_location ) ? true : false ):
 			$atts['class'] = 'o-footer__list-link';
 			break;
 	}
 	return $atts;
 }
 
-add_filter('nav_menu_css_class', 'current_nav_class', 10, 2);
-function current_nav_class($classes, $item) {
-	if (in_array('current-menu-item', $classes)) {
+add_filter( 'nav_menu_css_class', 'current_nav_class', 10, 2 );
+function current_nav_class( $classes, $item ) {
+	if ( in_array( 'current-menu-item', $classes ) ) {
 		$classes[] = 'is-current ';
 	}
 	return $classes;
+}
+
+/**
+ * Utility functions
+ */
+function get_nav_menu_by_location( $location ) {
+	$locations = get_nav_menu_locations();
+	$menu_id = $locations[ $location ] ;
+	return wp_get_nav_menu_object( $menu_id );
 }
