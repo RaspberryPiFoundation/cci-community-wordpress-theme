@@ -83,9 +83,9 @@ endif;
  * @return bool
  */
 function ccw_countries_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'ccw_countries_categories' ) ) ) {
+	if ( false === ( $all_attached_cats = get_transient( 'ccw_countries_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
+		$all_attached_cats = get_categories( array(
 			'fields'     => 'ids',
 			'hide_empty' => 1,
 			// We only need to know if there is more than one category.
@@ -93,12 +93,12 @@ function ccw_countries_categorized_blog() {
 		) );
 
 		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$all_attached_cats = count( $all_attached_cats );
 
-		set_transient( 'ccw_countries_categories', $all_the_cool_cats );
+		set_transient( 'ccw_countries_categories', $all_attached_cats );
 	}
 
-	if ( $all_the_cool_cats > 1 ) {
+	if ( $all_attached_cats > 1 ) {
 		// This blog has more than 1 category so ccw_countries_categorized_blog should return true.
 		return true;
 	} else {
