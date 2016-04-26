@@ -93,11 +93,11 @@ function ccw_countries_scripts() {
 	$styleguide_meta_json = json_decode( $styleguide_meta, true );
 	$styleguide_version = $styleguide_meta_json['version'] ?: false;
 
-	// enqueue the Code Club style guide styles
+	// enqueue the style guide & theme styles
 	wp_enqueue_style( 'ccw-countries-style-guide-style', get_template_directory_uri() . '/bower_components/code-club/dist/stylesheets/code-club.min.css', false, $styleguide_version );
 	wp_enqueue_style( 'ccw-countries-style', get_stylesheet_uri() );
 
-	// enqueue the Code Club style guide scripts
+	// enqueue the style guide & theme scripts
 	wp_enqueue_script( 'ccw-countries-style-guide-script', get_template_directory_uri() . '/bower_components/code-club/dist/javascripts/code-club.min.js', ['jquery'], $styleguide_version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
