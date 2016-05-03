@@ -17,35 +17,22 @@ get_header(); ?>
 	<?php get_template_part('template-parts/page', 'header'); ?>
 
 	<div class="c-page-block">
-	  <div class="c-grid c-grid--h-center">
-	    <div class="c-col--8 u-text--center">
-	      <h2>How to create a club</h2>
-	      <?php the_field('how_to_create_a_club_text'); ?>
-	    </div>
-	  </div>
-	</div>
+		<div class="c-grid c-grid--h-center">
+			<div class="c-col--8">
+			<?php
+			while ( have_posts() ) : the_post();
 
-	<div class="c-page-block c-page-block--action-block">
-	  <div class="c-grid c-grid--h-center">
-	    <div class="c-col--8 u-text--center">
-	      <h3>Register your Code Club and join the movement</h3>
-	      <?php the_field('why_register_text'); ?>
-	      <p><a class="c-button c-button--action-button" href="<?php the_field('register_a_club_link'); ?>">Register a Code Club</a></p>
-	    </div>
-	  </div>
-	</div>
+				get_template_part( 'template-parts/content', 'page' );
 
-	<div class="c-page-block">
-	  <div class="c-grid">
-	    <div class="c-col c-col--6">
-	      <h2>Teaching materials</h2>
-	      <?php the_field('teaching_materials_text'); ?>
-	      <a class="c-button c-button--hollow c-button--green" href="http://projects.codeclubworld.org/" target="_blank">Visit the Code Club projects</a>
-	    </div>
-	    <div class="c-col c-col--6">
-	      <img width="100%" src="<?php the_field('teaching_materials_image'); ?>" />
-	    </div>
-	  </div>
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+
+			endwhile; // End of the loop.
+			?>
+			</div>
+		</div>
 	</div>
 
 <?php
