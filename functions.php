@@ -19,8 +19,6 @@ function ccw_countries_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on CCW_Countries, use a find and replace
-	 * to change 'ccw_countries' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'ccw_countries', get_template_directory() . '/languages' );
 
