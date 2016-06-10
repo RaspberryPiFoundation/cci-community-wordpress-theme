@@ -88,7 +88,7 @@ function ccw_countries_scripts() {
 	wp_enqueue_style( 'ccw-countries-style', get_stylesheet_uri() );
 
 	// enqueue the style guide & theme scripts
-	wp_enqueue_script( 'ccw-countries-style-guide-script', get_template_directory_uri() . '/bower_components/code-club/dist/javascripts/code-club.min.js', ['jquery'], $styleguide_version, true );
+	wp_enqueue_script( 'ccw-countries-style-guide-script', get_template_directory_uri() . '/bower_components/code-club/dist/javascripts/code-club.min.js', 'jquery', $styleguide_version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
