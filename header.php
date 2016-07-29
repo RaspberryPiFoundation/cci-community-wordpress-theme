@@ -9,6 +9,7 @@
  * @package CCW_Countries
  */
 
+// required to successfully perform header-based redirect after submission of forms (eg. club creation form)
 ob_start();
 
 ?><!DOCTYPE html>
