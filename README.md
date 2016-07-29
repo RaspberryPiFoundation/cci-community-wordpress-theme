@@ -33,6 +33,36 @@ Once you have the theme ZIP file, extract it & then upload the resulting directo
 * Select the Appearance panel, then Themes.
 * You'll see the 'CCW Countries' listed, select it & click on Activate.
 
+Making changes to the theme itself is the most basic way to get started, however it is *highly* recommended that instead of modifying the source theme, you utilise a child theme instead. This will allow you to make changes / additions to your theme without changing the source theme (ie. this one) in any way (allowing it to be updated easily as & when we publish updates).
+
+The full Wordpress child theme documentation is available here: https://codex.wordpress.org/Child_Themes but the main steps are:
+
+* Create a new folder within the `wp-content/themes` directory & name it whatever you'd like your theme to be called eg. `ccw-child-theme`.
+* Within `ccw-child-theme` create the file `style.css` and place the following inside:
+```
+/*
+ Theme Name:   CCW Countries Child Theme
+ Theme URI:
+ Description:  A child theme based on the CCW Countries theme
+ Template:     ccw-countries-wordpress-theme
+ Version:      1.0.0
+ Text Domain:  ccw-countries-child
+*/
+```
+* Within `ccw-child-theme` create the file `functions.php` and place the following inside:
+```
+<?php
+add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_styles' );
+function child_theme_enqueue_styles() {
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+}
+```
+* In the Wordpress admin, go to Appearance > Themes and activate the theme `CCW Countries Child Theme`
+
+That's all! (don't forget to read the docs for extra info & path-related caveats: https://codex.wordpress.org/Child_Themes)
+
+You can now override files that exist in the parent theme (such as `template-home.php`) by simply duplicating them into your child theme's folder and modifying them, and/or add new files as you wish.
+
 ### Upload the Setup Data
 
 Back on your machine, within the theme folder (that was unzipped in the steps above) there's a 'setup' directory. This contains some starter data for WordPress and for the Advanced Custom Fields. They need to both be imported:
@@ -62,6 +92,19 @@ Included in the theme is an example template for outputting a form which allows 
 * First, ensure that *all* of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' & 'Registration Success' pages in Wordpress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the Code Club World team.
 * Include the form in one of your page templates using: `<?php get_template_part( 'template-parts/form', 'register-club' ); ?>`
 * You're all set! Submissions to the form will be viewable in your CCW API admin account: https://api.codeclubworld.org/admin/clubs
+
+**Note**: If using a child theme (see above) the `inc/country-config.php` file in the parent theme will need to be re-created within the child theme's directory, it can then be modified there. However, it won't automatically be included by `functions.php`  now that it exists in the child theme, so within your child theme's `functions.php` add the following:
+
+```
+/**
+ * Country-specific config.
+ */
+require get_stylesheet_directory() . '/inc/country-config.php';
+```
+
+(note the use of `get_stylesheet_directory()` rather than `get_template_directory()`, see: https://codex.wordpress.org/Child_Themes#Referencing_.2F_Including_Files_in_Your_Child_Theme)
+
+The constants defined in you child theme's `/inc/country-config.php` are now available and will be used by `template-parts/form-register-club.php` in the parent theme.
 
 ## Assets
 
