@@ -31,9 +31,9 @@ Once you have the plugin ZIP file, extract it and then upload the resulting dire
 
 ### Install the Theme
 
-We'll be posting releases to the [releases page](https://github.com/CodeClub/ccw-countries-wordpress-theme/releases) but in the meantime simply download the theme using the [ZIP file link](https://github.com/CodeClub/ccw-countries-wordpress-theme/archive/master.zip).
+Download the 'Source code (zip)` file from the latest release on the [releases page](https://github.com/CodeClub/ccw-countries-wordpress-theme/releases)
 
-Once you have the theme ZIP file, extract it and then upload the resulting directory to your WordPress installation's `wp-content/themes` directory using whatever mechanism you have available via your hosting provider (eg. FTP). Then:
+Once you have the ZIP file, extract it and then upload the resulting directory to your WordPress installation's `wp-content/themes` directory using whatever mechanism you have available via your hosting provider (eg. FTP). Then:
 
 * Log in to the WordPress Administration panel (usually http://example.com/wp-admin).
 * Select the Appearance panel, then Themes.
