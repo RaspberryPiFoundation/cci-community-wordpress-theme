@@ -2,8 +2,8 @@
   "name": "code-club",
   "description": "A collection of UI components for styling Code Club websites",
   "main": [
-    "dist/stylesheets/code-club.min.css",
-    "dist/javascripts/code-club.min.js"
+    "dist/stylesheets/code-club.css",
+    "dist/javascripts/code-club.js"
   ],
   "authors": [
     "Code Club World Ltd"
@@ -34,12 +34,12 @@
     "test",
     "vendor"
   ],
-  "version": "1.0.10",
-  "_release": "1.0.10",
+  "version": "1.0.54",
+  "_release": "1.0.54",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.10",
-    "commit": "946164306b5bc60f456773a5d739b0fef4c57631"
+    "tag": "v1.0.54",
+    "commit": "15c57353ec69f426d3232f70065de8ea01d941d5"
   },
   "_source": "https://github.com/CodeClubWorld/style-guide.git",
   "_target": "~1.0.0",

@@ -25,7 +25,7 @@ ob_start();
 <body <?php body_class(); ?>>
 
 <header class="o-nav">
-    <div class="o-nav__container">
+    <div class="o-nav__container u-clearfix">
         <div class="c-logo">
             <a href="<?= esc_url(home_url('/')); ?>" class="c-logo__link">
                 <img alt="Code Club Logo" class="c-logo__image" src="<?php echo get_template_directory_uri(); ?>/bower_components/code-club/dist/images/code-club-logo.svg">
@@ -50,4 +50,4 @@ ob_start();
     </div>
 </header>
 
-<main class="main">
+<main class="o-main">

@@ -2,8 +2,8 @@
   "name": "code-club",
   "description": "A collection of UI components for styling Code Club websites",
   "main": [
-    "dist/stylesheets/code-club.min.css",
-    "dist/javascripts/code-club.min.js"
+    "dist/stylesheets/code-club.css",
+    "dist/javascripts/code-club.js"
   ],
   "authors": [
     "Code Club World Ltd"
