@@ -97,6 +97,11 @@ function ccw_countries_scripts() {
 add_action( 'wp_enqueue_scripts', 'ccw_countries_scripts' );
 
 /**
+ * Country-specific config.
+ */
+require get_template_directory() . '/inc/country-config.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -117,56 +122,11 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Theme nav overrides
+ * Load nav markup overrides file.
  */
-add_filter( 'nav_menu_css_class', 'primary_nav_li', 1, 3 );
-function primary_nav_li( $classes, $item, $args ) {
-	switch( $args->theme_location ) {
-		case 'primary_navigation':
-			$classes[] = 'o-nav__item';
-			break;
-		case ( preg_match( '/footer_navigation_.*/', $args->theme_location ) ? true : false ):
-			$classes[] = 'o-footer__list-item';
-			break;
-	}
-	return $classes;
-}
-
-add_filter( 'nav_menu_link_attributes', 'add_menu_link_classes', 10, 3 );
-function add_menu_link_classes( $atts, $item, $args ) {
-	switch( $args->theme_location ) {
-		case 'primary_navigation':
-			$atts['class'] = 'o-nav__link';
-			break;
-		case ( preg_match( '/footer_navigation_.*/', $args->theme_location ) ? true : false ):
-			$atts['class'] = 'o-footer__list-link';
-			break;
-	}
-	return $atts;
-}
-
-add_filter( 'nav_menu_css_class', 'current_nav_class', 10, 2 );
-function current_nav_class( $classes, $item ) {
-	if ( in_array( 'current-menu-item', $classes ) ) {
-		$classes[] = 'is-current ';
-	}
-	return $classes;
-}
+require get_template_directory() . '/inc/nav-overrides.php';
 
 /**
- * Utility functions
+ * Load utilities file.
  */
-function get_nav_menu_by_location( $location ) {
-	$locations = get_nav_menu_locations();
-	$menu_id = $locations[ $location ] ;
-	return wp_get_nav_menu_object( $menu_id );
-}
-
-function nav_menu_name_by_location( $location ) {
-	$nav_menu = get_nav_menu_by_location( $location );
-	echo $nav_menu->name;
-}
-
-function get_codeclub_asset_uri() {
-	return esc_url( get_template_directory_uri() ) . "/bower_components/code-club/dist";
-}
+require get_template_directory() . '/inc/utilities.php';
