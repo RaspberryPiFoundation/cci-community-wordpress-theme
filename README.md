@@ -54,3 +54,11 @@ The themes styles can be found in the `sass` directory. After any changes to Sas
 * Run `sass sass/style.scss style.css` from within the theme directory
 
 There are a number of command line tools & GUIs to make this process even easier / automatic (see links on the Sass installation page: http://sass-lang.com/install).
+
+## Club Creation Form
+
+Included in the theme is an example template for outputting a form which allows visitors to register their clubs via the Code Club World API. It's located in `template-parts/form-register-club.php` and is completely self-contained to keep things as simple as possible. To use it:
+
+* First, ensure that *all* of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' & 'Registration Success' pages in Wordpress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the Code Club World team.
+* Include the form in one of your page templates using: `<?php get_template_part( 'template-parts/form', 'register-club' ); ?>`
+* You're all set! Submissions to the form will be viewable in your CCW API admin account: https://api.codeclubworld.org/admin/clubs
