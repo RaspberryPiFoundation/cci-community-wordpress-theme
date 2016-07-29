@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: CCW Countries\n"
-"POT-Creation-Date: 2016-07-29 10:06+0100\n"
+"POT-Creation-Date: 2016-07-29 11:05+0100\n"
 "PO-Revision-Date: 2016-07-29 10:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -162,8 +162,64 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: template-parts/form-register-club.php:48
+#: template-parts/form-register-club.php:66
 msgid "You must accept the terms &amp; conditions"
+msgstr ""
+
+#: template-parts/form-register-club.php:74
+msgid "Venue name"
+msgstr ""
+
+#: template-parts/form-register-club.php:77
+msgid "Venue website"
+msgstr ""
+
+#: template-parts/form-register-club.php:80
+msgid "Street address 1"
+msgstr ""
+
+#: template-parts/form-register-club.php:83
+msgid "Street address 2"
+msgstr ""
+
+#: template-parts/form-register-club.php:86
+msgid "Town/City"
+msgstr ""
+
+#: template-parts/form-register-club.php:89
+msgid "Region/State"
+msgstr ""
+
+#: template-parts/form-register-club.php:92
+msgid "Postcode/Zipcode"
+msgstr ""
+
+#: template-parts/form-register-club.php:97
+msgid "Club Skype username"
+msgstr ""
+
+#: template-parts/form-register-club.php:102
+msgid "Your name"
+msgstr ""
+
+#: template-parts/form-register-club.php:105
+msgid "Your email address"
+msgstr ""
+
+#: template-parts/form-register-club.php:113
+msgid "Your name and email address will never be displayed publicly"
+msgstr ""
+
+#: template-parts/form-register-club.php:119
+msgid "I accept the"
+msgstr ""
+
+#: template-parts/form-register-club.php:119
+msgid "terms &amp; conditions"
+msgstr ""
+
+#: template-parts/form-register-club.php:129
+msgid "Create a Code Club"
 msgstr ""
 
 #. Theme Name of the plugin/theme
