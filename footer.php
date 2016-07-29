@@ -72,16 +72,34 @@
         </div>
         <div class="c-col--2">
             <ul class="o-footer__social-list">
+                <?php if( defined( 'SOCIAL_FACEBOOK_URL' ) ): ?>
                 <li class="o-footer__social-list-item">
-                    <a class="o-footer__social-list-link" href="https://www.facebook.com/" target="_blank">
+                    <a class="o-footer__social-list-link" href="<?php echo SOCIAL_FACEBOOK_URL ?>" target="_blank">
                         <span class="c-icon c-icon--social-facebook c-icon--white"></span>
                     </a>
                 </li>
+                <?php endif; ?>
+                <?php if( defined( 'SOCIAL_TWITTER_URL' ) ): ?>
                 <li class="o-footer__social-list-item">
-                    <a class="o-footer__social-list-link" href="https://twitter.com/" target="_blank">
+                    <a class="o-footer__social-list-link" href="<?php echo SOCIAL_TWITTER_URL ?>" target="_blank">
                         <span class="c-icon c-icon--social-twitter c-icon--white"></span>
                     </a>
                 </li>
+                <?php endif; ?>
+                <?php if( defined( 'SOCIAL_GOOGLE_URL' ) ): ?>
+                <li class="o-footer__social-list-item">
+                    <a class="o-footer__social-list-link" href="<?php echo SOCIAL_GOOGLE_URL ?>" target="_blank">
+                        <span class="c-icon c-icon--social-google c-icon--white"></span>
+                    </a>
+                </li>
+                <?php endif; ?>
+                <?php if( defined( 'SOCIAL_YOUTUBE_URL' ) ): ?>
+                <li class="o-footer__social-list-item">
+                    <a class="o-footer__social-list-link" href="<?php echo SOCIAL_YOUTUBE_URL ?>" target="_blank">
+                        <span class="c-icon c-icon--social-youtube c-icon--white"></span>
+                    </a>
+                </li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>

@@ -172,6 +172,10 @@ Menu contents are managed via the WordPress admin. To create a new menu and assi
 
 The new menu should now appear in the appropriate place and its items can continue to be modified / added to via the 'Edit Menus' tab.
 
+### Social Links
+
+In addition to the menus, social links can be output in the footer. To enable, uncomment and add your links to the relevant social link `define` lines in `inc/country-config.php`. Upon doing so, the social icons will appear in the lower right of the footer (eg. https://styleguide.codeclubworld.org/example-pages/stacked-content)
+
 ## Localisation / Translation
 
 The theme (and thus a child theme) is prepared for translation. This is performed via 'POT' files within the `languages` folder (we recommend using the program 'Poedit' to create and manage `.pot` files).
