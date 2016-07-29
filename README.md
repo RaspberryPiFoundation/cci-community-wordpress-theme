@@ -140,3 +140,22 @@ Museo Sans Rounded is used through and is served via the CCW Typekit account usi
 ```
 
 However, since Typekit performs domain name checks against a whitelist before serving any assets, fonts on your site won't be loaded until you inform the CCW team of the domain names you will be using (eg. `codeclub.org.uk`, `test.codeclub.org.uk`, `dev.codeclub.org.uk`) and we add them to Typekit's whitelist, so please let us know!
+
+## Menus
+
+There are five single-level menu locations defined in this theme:
+
+* 1 Primary menu (horizontal, in header)
+* 4 Footer menus (vertical, in columns within footer)
+
+See https://styleguide.codeclubworld.org/example-pages/stacked-content for examples of each.
+
+Menu contents are managed via the Wordpress admin. To create a new menu & assign it to one of the above locations:
+
+* Head to Appearance > Menus in the Wordpress admin
+* Click on 'create a new menu'
+* Enter a name (such as 'Main' or 'Footer 1') & click on 'Create Menu'
+* Add pages / items to the new menu using the panel on the left (for more info, see: https://codex.wordpress.org/WordPress_Menu_User_Guide)
+* Click on the 'Manage Locations' tab above and assign the menu to one of the five locations. Click on 'Save Changes'
+
+The new menu should now appear in the appropriate place and its items can continue to be modified / added to via the 'Edit Menus' tab.
