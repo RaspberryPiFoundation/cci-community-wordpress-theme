@@ -9,6 +9,8 @@
  * @package CCW_Countries
  */
 
+ob_start();
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
