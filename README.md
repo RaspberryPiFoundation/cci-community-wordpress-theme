@@ -97,27 +97,6 @@ The themes styles can be found in the `sass` directory. After any changes to Sas
 
 There are a number of command line tools and GUIs to make this process even easier / automatic (see links on the Sass installation page: http://sass-lang.com/install).
 
-## Club Creation Form
-
-Included in the theme is an example template for outputting a form which allows visitors to register their clubs via the Code Club World API. It's located in `template-parts/form-register-club.php` and is completely self-contained to keep things as simple as possible. To use it:
-
-* First, ensure that _all_ of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' and 'Registration Success' pages in WordPress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the Code Club World team.
-* Include the form in one of your page templates using: `<?php get_template_part( 'template-parts/form', 'register-club' ); ?>`
-* You're all set! The form will be output on the page and submissions to the form will be viewable in your CCW API admin account: https://api.codeclubworld.org/admin/clubs
-
-**Note**: If using a child theme (see above), the `inc/country-config.php` file in the parent theme will need to be re-created within the child theme's directory, it can then be modified there. However, it won't automatically be included by `functions.php`  now that it exists in the child theme, so within your child theme's `functions.php` add the following:
-
-```
-/**
- * Country-specific config.
- */
-require get_stylesheet_directory() . '/inc/country-config.php';
-```
-
-(Note the use of `get_stylesheet_directory()` rather than `get_template_directory()`, this is required in order to return the child theme directory instead of the parent theme directory. For more info see: https://codex.wordpress.org/Child_Themes#Referencing_.2F_Including_Files_in_Your_Child_Theme)
-
-The constants defined in your child theme's `/inc/country-config.php` are now available and will be used by `template-parts/form-register-club.php` in the parent theme.
-
 ## Assets
 
 ### Images
@@ -185,3 +164,42 @@ See the WordPress guide for more information: https://developer.wordpress.org/th
 In particular, the club registration form (`template-parts/form-register-club.php`) and the 404 page (`404.php`) contain strings that will require translating.
 
 Right-to-left languages are supported via the `rtl.css` file. See https://codex.wordpress.org/Right_to_Left_Language_Support
+
+## Use of the CCW API
+
+The CCW API can be used store newly created clubs and also to retrieve club data. This theme includes examples of each to get you started.
+
+### Club Creation Form
+
+An example template for outputting a form which allows visitors to register their clubs via the Code Club World API is located in `template-parts/form-register-club.php`. It is completely self-contained to keep things as simple as possible. To use it:
+
+* First, ensure that _all_ of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' and 'Registration Success' pages in WordPress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the Code Club World team.
+* Include the form in one of your page templates using: `<?php get_template_part( 'template-parts/form', 'register-club' ); ?>`
+* You're all set! The form will be output on the page and submissions to the form will be viewable in your CCW API admin account: https://api.codeclubworld.org/admin/clubs
+
+**Note**: If using a child theme (see above), the `inc/country-config.php` file in the parent theme will need to be re-created within the child theme's directory, it can then be modified there. However, it won't automatically be included by `functions.php`  now that it exists in the child theme, so within your child theme's `functions.php` add the following:
+
+```
+/**
+ * Country-specific config.
+ */
+require get_stylesheet_directory() . '/inc/country-config.php';
+```
+
+(Note the use of `get_stylesheet_directory()` rather than `get_template_directory()`, this is required in order to return the child theme directory instead of the parent theme directory. For more info see: https://codex.wordpress.org/Child_Themes#Referencing_.2F_Including_Files_in_Your_Child_Theme)
+
+The constants defined in your child theme's `/inc/country-config.php` are now available and will be used by `template-parts/form-register-club.php` in the parent theme.
+
+### Club Retrieval Class
+
+Assuming the values in `inc/country-config.php` have been correctly set (see above), it's possible to to retrieve club data very simply within any template:
+
+```
+<?php
+$ccw_api = new CCW_API();
+$data = $ccw_api->getClubs();
+$clubs = json_decode($data, true);
+?>
+```
+
+The `$clubs` variable will contain an array of clubs which can then be used to populate a map / club listing view etc. Bear in mind that on each page load, the call to `getClubs()` will query the CCW API and return fresh results, meaning that page load times may be increased if there are a lot of clubs being retrieved. With this in mind, pagination of results is possible and an example of this will be added here shortly.

@@ -130,3 +130,8 @@ require get_template_directory() . '/inc/utilities.php';
  * Country-specific config.
  */
 require get_template_directory() . '/inc/country-config.php';
+
+/**
+ * CCW API class.
+ */
+require get_template_directory() . '/inc/ccw-api.php';
