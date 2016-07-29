@@ -62,3 +62,36 @@ Included in the theme is an example template for outputting a form which allows 
 * First, ensure that *all* of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' & 'Registration Success' pages in Wordpress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the Code Club World team.
 * Include the form in one of your page templates using: `<?php get_template_part( 'template-parts/form', 'register-club' ); ?>`
 * You're all set! Submissions to the form will be viewable in your CCW API admin account: https://api.codeclubworld.org/admin/clubs
+
+## Assets
+
+### Images
+
+It's recommended to create a directory in the root of the theme folder called `images` and refer to it in templates using `<?php echo get_template_directory_uri(); ?>/images/image-name.jpg` eg:
+
+```
+<img src="<?php echo get_template_directory_uri(); ?>/images/image-name.jpg" alt="" />
+```
+
+### Favicons
+
+Paths to favicons are set in `header.php` (these favicons need to be created & placed into the `images` dir, see above):
+
+```
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
+<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" sizes="32x32">
+```
+
+You may use the style guide assets for guidance, see: `bower_components/code-club/dist/images/favicons`
+
+### Fonts
+
+Museo Sans Rounded is used through and is served via the CCW Typekit account using this snippet in `header.php`:
+
+```
+<script src="https://use.typekit.net/hos3npy.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+```
+
+However, since Typekit performs domain name checks against a whitelist before serving any assets, fonts on your site won't be loaded until you inform the CCW team of the domain names you will be using (eg. `codeclub.org.uk`, `test.codeclub.org.uk`, `dev.codeclub.org.uk`) and we add them to Typekit's whitelist, so please let us know!
