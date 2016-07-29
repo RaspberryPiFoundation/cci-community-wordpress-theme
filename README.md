@@ -43,3 +43,5 @@ Back on your machine, within the theme folder (that was unzipped in the steps ab
 * When prompted to 'Assign Authors', select the username 'admin' from the dropdown option under 'or assign posts to an existing user' in step 1. Then click on Submit.
 * When complete, head to the Custom Fields panel, then Tools.
 * Under 'Import Field Groups' browse to the `acf-export.json` file within the theme's 'setup' directory, then select Import.
+
+A page called 'Home' will have been created (using the `template-home.php` file) with an example ACF field attached to it (visit http://yoursiteurl/home/' to see it). Try adding some new fields and outputting them in the template (see the ACF documentation: https://www.advancedcustomfields.com/resources/get_field/). Wordpress' templating help documents can be found here: https://developer.wordpress.org/themes/basics/
