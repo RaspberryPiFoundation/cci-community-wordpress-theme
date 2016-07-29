@@ -197,8 +197,8 @@ Assuming the values in `inc/country-config.php` have been correctly set (see abo
 ```
 <?php
 $ccw_api = new CCW_API();
-$data = $ccw_api->getClubs();
-$clubs = json_decode($data, true);
+$response = $ccw_api->getClubs();
+$clubs = $response['body'];
 ?>
 ```
 
