@@ -8,11 +8,17 @@ Note: this theme and accompanying documentation is in its early stages, many cha
 
 The theme sets up some basic templates and a set of styles that should cover the majority of use-cases required by a community site in its infancy. Styling is based off the [official Code Club style guide](https://styleguide.codeclubworld.org).
 
+In order to work with this theme & build a content-managed Wordpress site, it's expected that you have at least some experience of creating Wordpress themes (HTML & at least some PHP knowledge assumed) and are familiar with setting up Wordpress in a local development environment as well as in a hosted environment. Additional experience of the Advanced Custom Fields plugin for Wordpress is a bonus but not required.
+
 ## Setup
 
 ### Install WordPress
 
-The best resource is the [WordPress Codex](https://codex.wordpress.org/Installing_WordPress), you'll need an appropriate account with a web hosting provider (linked with the relevant domain name) as well (we'll have a short list of recommended hosting providers ready soon).
+The best resource is the [WordPress Codex](https://codex.wordpress.org/Installing_WordPress). When installing in a hosted environment, you'll need an appropriate account with a web hosting provider (linked with the relevant domain name) as well (we'll have a short list of recommended hosting providers ready soon).
+
+Wordpress' minimum requirements can be found here: https://codex.wordpress.org/Hosting_WordPress and whilst it's stated that PHP 5.2.4 is the minimum, we would strongly suggest at least PHP 5.3 (>= 5.5 is even better).
+
+It's very important to ensure that your Wordpress installation is kept up-to-date at all times and that a regular (and secure) backup of your data is made.
 
 ### Install the ACF Pro Plugin
 
