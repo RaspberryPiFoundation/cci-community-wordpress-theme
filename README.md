@@ -173,3 +173,5 @@ The theme (and thus a child theme) is prepared for translation. This is performe
 See the WordPress guide for more information: https://developer.wordpress.org/themes/functionality/localization/ along with this tutorial: https://premium.wpmudev.org/blog/how-to-translate-a-wordpress-theme
 
 In particular, the club registration form (`template-parts/form-register-club.php`) and the 404 page (`404.php`) contain strings that will require translating.
+
+Right-to-left languages are supported via the `rtl.css` file. See https://codex.wordpress.org/Right_to_Left_Language_Support
