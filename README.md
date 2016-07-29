@@ -14,9 +14,9 @@ The theme sets up some basic templates and a set of styles that should cover the
 
 The best resource is the [WordPress Codex](https://codex.wordpress.org/Installing_WordPress), you'll need an appropriate account with a web hosting provider (linked with the relevant domain name) as well (we'll have a short list of recommended hosting providers ready soon).
 
-### Install the ACF Plugin
+### Install the ACF Pro Plugin
 
-The Advanced Custom Fields plugin is required for the theme to function. You can download it here: http://downloads.codeclubworld.org/wp-advanced-custom-fields-pro.zip
+The Advanced Custom Fields Pro plugin is required for the theme to function. You can download it here: http://downloads.codeclubworld.org/wp-advanced-custom-fields-pro.zip
 
 Once you have the plugin ZIP file, extract it & then upload the resulting directory to your WordPress installation's `wp-content/plugins` directory using whatever mechanism you have available via your hosting provider (eg. FTP). Then:
 
