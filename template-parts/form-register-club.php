@@ -27,9 +27,6 @@ if ( empty( $_POST['honeypot'] ) && !empty( $_POST['terms-checkbox'] ) ) {
     // successful POST, forward to the 'registration success' page
     if ( 201 == wp_remote_retrieve_response_code( $response ) ) {
       $_POST = array();
-      ini_set('display_errors', 1);
-      ini_set('display_startup_errors', 1);
-      error_reporting(E_ALL);
       wp_safe_redirect( CCW_API_REGISTRATION_SUCCESS_PAGE );
       exit;
     } else {
