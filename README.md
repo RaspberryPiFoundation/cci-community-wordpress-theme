@@ -167,7 +167,7 @@ Right-to-left languages are supported via the `rtl.css` file. See https://codex.
 
 ## Use of the CCW API
 
-The CCW API can be used store newly created clubs and also to retrieve club data. This theme includes examples of each to get you started.
+The CCW API can be used store newly created clubs and also to retrieve club data. This theme includes examples of each to get you started, both examples utilise the `CCW_API` class located in `inc/ccw-api.php`.
 
 ### Club Creation Form
 
@@ -190,7 +190,7 @@ require get_stylesheet_directory() . '/inc/country-config.php';
 
 The constants defined in your child theme's `/inc/country-config.php` are now available and will be used by `template-parts/form-register-club.php` in the parent theme.
 
-### Club Retrieval Class
+### Club Retrieval
 
 Assuming the values in `inc/country-config.php` have been correctly set (see above), it's possible to to retrieve club data very simply within any template:
 
