@@ -61,11 +61,11 @@ function child_theme_enqueue_styles() {
 
 That's all! (don't forget to read the docs for extra info & path-related caveats: https://codex.wordpress.org/Child_Themes)
 
-You can now override files that exist in the parent theme (such as `template-home.php`) by simply duplicating them into your child theme's folder and modifying them, and/or add new files as you wish.
+You can now add new files as you wish but also override files that exist in the parent theme (such as `template-home.php`) by simply duplicating them in your child theme's folder and modifying them there.
 
 ### Upload the Setup Data
 
-Back on your machine, within the theme folder (that was unzipped in the steps above) there's a 'setup' directory. This contains some starter data for WordPress and for the Advanced Custom Fields. They need to both be imported:
+Within the theme folder (that was unzipped in the initial steps above) there's a 'setup' directory. This contains some starter data for WordPress and for the Advanced Custom Fields. They need to both be imported:
 
 * Log in to the WordPress Administration panel.
 * Select the Tools panel, then Import.
@@ -89,11 +89,11 @@ There are a number of command line tools & GUIs to make this process even easier
 
 Included in the theme is an example template for outputting a form which allows visitors to register their clubs via the Code Club World API. It's located in `template-parts/form-register-club.php` and is completely self-contained to keep things as simple as possible. To use it:
 
-* First, ensure that *all* of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' & 'Registration Success' pages in Wordpress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the Code Club World team.
+* First, ensure that _all_ of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' & 'Registration Success' pages in Wordpress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the Code Club World team.
 * Include the form in one of your page templates using: `<?php get_template_part( 'template-parts/form', 'register-club' ); ?>`
-* You're all set! Submissions to the form will be viewable in your CCW API admin account: https://api.codeclubworld.org/admin/clubs
+* You're all set! The form will be output on the page & submissions to the form will be viewable in your CCW API admin account: https://api.codeclubworld.org/admin/clubs
 
-**Note**: If using a child theme (see above) the `inc/country-config.php` file in the parent theme will need to be re-created within the child theme's directory, it can then be modified there. However, it won't automatically be included by `functions.php`  now that it exists in the child theme, so within your child theme's `functions.php` add the following:
+**Note**: If using a child theme (see above), the `inc/country-config.php` file in the parent theme will need to be re-created within the child theme's directory, it can then be modified there. However, it won't automatically be included by `functions.php`  now that it exists in the child theme, so within your child theme's `functions.php` add the following:
 
 ```
 /**
@@ -102,19 +102,21 @@ Included in the theme is an example template for outputting a form which allows 
 require get_stylesheet_directory() . '/inc/country-config.php';
 ```
 
-(note the use of `get_stylesheet_directory()` rather than `get_template_directory()`, see: https://codex.wordpress.org/Child_Themes#Referencing_.2F_Including_Files_in_Your_Child_Theme)
+(Note the use of `get_stylesheet_directory()` rather than `get_template_directory()`, this is required in order to return the child theme directory instead of the parent theme directory. For more info see: https://codex.wordpress.org/Child_Themes#Referencing_.2F_Including_Files_in_Your_Child_Theme)
 
-The constants defined in you child theme's `/inc/country-config.php` are now available and will be used by `template-parts/form-register-club.php` in the parent theme.
+The constants defined in your child theme's `/inc/country-config.php` are now available and will be used by `template-parts/form-register-club.php` in the parent theme.
 
 ## Assets
 
 ### Images
 
-It's recommended to create a directory in the root of the theme folder called `images` and refer to it in templates using `<?php echo get_template_directory_uri(); ?>/images/image-name.jpg` eg:
+It's recommended that you create a directory in the root of the theme folder called `images` and refer to it in templates using `<?php echo get_template_directory_uri(); ?>/images/image-name.jpg` eg:
 
 ```
 <img src="<?php echo get_template_directory_uri(); ?>/images/image-name.jpg" alt="" />
 ```
+
+**Note:** if using a child theme, replace `get_template_directory_uri()` with `get_stylesheet_directory_uri()`
 
 ### Favicons
 
