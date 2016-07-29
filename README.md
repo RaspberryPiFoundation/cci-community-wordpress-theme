@@ -203,3 +203,10 @@ $clubs = $response['body'];
 ```
 
 The `$clubs` variable will contain an array of clubs which can then be used to populate a map / club listing view etc. Bear in mind that on each page load, the call to `getClubs()` will query the CCW API and return fresh results, meaning that page load times may be increased if there are a lot of clubs being retrieved. With this in mind, pagination of results is possible and an example of this will be added here shortly.
+
+## Legal Stuff
+
+Copyright (c) 2016 Code Club World Ltd.
+
+- [License](LICENSE.txt)
+- [Contributing](CONTRIBUTING.txt)
