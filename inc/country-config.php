@@ -23,7 +23,7 @@ define( 'CCW_API_VERSION', '2' );
 // Send an automatic welcome email (in English) when a club registers via the CCW API registration form. Values: 'true' or 'false'
 define( 'CCW_API_WELCOME_EMAIL', 'true' );
 
-// You must create a Terms & Conditions page and provide the path to it here. For example, if the page address is: 'http://codeclub.org.uk/terms-and-conditions' then the value here should be: '/terms-and/conditions' (must start with a /)
+// You must create a Terms & Conditions page and provide the path to it here. For example, if the page address is: 'http://codeclub.org.uk/terms-and-conditions' then the value here should be: '/terms-and-conditions' (must start with a /)
 define( 'CCW_API_TERMS_CONDITIONS_PAGE', '/' );
 
 // You must create a page to display a 'Registration Success' message and provide the path to it here. For example, if the page address is: 'http://codeclub.org.uk/registration-success' then the value here should be: '/registration-success' (must start with a /)
