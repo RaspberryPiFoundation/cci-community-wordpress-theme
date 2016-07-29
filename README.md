@@ -2,7 +2,7 @@
 
 This is a WordPress theme designed to help country coordinators build a site to service their community.
 
-Note: this theme and accompanying documentation is in its early stages, many changes and improvements will be made. You're encouraged to provide feedback and log issues via the Github Issues feature attached to this repository.
+**Note:** this theme and accompanying documentation are in their early stages. Many changes and improvements will be made. You're encouraged to provide feedback and log issues via the Issues feature attached to this repository as well as provide fixes and new features via Pull Requests.
 
 ## General Info
 
