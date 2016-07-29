@@ -45,3 +45,12 @@ Back on your machine, within the theme folder (that was unzipped in the steps ab
 * Under 'Import Field Groups' browse to the `acf-export.json` file within the theme's 'setup' directory, then select Import.
 
 A page called 'Home' will have been created (using the `template-home.php` file) with an example ACF field attached to it (visit http://yoursiteurl/home/' to see it). Try adding some new fields and outputting them in the template (see the ACF documentation: https://www.advancedcustomfields.com/resources/get_field/). Wordpress' templating help documents can be found here: https://developer.wordpress.org/themes/basics/
+
+### Sass
+
+The themes styles can be found in the `sass` directory. After any changes to Sass files, `sass/style.scss` needs to be compiled to create `style.css`:
+
+* Ensure you have Sass installed: http://sass-lang.com/install
+* Run `sass sass/style.scss style.css` from within the theme directory
+
+There are a number of command line tools & GUIs to make this process even easier / automatic (see links on the Sass installation page: http://sass-lang.com/install).
