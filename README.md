@@ -159,3 +159,11 @@ Menu contents are managed via the Wordpress admin. To create a new menu & assign
 * Click on the 'Manage Locations' tab above and assign the menu to one of the five locations. Click on 'Save Changes'
 
 The new menu should now appear in the appropriate place and its items can continue to be modified / added to via the 'Edit Menus' tab.
+
+## Localisation / Translation
+
+The theme (and thus a child theme) is prepared for translation. This is performed via 'POT' files within the `languages` folder (we recommend using the program 'Poedit' to create and manage `.pot` files).
+
+See the Wordpress guide for more information: https://developer.wordpress.org/themes/functionality/localization/ along with this tutorial: https://premium.wpmudev.org/blog/how-to-translate-a-wordpress-theme
+
+In particular, the club registration form (`template-parts/form-register-club.php`) and the 404 page (`404.php`) contain strings that will require translating.
