@@ -9,56 +9,25 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="o-hero">
+	    <div class="o-hero__bg c-grid c-grid--h-center c-grid--v-center">
+	        <div class="c-col--8">
+	            <div class="o-hero__body">
+	            	<h1 class="o-hero__title"><?php esc_html_e( '404 - Not found', 'ccw_countries' ); ?></h1>
+	                <p class="o-hero__subtitle c-lede"><?php esc_html_e( 'Sorry but we couldn\'t find the content you were looking for', 'ccw_countries' ); ?></p>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ccw_countries' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'ccw_countries' ); ?></p>
-
-					<?php
-						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-
-						// Only show the widget if site has multiple categories.
-						if ( ccw_countries_categorized_blog() ) :
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'ccw_countries' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-						endif;
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'ccw_countries' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	<div class="c-page-block c-page-block--alt-block u-text--center">
+		<div class="c-grid">
+			<div class="c-col c-col--12">
+				<p><?php esc_html_e( 'Try the navigation menu above or search for the content', 'ccw_countries' ); ?>:</p>
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+	</div>
 
 <?php
 get_footer();
