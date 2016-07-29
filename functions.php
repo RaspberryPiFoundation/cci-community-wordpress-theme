@@ -97,11 +97,6 @@ function ccw_countries_scripts() {
 add_action( 'wp_enqueue_scripts', 'ccw_countries_scripts' );
 
 /**
- * Country-specific config.
- */
-require get_template_directory() . '/inc/country-config.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -130,3 +125,8 @@ require get_template_directory() . '/inc/nav-overrides.php';
  * Load utilities file.
  */
 require get_template_directory() . '/inc/utilities.php';
+
+/**
+ * Country-specific config.
+ */
+require get_template_directory() . '/inc/country-config.php';
