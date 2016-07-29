@@ -9,19 +9,11 @@ if ( empty( $_POST['honeypot'] ) && !empty( $_POST['terms-checkbox'] ) ) {
 
     // set the club name from the venue name
     $_POST['club']['name'] = $_POST['club']['venue_attributes']['name'];
-    $json = json_encode( $_POST );
+    $club_json = json_encode( $_POST );
 
     // POST the form to the CCW API
-    $response = wp_remote_post( CCW_API_URL . '/clubs?welcome_email=' . CCW_API_WELCOME_EMAIL, array(
-        'timeout' => 30,
-        'headers' => array(
-            'Content-Type' => 'application/json',
-            'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
-            'Accept' => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
-        ),
-        'body' => $json,
-    ));
+    $ccw_api = new CCW_API();
+    $response = $ccw_api->saveClub( $club_json );
 
     if ( !is_wp_error( $response ) ) { // POST response
         if ( 201 == wp_remote_retrieve_response_code( $response ) ) { // successful POST, forward to the 'registration success' page

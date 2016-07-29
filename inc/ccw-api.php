@@ -1,6 +1,7 @@
 <?php
 /**
  * CCW API Class & Functions
+ * Constants are set in `country-config.php`
  */
 class CCW_API {
 
@@ -21,6 +22,19 @@ class CCW_API {
         curl_close($curl);
 
         return $result;
+    }
+
+    public function saveClub( $club_json ) {
+        $response = wp_remote_post( CCW_API_URL . '/clubs?welcome_email=' . CCW_API_WELCOME_EMAIL, array(
+            'timeout' => 30,
+            'headers' => array(
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
+                'Accept' => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
+            ),
+            'body' => $club_json,
+        ));
+        return $response;
     }
 
 }
