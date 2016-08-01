@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<!-- generator="WordPress/4.5.1" created="2016-05-03 09:26" -->
+<!-- generator="WordPress/4.5.3" created="2016-08-01 16:52" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -26,10 +26,10 @@
 >
 
 <channel>
-	<title>Country Name</title>
+	<title>CCW WP Test</title>
 	<link>http://dev.codeclub.wordpress</link>
-	<description>Code Club Country Name</description>
-	<pubDate>Tue, 03 May 2016 09:26:46 +0000</pubDate>
+	<description>Just another WordPress site</description>
+	<pubDate>Mon, 01 Aug 2016 16:52:24 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://dev.codeclub.wordpress</wp:base_site_url>
@@ -38,11 +38,11 @@
 	<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[admin]]></wp:author_login><wp:author_email><![CDATA[greg@codeclub.org.uk]]></wp:author_email><wp:author_display_name><![CDATA[admin]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
 
 
-	<generator>https://wordpress.org/?v=4.5.1</generator>
+	<generator>https://wordpress.org/?v=4.5.3</generator>
 
 	<item>
 		<title>Home</title>
-		<link>http://dev.codeclub.wordpress/</link>
+		<link>http://dev.codeclub.wordpress/home/</link>
 		<pubDate>Tue, 03 May 2016 08:59:53 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">http://dev.codeclub.wordpress/?page_id=36</guid>
@@ -67,7 +67,7 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[page_title]]></wp:meta_key>
-			<wp:meta_value><![CDATA[A worldwide network of coding clubs for children]]></wp:meta_value>
+			<wp:meta_value><![CDATA[The Website's Title]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_page_title]]></wp:meta_key>
@@ -76,6 +76,73 @@
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 			<wp:meta_value><![CDATA[template-home.php]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[page_intro]]></wp:meta_key>
+			<wp:meta_value><![CDATA[The Website's Strapline]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_page_intro]]></wp:meta_key>
+			<wp:meta_value><![CDATA[field_579f7b0a55e3b]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[primary_text]]></wp:meta_key>
+			<wp:meta_value><![CDATA[<h2 style="text-align: center;">Heading</h2>
+<p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_primary_text]]></wp:meta_key>
+			<wp:meta_value><![CDATA[field_579f7b3f55e3d]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[driver_text]]></wp:meta_key>
+			<wp:meta_value><![CDATA[<h3>Driver Heading</h3>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_driver_text]]></wp:meta_key>
+			<wp:meta_value><![CDATA[field_579f7b5855e3f]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[driver_link]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_driver_link]]></wp:meta_key>
+			<wp:meta_value><![CDATA[field_579f7b6455e40]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[driver_link_text]]></wp:meta_key>
+			<wp:meta_value><![CDATA[Driver Action]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_driver_link_text]]></wp:meta_key>
+			<wp:meta_value><![CDATA[field_579f7bfd55e41]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[secondary_text]]></wp:meta_key>
+			<wp:meta_value><![CDATA[<h3>Left-Aligned Heading</h3>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_secondary_text]]></wp:meta_key>
+			<wp:meta_value><![CDATA[field_579f7c0455e42]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[secondary_link]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_secondary_link]]></wp:meta_key>
+			<wp:meta_value><![CDATA[field_579f7c1455e43]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[secondary_link_text]]></wp:meta_key>
+			<wp:meta_value><![CDATA[Visit this Page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_secondary_link_text]]></wp:meta_key>
+			<wp:meta_value><![CDATA[field_579f7c2055e44]]></wp:meta_value>
 		</wp:postmeta>
 	</item>
 </channel>
