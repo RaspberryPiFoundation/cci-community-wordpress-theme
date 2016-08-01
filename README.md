@@ -88,7 +88,9 @@ To set the 'Home' page to be the one that appears by default when viewing the ro
 * Under 'Front page displays' select 'A static page' and then set 'Front page' to 'Home'
 * Click on 'Save Changes'
 
-### Sass
+## Assets
+
+### Sass / CSS
 
 The themes styles can be found in the `sass` directory. After any changes to Sass files, `sass/style.scss` needs to be compiled to create `style.css`:
 
@@ -96,8 +98,6 @@ The themes styles can be found in the `sass` directory. After any changes to Sas
 * Run `sass sass/style.scss style.css` from within the theme directory
 
 There are a number of command line tools and GUIs to make this process even easier / automatic (see links on the Sass installation page: http://sass-lang.com/install).
-
-## Assets
 
 ### Images
 
