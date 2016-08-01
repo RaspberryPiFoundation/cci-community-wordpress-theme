@@ -28,6 +28,26 @@ class CCW_API {
     }
 
     /**
+     * @param integer $id The ID of the club
+     * @return array $response Containing 'headers' & 'body' arrays
+     */
+    public function getClub( $id ) {
+        $url = CCW_API_URL . '/clubs/' . $id;
+        $headers = [
+            'AUTHORIZATION' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+            'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
+        ];
+
+        $response = wp_remote_get( $url,
+            array(
+                'timeout' => 30,
+                'headers' => $headers,
+            )
+        );
+        return $response;
+    }
+
+    /**
      * @param json $club_json Club data (inc. venue, address, contact) in a JSON encoded array
      * @return array $response Containing 'headers', 'body' & 'response' arrays
      */

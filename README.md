@@ -194,7 +194,7 @@ The constants defined in your child theme's `/inc/country-config.php` are now av
 
 ### Club Retrieval
 
-Assuming the values in `inc/country-config.php` have been correctly set (see above), it's possible to to retrieve club data very simply within any template:
+Assuming the values in `inc/country-config.php` have been correctly set (see above), it's possible to to retrieve club data (from your country / community) very simply within any template:
 
 ```
 <?php
@@ -254,6 +254,18 @@ Array
 ```
 
 which can then be used to generate pagination links.
+
+To retrieve a single club by its ID (in this case, `1`) simply use:
+
+```
+<?php
+$ccw_api = new CCW_API();
+$response = $ccw_api->getClub(1);
+$club = $response['body'];
+?>
+```
+
+(bear in mind that you'll need to supply an ID for a club that belongs to your country / community!)
 
 
 Finally, to improve on the club retrieval examples, some error checking / handling would be useful:
