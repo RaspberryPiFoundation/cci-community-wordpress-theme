@@ -169,6 +169,8 @@ Right-to-left languages are supported via the `rtl.css` file. See https://codex.
 
 The CCW API can be used store newly created clubs and also to retrieve club data. This theme includes examples of each to get you started, both examples utilise the `CCW_API` class located in `inc/ccw-api.php`.
 
+The full API documentation is available here: http://docs.codeclubworldapiv2.apiary.io/
+
 ### Club Creation Form
 
 An example template for outputting a form which allows visitors to register their clubs via the Code Club World API is located in `template-parts/form-register-club.php`. It is completely self-contained to keep things as simple as possible. To use it:
@@ -203,6 +205,16 @@ $clubs = $response['body'];
 ```
 
 The `$clubs` variable will contain an array of clubs which can then be used to populate a map / club listing view etc. Bear in mind that on each page load, the call to `getClubs()` will query the CCW API and return fresh results, meaning that page load times may be increased if there are a lot of clubs being retrieved. With this in mind, pagination of results is possible and an example of this will be added here shortly.
+
+By default only active clubs are returned but it's possible to pass a `state` argument (set to `pending`, `active`, `suspended` or `deleted`) to override. Clubs are also paginated and return the first 50 records by default, this can be overriden by setting the `per_page` and `page` values. In summary: `getClubs( $state, $per_page, $page )`
+
+For example:
+
+```
+// get only pending clubs, 25 per page and page #2
+$ccw_api = new CCW_API();
+$response = $ccw_api->getClubs( 'pending', 25, 2 );
+```
 
 ## Legal Stuff
 
