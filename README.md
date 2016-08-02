@@ -22,11 +22,11 @@ It's very important to ensure that your WordPress installation is kept up-to-dat
 
 ### Install the ACF Pro Plugin
 
-The Advanced Custom Fields Pro plugin is required for the theme to function. You can download it here: http://downloads.codeclubworld.org/wp-advanced-custom-fields-pro.zip
+The Advanced Custom Fields Pro plugin is required for the theme to function as intended. You can download it here: http://downloads.codeclubworld.org/wp-advanced-custom-fields-pro.zip
 
 Once you have the plugin ZIP file, extract it and then upload the resulting directory to your WordPress installation's `wp-content/plugins` directory using whatever mechanism you have available via your hosting provider (eg. FTP). Then:
 
-* Log in to the WordPress Administration panel (usually http://example.com/wp-admin)
+* Log in to the WordPress Administration panel (usually http://yoursiteurl/wp-admin)
 * Select the Plugins panel, then click on 'Activate' beneath 'Advanced Custom Fields Pro'
 
 ### Install the Theme
@@ -35,7 +35,7 @@ Download the `Source code (zip)` file from the latest release on the [releases p
 
 Once you have the ZIP file, extract it and then upload the resulting directory to your WordPress installation's `wp-content/themes` directory using whatever mechanism you have available via your hosting provider (eg. FTP). Then:
 
-* Log in to the WordPress Administration panel (usually http://example.com/wp-admin).
+* Log in to the WordPress Administration panel (usually http://yoursiteurl/wp-admin).
 * Select the Appearance panel, then Themes.
 * You'll see the 'CCW Countries' listed, select it and click on Activate.
 
@@ -52,7 +52,7 @@ The full WordPress child theme documentation is available here: https://codex.wo
  Description:  A child theme based on the CCW Countries theme
  Template:     ccw-countries-wordpress-theme
  Version:      1.0.0
- Text Domain:  ccw-countries-child
+ Text Domain:  ccw-child-theme
 */
 ```
 * Within `ccw-child-theme` create the file `functions.php` and place the following inside:
@@ -71,16 +71,16 @@ You can now add new files as you wish but also override files that exist in the 
 
 ### Upload the Setup Data
 
-Within the theme folder (that was unzipped in the initial steps above) there's a 'setup' directory. This contains some starter data for WordPress and for the Advanced Custom Fields. They need to both be imported:
+Within the theme folder (that was unzipped in the initial steps above) there's a `setup` directory. This contains some starter data for WordPress and for the ACF plugin. They need to both be imported:
 
 * Log in to the WordPress Administration panel.
 * Select the Tools panel, then Import.
-* Select 'WordPress' from the import list (install the Importer plugin if prompted and select 'Activate Plugin and Run Importer' when complete) then select 'Browse' and point it to the `pages-export.xml` file within the theme's 'setup' directory. Select 'Upload file and import'
+* Select 'WordPress' from the import list (install the Importer plugin if prompted and select 'Activate Plugin and Run Importer' when complete) then select 'Browse' and point it to the `pages-export.xml` file within the theme's `setup` directory. Select 'Upload file and import'
 * When prompted to 'Assign Authors', select the username 'admin' from the dropdown option under 'or assign posts to an existing user' in step 1. Then click on Submit.
 * When complete, head to the Custom Fields panel, then Tools.
-* Under 'Import Field Groups' browse to the `acf-export.json` file within the theme's 'setup' directory, then select Import.
+* Under 'Import Field Groups' browse to the `acf-export.json` file within the theme's `setup` directory, then select Import.
 
-A page called 'Home' will have been created (using the `template-home.php` file) with example ACF fields attached to it (visit http://yoursiteurl/home' to see it). Try adding some new fields and outputting them in the template (see the ACF documentation: https://www.advancedcustomfields.com/resources/get_field/). WordPress' templating help documents can be found here: https://developer.wordpress.org/themes/basics/
+A page called 'Home' will have been created (using the `template-home.php` file) with example ACF fields attached to it (visit http://yoursiteurl/home' to see it). Try adding some new fields via ACF's Field Groups panel and outputting them in the template (see the ACF documentation: https://www.advancedcustomfields.com/resources/get_field/). WordPress' templating help documents can be found here: https://developer.wordpress.org/themes/basics/
 
 To set the 'Home' page to be the one that appears by default when viewing the root of your site (eg. at http://yoursiteurl rather than at http://yoursiteurl/home):
 
@@ -111,7 +111,7 @@ It's recommended that you create a directory in the root of the theme folder cal
 
 ### Favicons
 
-Paths to favicons are set in `header.php` (these favicons need to be created and placed into the `images` dir, see above):
+Paths to favicons are set in `header.php` (these favicons need to be created and placed in the `images` dir, see above):
 
 ```
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
@@ -123,7 +123,7 @@ You may use the style guide assets for guidance, see: `bower_components/code-clu
 
 ### Fonts
 
-Museo Sans Rounded is used through and is served via the CCW Typekit account using this snippet in `header.php`:
+Museo Sans Rounded is used throughout (at varying weights) and is served via the CCW Typekit account using this snippet in `header.php`:
 
 ```
 <script src="https://use.typekit.net/hos3npy.js"></script>
@@ -157,17 +157,17 @@ In addition to the menus, social links can be output in the footer. To enable, u
 
 ## Localisation / Translation
 
-The theme (and thus a child theme) is prepared for translation. This is performed via 'POT' files within the `languages` folder (we recommend using the program 'Poedit' to create and manage `.pot` files).
+The theme (and thus a child theme) is prepared for translation. This is performed via 'POT' files within the `languages` folder (we recommend using the program [Poedit](http://poedit.net) to create and manage `.pot` files).
 
 See the WordPress guide for more information: https://developer.wordpress.org/themes/functionality/localization/ along with this tutorial: https://premium.wpmudev.org/blog/how-to-translate-a-wordpress-theme
 
-In particular, the club registration form (`template-parts/form-register-club.php`) and the 404 page (`404.php`) contain strings that will require translating.
+In particular, the club registration form (`template-parts/form-register-club.php`) and the 404 page (`404.php`) contain strings requiring translation.
 
 Right-to-left languages are supported via the `rtl.css` file. See https://codex.wordpress.org/Right_to_Left_Language_Support
 
 ## Use of the CCW API
 
-The CCW API can be used store newly created clubs and also to retrieve club data. This theme includes examples of each to get you started, both examples utilise the `CCW_API` class located in `inc/ccw-api.php`.
+The CCW API can be used store new clubs and to retrieve club data. This theme includes examples of each to get you started, both examples utilise the `CCW_API` class located in `inc/ccw-api.php`.
 
 The full API documentation is available here: http://docs.codeclubworldapiv2.apiary.io/
 
@@ -175,9 +175,9 @@ The full API documentation is available here: http://docs.codeclubworldapiv2.api
 
 An example template for outputting a form which allows visitors to register their clubs via the Code Club World API is located in `template-parts/form-register-club.php`. It is completely self-contained to keep things as simple as possible. To use it:
 
-* First, ensure that _all_ of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' and 'Registration Success' pages in WordPress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the Code Club World team.
+* First, ensure that _all_ of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' and 'Registration Success' pages in WordPress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the CCW team.
 * Include the form in one of your page templates using: `<?php get_template_part( 'template-parts/form', 'register-club' ); ?>`
-* You're all set! The form will be output on the page and submissions to the form will be viewable in your CCW API admin account: https://api.codeclubworld.org/admin/clubs
+* You're all set! The form will appear on the page and submissions to the form will be viewable in your CCW API admin account: https://api.codeclubworld.org/admin/clubs
 
 **Note**: If using a child theme (see above), the `inc/country-config.php` file in the parent theme will need to be re-created within the child theme's directory, it can then be modified there. However, it won't automatically be included by `functions.php`  now that it exists in the child theme, so within your child theme's `functions.php` add the following:
 
@@ -204,7 +204,7 @@ $clubs = $response['body'];
 ?>
 ```
 
-The `$clubs` variable will contain an array of clubs which can then be used to populate a map / club listing view etc. Bear in mind that on each page load, the call to `getClubs()` will query the CCW API and return fresh results, meaning that page load times may be increased if there are a lot of clubs being retrieved. With this in mind, pagination of results is possible and an example of this will be added here shortly.
+The `$clubs` variable will contain an array of clubs which can then be used to populate a map / club listing view etc. Bear in mind that on each page load, the call to `getClubs()` will query the CCW API and return fresh results, meaning that page load times may be increased if there are a lot of clubs being retrieved. With this in mind, pagination of results is possible and an example of this is included below.
 
 By default only active clubs are returned but it's possible to pass a `state` argument (set to `pending`, `active`, `suspended` or `deleted`) to override. Clubs are also paginated and return the first 50 records by default, this can be overriden by setting the `per_page` and `page` values. In summary: `getClubs( $state, $per_page, $page )`
 
