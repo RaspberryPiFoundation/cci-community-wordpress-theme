@@ -4,6 +4,15 @@ This is a WordPress theme designed to help country coordinators build a site to 
 
 **Note:** this theme and accompanying documentation are in their early stages. Many changes and improvements will be made. You're encouraged to provide feedback and log issues via the Issues feature attached to this repository as well as provide fixes and new features via Pull Requests.
 
+##### Table of Contents
+* [General Info](#general-info)
+* [Setup](#setup)
+* [Assets](#assets)
+* [Menus](#menus)
+* [Localisation / Translation](#localisation--translation)
+* [Use of the CCW API](#use-of-the-ccw-api)
+* [Legal Stuff](#legal-stuff)
+
 ## General Info
 
 The theme sets up some basic templates and a set of styles that should cover the majority of use-cases required by a community site in its infancy. Styling is based off the [official Code Club style guide](https://styleguide.codeclubworld.org).
