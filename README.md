@@ -4,7 +4,7 @@ This is a WordPress theme designed to help country coordinators build a site to 
 
 **Note:** this theme and accompanying documentation are in their early stages. Many changes and improvements will be made. You're encouraged to provide feedback and log issues via the Issues feature attached to this repository as well as provide fixes and new features via Pull Requests.
 
-##### Table of Contents
+#### Table of Contents
 * [General Info](#general-info)
 * [Setup](#setup)
 * [Assets](#assets)
