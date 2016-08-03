@@ -23,12 +23,12 @@ if ( empty( $_POST['honeypot'] ) && !empty( $_POST['terms-checkbox'] ) ) {
         } else { // the API returned an error / errors, display them ?>
             <div class="c-alert c-alert--error">
                 <span class="c-icon c-icon--small c-icon--error c-icon--white"></span>
+                <p>The following errors need correcting:</p>
                 <ul>
                     <?php
                     $body = json_decode( wp_remote_retrieve_body( $response ) );
-                    echo $body->error.":";
-                    foreach( $body->errors as $key=>$value ) {
-                        echo "<li>".$key." ".$value."</li>";
+                    foreach( $body->errors as $error ) {
+                        echo "<li>" . array_pop(explode('/', str_replace(".", " ", $error->source->pointer))) . " " . $error->detail . "</li>";
                     }
                     ?>
                 </ul>
