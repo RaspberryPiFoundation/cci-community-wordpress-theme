@@ -15,7 +15,7 @@
     <div class="c-grid c-grid--v-top">
         <?php if ( has_nav_menu( 'footer_navigation_1' ) ) : ?>
         <div class="c-col--3">
-            <p class="o-footer__heading"><?php nav_menu_name_by_location('footer_navigation_1'); ?></p>
+            <p class="o-footer__heading"><?php nav_menu_name_by_location( 'footer_navigation_1' ); ?></p>
             <?php
             wp_nav_menu([
                 'theme_location' => 'footer_navigation_1',
@@ -28,7 +28,7 @@
 
         <?php if ( has_nav_menu( 'footer_navigation_2' ) ) : ?>
         <div class="c-col--3">
-            <p class="o-footer__heading"><?php nav_menu_name_by_location('footer_navigation_2'); ?></p>
+            <p class="o-footer__heading"><?php nav_menu_name_by_location( 'footer_navigation_2' ); ?></p>
             <?php
             wp_nav_menu([
                 'theme_location' => 'footer_navigation_2',
@@ -41,7 +41,7 @@
 
         <?php if ( has_nav_menu( 'footer_navigation_3' ) ) : ?>
         <div class="c-col--3">
-            <p class="o-footer__heading"><?php nav_menu_name_by_location('footer_navigation_3'); ?></p>
+            <p class="o-footer__heading"><?php nav_menu_name_by_location( 'footer_navigation_3' ); ?></p>
             <?php
             wp_nav_menu([
                 'theme_location' => 'footer_navigation_3',
@@ -54,7 +54,7 @@
 
         <?php if ( has_nav_menu( 'footer_navigation_4' ) ) : ?>
         <div class="c-col--3">
-            <p class="o-footer__heading"><?php nav_menu_name_by_location('footer_navigation_4'); ?></p>
+            <p class="o-footer__heading"><?php nav_menu_name_by_location( 'footer_navigation_4' ); ?></p>
             <?php
             wp_nav_menu([
                 'theme_location' => 'footer_navigation_4',
@@ -103,7 +103,7 @@
             </ul>
         </div>
     </div>
-    <?php dynamic_sidebar('sidebar-footer'); ?>
+    <?php dynamic_sidebar( 'sidebar-footer' ); ?>
 </footer>
 
 <?php wp_footer(); ?>

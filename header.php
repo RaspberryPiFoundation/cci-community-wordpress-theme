@@ -11,8 +11,9 @@
 
 // required to successfully perform header-based redirect after submission of forms (eg. club creation form)
 ob_start();
+?>
 
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="utf-8">
@@ -32,9 +33,9 @@ ob_start();
 <header class="o-nav">
     <div class="o-nav__container u-clearfix">
         <div class="c-logo">
-            <a href="<?= esc_url(home_url('/')); ?>" class="c-logo__link">
+            <a href="<?= esc_url( home_url( '/' ) ); ?>" class="c-logo__link">
                 <img alt="Code Club Logo" class="c-logo__image" src="<?php echo get_template_directory_uri(); ?>/bower_components/code-club/dist/images/code-club-logo.svg">
-                <div class="c-logo__appendix"><?php bloginfo('name'); ?></div>
+                <div class="c-logo__appendix"><?php bloginfo( 'name' ); ?></div>
             </a>
         </div>
 
@@ -43,12 +44,12 @@ ob_start();
 
         <nav class="o-nav__list-container">
         <?php
-        if (has_nav_menu('primary_navigation')) :
-            wp_nav_menu([
+        if ( has_nav_menu( 'primary_navigation' ) ) :
+            wp_nav_menu( [
                 'theme_location' => 'primary_navigation',
                 'menu_class' => 'o-nav__list',
                 'container' => false
-            ]);
+            ] );
         endif;
         ?>
         </nav>

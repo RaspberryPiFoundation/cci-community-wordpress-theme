@@ -12,7 +12,7 @@ if ( empty( $_POST['honeypot'] ) && !empty( $_POST['terms-checkbox'] ) ) {
     $club_json = json_encode( $_POST );
 
     // POST the form to the CCW API
-    $ccw_api = new CCW_API();
+    $ccw_api  = new CCW_API();
     $response = $ccw_api->saveClub( $club_json );
 
     if ( !is_wp_error( $response ) ) { // POST response
@@ -101,10 +101,10 @@ if ( empty( $_POST['honeypot'] ) && !empty( $_POST['terms-checkbox'] ) ) {
       <label class="c-form__input-group-label u-text--left" for="terms-checkbox"><?php esc_html_e( 'I accept the', 'ccw_countries' ); ?> <a href="<?php echo CCW_API_TERMS_CONDITIONS_PAGE; ?>" target="_blank"><?php esc_html_e( 'terms &amp; conditions', 'ccw_countries' ); ?></a></label>
     </div>
     <!-- anti-spam field start-->
-      <div style="display: none;">
+    <div style="display: none;">
         <label>Keep this field blank</label>
         <input type="text" name="honeypot" id="honeypot">
-      </div>
+    </div>
     <!-- anti-spam field end -->
     </fieldset>
     <fieldset class="c-form__fieldset">
