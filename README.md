@@ -33,7 +33,7 @@ It's very important to ensure that your WordPress installation is kept up-to-dat
 
 The Advanced Custom Fields Pro plugin is required for the theme to function as intended. You can download it here: http://downloads.codeclubworld.org/wp-advanced-custom-fields-pro.zip
 
-Once you have the plugin ZIP file, extract it and then upload the resulting directory to your WordPress installation's `wp-content/plugins` directory using whatever mechanism you have available via your hosting provider (eg. FTP). Then:
+Once you have the plugin ZIP file, extract it and place the resulting directory in your WordPress installation's `wp-content/plugins` directory. Then:
 
 * Log in to the WordPress Administration panel (usually http://yoursiteurl/wp-admin)
 * Select the Plugins panel, then click on 'Activate' beneath 'Advanced Custom Fields Pro'
@@ -42,13 +42,13 @@ Once you have the plugin ZIP file, extract it and then upload the resulting dire
 
 Download the `Source code (zip)` file from the latest release on the [releases page](https://github.com/CodeClub/ccw-countries-wordpress-theme/releases).
 
-Once you have the ZIP file, extract it and then upload the resulting directory to your WordPress installation's `wp-content/themes` directory. Then:
+Once you have the ZIP file, extract it and place the resulting directory in your WordPress installation's `wp-content/themes` directory. Then:
 
 * Log in to the WordPress Administration panel (usually http://yoursiteurl/wp-admin).
 * Select the Appearance panel, then Themes.
 * You'll see the 'CCW Countries' listed, select it and click on Activate.
 
-Making changes to the theme itself is the most basic way to get started, however it is *highly* recommended that instead of modifying the source theme, you utilise a child theme instead. This will allow you to make changes / additions to your theme without changing the source theme (ie. this one) in any way, allowing it to be updated easily as and when we publish updates.
+Making changes to the theme itself is the most basic way to get started, however it is *highly* recommended that instead of modifying the source theme, you utilise a child theme instead. This will allow you to make changes / additions to your theme without modifying the source theme (ie. this one) in any way, allowing it to be overwritten easily as and when we publish updates.
 
 The full WordPress child theme documentation is available here: https://codex.wordpress.org/Child_Themes but the main steps are:
 
