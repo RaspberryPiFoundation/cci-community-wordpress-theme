@@ -5,7 +5,7 @@
   "friendly_name": "Code Club Style Guide",
   "license": "GPL-3.0",
   "name": "code-club",
-  "version": "1.0.54",
+  "version": "1.0.58",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CodeClub/style-guide.git"

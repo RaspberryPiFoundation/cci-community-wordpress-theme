@@ -2,7 +2,7 @@
  * code-club.css
  * 
  * Code Club Style Guide - A collection of UI components for styling Code Club websites
- * @version v1.0.54
+ * @version v1.0.58
  * @link https://styleguide.codeclubworld.org/
  */
 /*
@@ -395,7 +395,7 @@ span, .wf-loading
 textarea, .wf-loading
 td, .wf-loading
 th {
-  visibility: hidden; }
+  opacity: 0; }
 
 .wf-active a,
 .wf-inactive a, .wf-active
@@ -459,7 +459,7 @@ td, .wf-active
 th,
 .wf-inactive
 th {
-  visibility: visible; }
+  opacity: 1; }
 
 .c-grid {
   background-position: center center;
@@ -2077,6 +2077,69 @@ ul {
   .c-page-block--action-block + .c-page-block--action-block {
     padding-top: 0; }
 
+.c-pagination {
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+
+.c-pagination--left {
+  text-align: left; }
+
+.c-pagination--center {
+  text-align: center; }
+
+.c-pagination--right {
+  text-align: right; }
+
+.c-pagination__summary {
+  color: #848484; }
+
+.c-pagination__list {
+  display: inline-block;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 12px;
+  margin-left: 0.75rem;
+  padding: 0; }
+
+.c-pagination__item {
+  display: inline-block;
+  list-style: none;
+  padding-top: 0;
+  padding-right: 4px;
+  padding-right: 0.25rem;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-left: 0.25rem; }
+
+.c-pagination__link {
+  background: #FFF;
+  border: 1px solid #E0E0E0;
+  color: #848484;
+  border-radius: 4px;
+  border-radius: 0.25rem;
+  display: inline-block;
+  padding-top: 0;
+  padding-right: 8px;
+  padding-right: 0.5rem;
+  padding-bottom: 0;
+  padding-left: 8px;
+  padding-left: 0.5rem;
+  line-height: 27.5px;
+  line-height: 1.71875rem;
+  text-align: center;
+  text-decoration: none; }
+  .c-pagination__link:focus, .c-pagination__link:hover {
+    background: #F5F6F9;
+    color: #848484; }
+
+.c-pagination__link--current,
+.c-pagination__link--current:focus,
+.c-pagination__link--current:hover {
+  background: #339933;
+  border-color: #339933;
+  color: #FFF; }
+
 .c-strip-table {
   border-collapse: collapse;
   margin-bottom: 32px;
@@ -2248,7 +2311,7 @@ ul {
 .o-hero__bg {
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 100% auto; }
+  background-size: auto 100%; }
 
 .o-hero--bg-top {
   background-position: center top; }
