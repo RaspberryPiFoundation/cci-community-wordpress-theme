@@ -51,7 +51,7 @@ class CCW_API {
      * @param json $club_json Club data (inc. venue, address, contact) in a JSON encoded array
      * @return array $response Containing 'headers', 'body' & 'response' arrays
      */
-    public function saveClub( $club_json ) {
+    public function createClub( $club_json ) {
         $response = wp_remote_post( CCW_API_URL . '/clubs?welcome_email=' . CCW_API_WELCOME_EMAIL,
             array(
                 'timeout' => 30,

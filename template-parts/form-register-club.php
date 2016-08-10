@@ -13,7 +13,7 @@ if ( empty( $_POST['honeypot'] ) && !empty( $_POST['terms-checkbox'] ) ) {
 
     // POST the form to the CCW API
     $ccw_api  = new CCW_API();
-    $response = $ccw_api->saveClub( $club_json );
+    $response = $ccw_api->createClub( $club_json );
 
     if ( !is_wp_error( $response ) ) { // POST response
         if ( 201 == wp_remote_retrieve_response_code( $response ) ) { // successful POST, forward to the 'registration success' page
