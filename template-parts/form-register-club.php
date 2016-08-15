@@ -5,7 +5,7 @@
  * @package CCW_Countries
  */
 
-if ( empty( $_POST['honeypot'] ) && !empty( $_POST['terms-checkbox'] ) ) {
+if ( empty( $_POST['body_text'] ) && !empty( $_POST['terms-checkbox'] ) ) {
 
     // set the club name from the venue name
     $_POST['club']['name'] = $_POST['club']['venue_attributes']['name'];
@@ -100,10 +100,11 @@ if ( empty( $_POST['honeypot'] ) && !empty( $_POST['terms-checkbox'] ) ) {
       <input class="c-form__input-group-checkbox" id="terms-checkbox" name="terms-checkbox" type="checkbox" value="true" <?php echo !empty( $_POST['terms-checkbox'] ) ? 'checked="checked"' : ''; ?>>
       <label class="c-form__input-group-label u-text--left" for="terms-checkbox"><?php esc_html_e( 'I accept the', 'ccw_countries' ); ?> <a href="<?php echo CCW_API_TERMS_CONDITIONS_PAGE; ?>" target="_blank"><?php esc_html_e( 'terms &amp; conditions', 'ccw_countries' ); ?></a></label>
     </div>
-    <!-- anti-spam field start-->
+    <!-- anti-spam field start -->
     <div style="display: none;">
-        <label>Keep this field blank</label>
-        <input type="text" name="honeypot" id="honeypot">
+        <!-- the field name is purposefully *not* something obvious, such as "honeypot" -->
+        <label for="body_text">Keep this field blank</label>
+        <input type="text" name="body_text" id="body_text">
     </div>
     <!-- anti-spam field end -->
     </fieldset>
