@@ -27,6 +27,9 @@ if ( empty( $_POST['body_text'] ) && !empty( $_POST['terms-checkbox'] ) ) {
                 <ul>
                     <?php
                     $body = json_decode( wp_remote_retrieve_body( $response ) );
+                    if ($body->error) {
+                        echo "<li>" . $body->error . "</li>";
+                    }
                     foreach( $body->errors as $error ) {
                         echo "<li>" . array_pop(explode('/', str_replace(".", " ", $error->source->pointer))) . " " . $error->detail . "</li>";
                     }
