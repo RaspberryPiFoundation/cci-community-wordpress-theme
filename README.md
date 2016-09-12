@@ -213,7 +213,7 @@ $clubs = $response['body'];
 ?>
 ```
 
-The `$clubs` variable will contain an array of clubs which can then be used to populate a map / club listing view etc. Bear in mind that on each page load, the call to `getClubs()` will query the CCW API and return fresh results, meaning that page load times may be increased if there are a lot of clubs being retrieved. With this in mind, pagination of results is possible and an example of this is included below.
+The `$clubs` variable will contain an array of the first 50 clubs (to override this see below) which can then be used to populate a map / club listing view etc.
 
 By default only active clubs are returned but it's possible to pass a `state` argument (set to `pending`, `active`, `suspended` or `deleted`) to override. Clubs are also paginated and return the first 50 records by default, this can be overriden by setting the `per_page` and `page` values. In summary: `getClubs( $state, $per_page, $page )`
 
@@ -294,8 +294,8 @@ if ( !is_wp_error( $response ) ) {
     // what we're expecting
     if ( 200 == wp_remote_retrieve_response_code( $response ) ) {
         // Do something with the response
-        // $clubs = wp_remote_retrieve_body( $response );
-        // $headers = wp_remote_retrieve_headers( $response );
+        $clubs = wp_remote_retrieve_body( $response );
+        $headers = wp_remote_retrieve_headers( $response );
     } else {
         // The response code was not what we were expecting, record the message
         $error_message = wp_remote_retrieve_response_message( $response );
