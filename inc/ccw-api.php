@@ -66,4 +66,27 @@ class CCW_API {
         return $response;
     }
 
+
+   /**
+    * @param float $latitude location's latitude
+    * @param float $longitude location's longitude
+    * @param integer $radius radius to look up code clubs within
+    * @return array $response Containing 'headers' & 'body' arrays
+    */
+    public function getNearbyCodeClubs($latitude, $longitude, $radius) {
+      $url = CCW_API_URL . '/nearest_code_clubs?' .
+             'radius=' . $radius . '&latitude=' . $latitude . '&longitude=' .$longitude;
+      $headers = [
+        'AUTHORIZATION' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+        'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
+      ];
+      $response = wp_remote_get($url,
+        array(
+          'timeout' => 30,
+          'headers' => $headers,
+        )
+      );
+      return $response;
+    }
+
 }
