@@ -1,31 +1,10 @@
 <?php
 
 $code_clubs = null;
+$host_volunteer_matching = new Host_Volunteer_Matching();
 
 if (empty( $_POST['body_text'] ) && !empty($_POST['address'])) {
-  $url = GOOGLE_MAPS_ADDRESS_END_POINT . preg_replace('/\s+/', '+', $_POST['address']);
-
-  $response = wp_remote_get($url);
-
-  if (is_wp_error($response)) {
-
-    echo "Could not resolve the address";
-
-  } else {
-    $geocode_data =  json_decode(wp_remote_retrieve_body($response), true);
-    $location = $geocode_data['results']['0']['geometry']['location'];
-    $ccw_api = new CCW_API();
-    $ccw_api_response = $ccw_api->getNearbyCodeClubs($location['lat'], $location['lng'], 1);
-
-    if (!is_wp_error($ccw_api_response)) {
-      $code_clubs = json_decode(wp_remote_retrieve_body($ccw_api_response), true);
-    } else {
-      echo "No code clubs found";
-      echo $ccw_api_response->get_error_message();
-    }
-
-  }
-
+  $code_clubs = $host_volunteer_matching->getCodeClubs($_POST['address']);
 }
 
 ?>
@@ -62,27 +41,23 @@ if (empty( $_POST['body_text'] ) && !empty($_POST['address'])) {
     <h2 class="u-text--center">Search results: <?php echo sizeof($code_clubs);?></h2>
     <div class="c-grid c-grid--h-center">
       <?php foreach ($code_clubs as $code_club): ?>
+
         <div class="c-card c-col c-col--4">
           <div class="c-card__body">
-            <h4><?php echo $code_club['name']; ?></h4>
+            <h4><?php echo $code_club['venue']['name']; ?></h4>
             <p class="c-meta">
-              <?php echo $code_club['address']['address_1'] . ' ' .
-                $code_club['address']['address_2'] . ' ' .
-                $code_club['address']['city'] . ' ' .
-                $code_club['address']['postcode']; ?>
+              <?php echo $code_club['venue']['address']['address_1'] . ' ' .
+                $code_club['venue']['address']['address_2'] . ' ' .
+                $code_club['venue']['address']['city'] . ' ' .
+                $code_club['venue']['address']['postcode']; ?>
             </p>
 
-            <?php if (!empty($code_club['phone'])): ?>
-              <span><?php echo $code_club['phone']; ?> </span>
-            <?php endif; ?>
-            <?php if (!empty($code_club['url'])): ?>
-              <p>
-                <a href="<?php echo $code_club['url']; ?>">Website</a>
-              </p>
+            <?php if (!empty($code_club['venue']['phone'])): ?>
+              <span><?php echo $code_club['venue']['phone']; ?> </span>
             <?php endif; ?>
           </div>
           <div class="c-card__footer">
-            <a class="c-card__link" href="#">
+            <a class="c-card__link" href="/contact-form?club_id=<?php echo $code_club['id']; ?>">
               Contact Club Host
             </a>
           </div>

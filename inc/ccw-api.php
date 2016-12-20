@@ -74,7 +74,7 @@ class CCW_API {
     * @return array $response Containing 'headers' & 'body' arrays
     */
     public function getNearbyCodeClubs($latitude, $longitude, $radius) {
-      $url = CCW_API_URL . '/nearest_code_clubs?' .
+      $url = CCW_API_URL . '/clubs/near?' .
              'radius=' . $radius . '&latitude=' . $latitude . '&longitude=' .$longitude;
       $headers = [
         'AUTHORIZATION' => 'Bearer ' . CCW_API_READONLY_TOKEN,

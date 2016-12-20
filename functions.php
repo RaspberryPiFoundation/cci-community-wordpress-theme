@@ -135,3 +135,13 @@ require get_template_directory() . '/inc/country-config.php';
  * CCW API class.
  */
 require get_template_directory() . '/inc/ccw-api.php';
+
+/**
+ * Host Volunteer Matching class.
+ */
+require get_template_directory() . '/inc/host-volunteer-matching.php';
+
+/**
+ * Flash Messages class.
+ */
+require get_template_directory() . '/inc/flash-messages.php';
