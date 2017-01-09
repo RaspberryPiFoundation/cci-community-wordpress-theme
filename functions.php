@@ -145,3 +145,15 @@ require get_template_directory() . '/inc/host-volunteer-matching.php';
  * Flash Messages class.
  */
 require get_template_directory() . '/inc/flash-messages.php';
+
+/**
+ * Generic PHP class autoloader, in lieu of using Composer.
+ * See: https://gist.github.com/jwage/221634
+ */
+require get_template_directory() . '/inc/SplClassLoader.php';
+
+/**
+ * Load the League Plates package via the above class autoloader.
+ */
+$classLoader = new SplClassLoader('League\Plates', get_template_directory() . '/inc');
+$classLoader->register();
