@@ -15,7 +15,12 @@
                 <?php if( have_rows('page_action_buttons') ): ?>
                     <ul class="o-hero__list">
                         <?php while( have_rows('page_action_buttons') ): the_row(); ?>
-                            <li class="o-hero__item"><a href="<?php the_sub_field('action_url') ?>" class="c-button c-button--hollow c-button--white"><?php the_sub_field('action_text') ?></a></li>
+                            <li class="o-hero__item">
+                              <a href="<?php the_sub_field('action_url') ?>"
+                                 class="c-button c-button--hollow c-button--white">
+                                <?php the_sub_field('action_text') ?>
+                              </a>
+                            </li>
                         <?php endwhile; ?>
                     </ul>
                 <?php endif; ?>

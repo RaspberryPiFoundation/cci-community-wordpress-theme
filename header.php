@@ -30,6 +30,8 @@ ob_start();
 
 <body <?php body_class(); ?>>
 
+<?php DISPLAY_ERRORS ? display_php_errors() : '' ?>
+
 <header class="o-nav">
     <div class="o-nav__container u-clearfix">
         <div class="c-logo">
@@ -57,3 +59,8 @@ ob_start();
 </header>
 
 <main class="o-main">
+<?php
+
+$flash_message = Flash_Message::Singleton();
+$flash_message->display();
+?>

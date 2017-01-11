@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: CCW Countries\n"
-"POT-Creation-Date: 2016-07-29 14:10+0100\n"
-"PO-Revision-Date: 2016-07-29 10:00+0100\n"
+"POT-Creation-Date: 2017-01-11 12:46+0000\n"
+"PO-Revision-Date: 2017-01-11 12:46+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "404 - Not found"
 msgstr ""
 
-#: 404.php:17
+#: 404.php:17 template-parts/content-none.php:17
 msgid "Sorry but we couldn't find the content you were looking for"
 msgstr ""
 
@@ -76,6 +76,18 @@ msgstr ""
 msgid "Footer Nav 4"
 msgstr ""
 
+#: inc/sign-in-logic.php:7
+msgid "Your Club"
+msgstr ""
+
+#: inc/sign-in-logic.php:8
+msgid "Sign Out"
+msgstr ""
+
+#: inc/sign-in-logic.php:10
+msgid "Sign In"
+msgstr ""
+
 #: inc/template-tags.php:28
 #, php-format
 msgctxt "post date"
@@ -114,7 +126,7 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:71 template-parts/content-page.php:33
+#: inc/template-tags.php:71
 #, php-format
 msgid "Edit %s"
 msgstr ""
@@ -124,29 +136,172 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: template-parts/content-none.php:14
+#: template-parts/club/club-materials.php:4
+msgid ""
+"Here you can access resources, materials and guidance to help you run your "
+"Code Club."
+msgstr ""
+
+#: template-parts/club/club-materials.php:6
+msgid "Get Materials"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:51
+msgid "You must accept the terms &amp; conditions"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:59
+msgid "Venue name"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:62
+msgid "Venue website"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:65
+msgid "Street address 1"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:68
+msgid "Street address 2"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:71
+msgid "Town/City"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:74
+msgid "Region/State"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:77
+msgid "Postcode/Zipcode"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:82
+msgid "Club Skype username"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:87
+msgid "Your name"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:90
+msgid "Your email address"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:98
+msgid "Your name and email address will never be displayed publicly"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:104
+msgid "I accept the"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:104
+msgid "terms &amp; conditions"
+msgstr ""
+
+#: template-parts/club/form-register-club.php:115
+msgid "Create a Code Club"
+msgstr ""
+
+#: template-parts/club/show-club.php:5
+msgid "Username"
+msgstr ""
+
+#: template-parts/club/show-club.php:13
+msgid "Venue"
+msgstr ""
+
+#: template-parts/club/show-club.php:15 template-parts/club/show-club.php:49
+msgid "Name"
+msgstr ""
+
+#: template-parts/club/show-club.php:19
+msgid "Website"
+msgstr ""
+
+#: template-parts/club/show-club.php:23
+msgid "Address 1"
+msgstr ""
+
+#: template-parts/club/show-club.php:27
+msgid "Address 2"
+msgstr ""
+
+#: template-parts/club/show-club.php:31
+msgid "City"
+msgstr ""
+
+#: template-parts/club/show-club.php:35
+msgid "Region"
+msgstr ""
+
+#: template-parts/club/show-club.php:39
+msgid "Postcode"
+msgstr ""
+
+#: template-parts/club/show-club.php:47
+msgid "Contact"
+msgstr ""
+
+#: template-parts/club/show-club.php:53
+msgid "Email"
+msgstr ""
+
+#: template-parts/club/show-club.php:57
+msgid "Skype"
+msgstr ""
+
+#: template-parts/club/sign-in/form-first-password.php:20
+#: template-parts/club/sign-in/form-set-new-password.php:20
+msgid "Invalid Auth token. Please request another password."
+msgstr ""
+
+#: template-parts/club/sign-in/form-forgotten-sign-in-details.php:21
+msgid "Please check your inbox for password reset instructions."
+msgstr ""
+
+#: template-parts/club/sign-in/form-forgotten-sign-in-details.php:53
+msgid "No wait I remembered my Club ID and Password!"
+msgstr ""
+
+#: template-parts/club/sign-in/form-sign-in.php:30
+msgid "Sign in successful"
+msgstr ""
+
+#: template-parts/club/sign-in/form-sign-in.php:80
+msgid "I forgot my Club ID or Password!"
+msgstr ""
+
+#: template-parts/club/sign-in/form-sign-in.php:83
+msgid "I want to register!"
+msgstr ""
+
+#: template-parts/content-none.php:16
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:21
+#: template-parts/content-none.php:29
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:25
+#: template-parts/content-none.php:33
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:31
+#: template-parts/content-none.php:39
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:22 template-parts/content.php:38
+#: template-parts/content-page.php:21 template-parts/content.php:38
 msgid "Pages:"
 msgstr ""
 
@@ -155,64 +310,31 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: template-parts/form-register-club.php:63
-msgid "You must accept the terms &amp; conditions"
+#: template-parts/form-contact.php:35
+msgid ""
+"Below is a sample of the email we’ll send to the Club Host on your behalf, "
+"to let them know\n"
+"          that you're interested in volunteering."
 msgstr ""
 
-#: template-parts/form-register-club.php:71
-msgid "Venue name"
+#: template-parts/form-contact.php:60
+msgid "Send Message"
 msgstr ""
 
-#: template-parts/form-register-club.php:74
-msgid "Venue website"
+#: template-parts/shared/new-password.php:33
+msgid "New password was successfully set"
 msgstr ""
 
-#: template-parts/form-register-club.php:77
-msgid "Street address 1"
+#: template-parts/shared/new-password.php:77
+msgid "Password is too short. It should be 8 characters or more."
 msgstr ""
 
-#: template-parts/form-register-club.php:80
-msgid "Street address 2"
+#: template-parts/shared/new-password.php:90
+msgid "Password confirmation does not match the password set above"
 msgstr ""
 
-#: template-parts/form-register-club.php:83
-msgid "Town/City"
-msgstr ""
-
-#: template-parts/form-register-club.php:86
-msgid "Region/State"
-msgstr ""
-
-#: template-parts/form-register-club.php:89
-msgid "Postcode/Zipcode"
-msgstr ""
-
-#: template-parts/form-register-club.php:94
-msgid "Club Skype username"
-msgstr ""
-
-#: template-parts/form-register-club.php:99
-msgid "Your name"
-msgstr ""
-
-#: template-parts/form-register-club.php:102
-msgid "Your email address"
-msgstr ""
-
-#: template-parts/form-register-club.php:110
-msgid "Your name and email address will never be displayed publicly"
-msgstr ""
-
-#: template-parts/form-register-club.php:116
-msgid "I accept the"
-msgstr ""
-
-#: template-parts/form-register-club.php:116
-msgid "terms &amp; conditions"
-msgstr ""
-
-#: template-parts/form-register-club.php:126
-msgid "Create a Code Club"
+#: template-parts/shared/new-password.php:103
+msgid "Set New Password"
 msgstr ""
 
 #. Theme Name of the plugin/theme

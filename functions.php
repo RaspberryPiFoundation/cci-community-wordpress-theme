@@ -74,6 +74,11 @@ function ccw_countries_setup() {
 endif;
 add_action( 'after_setup_theme', 'ccw_countries_setup' );
 
+function display_php_errors() {
+  ini_set('display_errors', 1);
+  error_reporting(E_ALL ^ E_NOTICE);
+}
+
 /**
  * Enqueue scripts and styles.
  */
@@ -157,3 +162,19 @@ require get_template_directory() . '/inc/SplClassLoader.php';
  */
 $classLoader = new SplClassLoader('League\Plates', get_template_directory() . '/inc');
 $classLoader->register();
+
+/**
+ * Sign in logic functions and Club Session class.
+ */
+require get_template_directory() . '/inc/sign-in-logic.php';
+
+/**
+ * Set up
+ */
+require_once get_template_directory() . '/inc/set-up/run-setup.php';
+
+
+/**
+ * Helper methods
+ */
+require get_template_directory() . '/inc/helpers.php';

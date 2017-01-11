@@ -6,6 +6,14 @@
   $code_club = $host_volunteer_matching->getCodeClub($_GET['club_id']);
 
 
+  if (!empty($_POST['message_body'])) {
+
+    wp_mail($code_club['contact']['email'], #to
+            'Looking for Code Club', #subject
+            $_POST['message_body']);
+  }
+
+
 ?>
 
 <div class="c-page-block">
@@ -24,8 +32,8 @@
         </h2>
 
         <p>
-          Below is a sample of the email we’ll send to the Club Host on your behalf, to let them know
-          that you're interested in volunteering.
+          <?php esc_html_e("Below is a sample of the email we’ll send to the Club Host on your behalf, to let them know
+          that you're interested in volunteering."); ?>
         </p>
 
         <form class="c-form" id="contact" action="#" method="POST">
@@ -48,7 +56,9 @@ It would be great if I could come into your school and discuss this with you.
           </p>
 
           <p class="u-text--center">
-            <button class="c-button c-button--green" data-disable-with="Please wait..." type="submit">Send Message</button>
+            <button class="c-button c-button--green" data-disable-with="Please wait..." type="submit">
+              <?php esc_html_e("Send Message"); ?>
+            </button>
 
           </p>
         </form>
