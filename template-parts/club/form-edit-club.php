@@ -5,7 +5,7 @@
   <?php
     // The form uses a honeypot field called "body_text", purposefully named so as to not be obvious to spam bots
     $error_messages = array();
-    $templates = new League\Plates\Engine(get_template_directory() . '/templates/shared');
+    $templates = new League\Plates\Engine(get_template_directory() . '/template-parts/shared');
 
     $club_session = new CCW_Session();
     $club_session->redirectIfNoSession();
