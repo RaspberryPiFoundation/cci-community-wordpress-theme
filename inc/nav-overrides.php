@@ -35,3 +35,30 @@ function current_nav_class( $classes, $item ) {
     }
     return $classes;
 }
+
+
+add_filter('nav_menu_css_class', 'club_navigation_menu_class', 1, 3);
+
+function club_navigation_menu_class($classes, $item, $args) {
+  if ($args->theme_location == 'club_navigation_menu') {
+    $classes[] = 'o-nav-stacked__item';
+  }
+
+  return $classes;
+}
+
+
+add_filter('nav_menu_link_attributes', 'add_club_navigation_menu_link_classes', 10, 3);
+
+function add_club_navigation_menu_link_classes($atts, $item, $args) {
+  if ($args->theme_location == 'club_navigation_menu') {
+    if($item->current == 1) {
+      $atts['class'] = 'o-nav-stacked__link is-current';
+    } else {
+      $atts['class'] = 'o-nav-stacked__link';
+    }
+  }
+
+  return $atts;
+}
+

@@ -27,7 +27,7 @@
           $session = new Club_Session();
           $session->newSession($club);
           $flash_messages = Flash_Message::Singleton();
-          $flash_messages->createSuccess(esc_html_e("Sign in successful"));
+          $flash_messages->createSuccess(__("Sign in successful"));
           wp_safe_redirect('/club');
           exit;
         });
@@ -45,7 +45,7 @@
   <?php echo $templates->render('keep-blank-field') ?>
 
   <?php echo $templates->render('input',
-    ['title' => 'Username',
+    ['title' => __('Username'),
       'error' => use_if_set($error_messages, ['username']),
       'attributes' => [
         'id' => 'username',
@@ -56,7 +56,7 @@
   ?>
 
   <?php echo $templates->render('input',
-    ['title' => 'Password',
+    ['title' => __('Password'),
       'error' => use_if_set($error_messages, ['password']),
       'attributes' => [
         'id' => 'password',

@@ -39,17 +39,19 @@ function ccw_countries_setup() {
 
 	// This theme uses multiple nav menus
 	register_nav_menus( array(
-		'primary_navigation'  => esc_html__( 'Primary Navigation', 'ccw_countries' ),
-		'footer_navigation_1' => esc_html__( 'Footer Nav 1', 'ccw_countries' ),
-		'footer_navigation_2' => esc_html__( 'Footer Nav 2', 'ccw_countries' ),
-		'footer_navigation_3' => esc_html__( 'Footer Nav 3', 'ccw_countries' ),
-		'footer_navigation_4' => esc_html__( 'Footer Nav 4', 'ccw_countries' ),
+		'primary_navigation'   => esc_html__( 'Primary Navigation', 'ccw_countries' ),
+		'footer_navigation_1'  => esc_html__( 'Footer Nav 1', 'ccw_countries' ),
+		'footer_navigation_2'  => esc_html__( 'Footer Nav 2', 'ccw_countries' ),
+		'footer_navigation_3'  => esc_html__( 'Footer Nav 3', 'ccw_countries' ),
+		'footer_navigation_4'  => esc_html__( 'Footer Nav 4', 'ccw_countries' ),
+    'club_navigation_menu' => esc_html__( 'Club Navigation Menu', 'ccw_countries' ),
 	) );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
+
+  /*
+   * Switch default core markup for search form, comment form, and comments
+   * to output valid HTML5.
+   */
 	add_theme_support( 'html5', array(
 		'search-form',
 		'comment-form',

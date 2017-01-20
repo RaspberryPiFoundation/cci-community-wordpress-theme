@@ -11,7 +11,7 @@ get_header(); ?>
   <div class="c-grid c-grid--h-center">
     <div class="c-col c-col--8">
       <div class="c-content-panel">
-        <?php get_template_part('template-parts/club/form', 'register-club'); ?>
+        <?php get_template_part('template-parts/club/form', 'register'); ?>
       </div>
     </div>
   </div>

@@ -52,7 +52,7 @@ function react_to_response($response, $success_code, callable $success_function)
         $flash_messages->createError(ucfirst($body->error));
         $flash_messages->display();
       } else {
-        $flash_messages->createError("Something went wrong, please try again later.");
+        $flash_messages->createError(__("Something went wrong, please try again later."));
         $flash_messages->display();
       }
 

@@ -7,7 +7,7 @@
     $error_messages = array();
     $templates = new League\Plates\Engine(get_template_directory() . '/template-parts/shared');
 
-    $club_session = new CCW_Session();
+    $club_session = new Club_Session();
     $club_session->redirectIfNoSession();
 
 
@@ -22,7 +22,7 @@
         $club = json_decode( wp_remote_retrieve_body( $response ), true );
         $_SESSION['club'] = $club;
         $flash_messages = Flash_Message::Singleton();
-        $flash_messages->createSuccess(esc_html_e("Successfully edited!"));
+        $flash_messages->createSuccess(__("Successfully edited!"));
         wp_safe_redirect('/club');
         exit;
       });
@@ -54,7 +54,7 @@
     <h3 class="u-text--center">Venue details:</h3>
 
     <?php echo $templates->render('input',
-      ['title' => esc_html_e('Venue name'),
+      ['title' => __('Venue name'),
         'error' => use_if_set($error_messages, ['venue.name']),
         'attributes' => [
           'id' => 'club[venue_attributes][name]',
@@ -65,7 +65,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => esc_html_e('Venue website'),
+      ['title' => __('Venue website'),
         'error' => use_if_set($error_messages, ['venue.url']),
         'attributes' => [
           'id' => 'club[venue_attributes][url]',
@@ -76,7 +76,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => esc_html_e('Street address 1'),
+      ['title' => __('Street address 1'),
         'error' => use_if_set($error_messages, ['venue.address.address-1']),
         'attributes' => [
           'id' => 'club[venue_attributes][address_attributes][address_1]',
@@ -87,7 +87,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => esc_html_e('Street address 2'),
+      ['title' => __('Street address 2'),
         'error' => use_if_set($error_messages, ['venue.address.address-2']),
         'attributes' => [
           'id' => 'club[venue_attributes][address_attributes][address_2]',
@@ -97,7 +97,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => esc_html_e('Town / City:'),
+      ['title' => __('Town / City:'),
         'error' => use_if_set($error_messages, ['venue.address.city']),
         'attributes' => [
           'id' => 'club[venue_attributes][address_attributes][city]',
@@ -108,7 +108,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => esc_html_e('Region / State:'),
+      ['title' => __('Region / State:'),
         'error' => use_if_set($error_messages, ['venue.address.region']),
         'attributes' => [
           'id' => 'club[venue_attributes][address_attributes][region]',
@@ -118,7 +118,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => esc_html_e('Postcode / Zipcode'),
+      ['title' => __('Postcode / Zipcode'),
         'error' => use_if_set($error_messages, ['venue.address.postcode']),
         'attributes' => [
           'id' => 'club[venue_attributes][address_attributes][postcode]',
@@ -128,7 +128,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => esc_html_e('Club Skype username'),
+      ['title' => __('Club Skype username'),
         'error' =>  use_if_set($error_messages, ['contact.skype']),
         'attributes' => [
           'id' => 'club[contact_attributes][skype]',
@@ -141,10 +141,10 @@
   <fieldset class="c-form__fieldset">
     <h3 class="u-text--center"><?php esc_html_e("Contact details:"); ?></h3>
 
-    <?php echo $templates->render('info', ['message' => esc_html_e("Your name and email address will never be displayed publicly")]); ?>
+    <?php echo $templates->render('info', ['message' => __("Your name and email address will never be displayed publicly")]); ?>
 
     <?php echo $templates->render('input',
-      ['title' => esc_html_e('Your name'),
+      ['title' => __('Your name'),
         'error' => use_if_set($error_messages, ['contact.name']),
         'attributes' => [
           'id' => 'club[contact_attributes][name]',
@@ -155,7 +155,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => esc_html_e('Your email address'),
+      ['title' => __('Your email address'),
         'error' => use_if_set($error_messages, ['contact.email']),
         'attributes' => [
           'id' => 'club[contact_attributes][email]',

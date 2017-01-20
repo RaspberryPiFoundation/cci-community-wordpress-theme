@@ -10,7 +10,7 @@
 ?>
 
 <label class="<?= $class ?>" for="<?= $for ?>">
-  <?= $title ?>
+  <?= esc_html_e($title) ?>
   <span class="c-form__optional"><?= $required ? '(required)' : '' ?></span>
 </label>
 

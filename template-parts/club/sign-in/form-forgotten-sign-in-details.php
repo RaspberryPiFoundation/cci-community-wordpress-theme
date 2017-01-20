@@ -18,7 +18,7 @@
       $error_messages = react_to_response($response, 200, function () {
         $_POST = array();
         $flash_message = Flash_Message::Singleton();
-        $flash_message->createSuccess(esc_html_e("Please check your inbox for password reset instructions."));
+        $flash_message->createSuccess(__("Please check your inbox for password reset instructions."));
         wp_safe_redirect('/sign-in/');
       });
 

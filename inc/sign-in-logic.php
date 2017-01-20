@@ -46,7 +46,7 @@ class Club_Session {
       if (204 == wp_remote_retrieve_response_code($response)) {
         unset($_SESSION['club']);
         $flash_message = Flash_Message::Singleton();
-        $flash_message->createSuccess(esc_html_e("Signed out successfully!"));
+        $flash_message->createSuccess(__("Signed out successfully!"));
         wp_safe_redirect('/sign-in');
         exit;
       } else {
@@ -60,7 +60,7 @@ class Club_Session {
     if ($this->sessionExist()) return;
 
     $flash_messages = Flash_Message::Singleton();
-    $flash_messages->createError(esc_html_e("You have to be signed in to view this page."));
+    $flash_messages->createError(__("You have to be signed in to view this page."));
     wp_safe_redirect('/sign-in');
     exit;
   }
