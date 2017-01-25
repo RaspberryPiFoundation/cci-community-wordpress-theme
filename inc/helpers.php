@@ -66,3 +66,10 @@ function react_to_response($response, $success_code, callable $success_function)
   return $error_messages;
 
 }
+
+function get_yes_no($value) {
+  if ($value) {
+    return "Yes";
+  }
+  return "No";
+}

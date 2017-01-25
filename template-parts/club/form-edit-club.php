@@ -10,7 +10,6 @@
     $club_session = new Club_Session();
     $club_session->redirectIfNoSession();
 
-
     if (empty($_POST['body_text']) && !empty($_POST['club'])) {
 
       $club_json = strip_slashes_json_encode($_POST);
@@ -60,6 +59,18 @@
           'id' => 'club[venue_attributes][name]',
           'value' => use_if_set($_SESSION, ['club', 'venue', 'name'], '', 'htmlspecialchars_with_quotes'),
           'required' => ''
+        ]
+      ])
+    ?>
+
+    <?php
+     echo $templates->render('select',
+      ['title' => __('Looking for Volunteer'),
+        'error' => use_if_set($error_messages, ['looking_for_volunteer']),
+        'options' => array('true' => 'Yes', 'false' => 'No'),
+        'selected' => get_yes_no($_SESSION['club']['looking_for_volunteer']),
+        'attributes' => [
+          'id' => 'club[looking_for_volunteer]',
         ]
       ])
     ?>

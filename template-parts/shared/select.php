@@ -29,10 +29,12 @@
   }
 
   echo ">";
-  echo "<option value=''>--</option>";
+  if (isset($include_blank)) {
+    echo "<option value=''>--</option>";
+  }
 
   foreach($options as $key => $text) {
-    echo "<option value='" . $key . "'>" . $text . "</option>";
+    echo "<option value='" . $key . "' " . ($text == $selected ? 'selected' : '') . ">" . $text . "</option>";
   }
 
   echo "</select>";
