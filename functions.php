@@ -165,18 +165,19 @@ require get_template_directory() . '/inc/SplClassLoader.php';
 $classLoader = new SplClassLoader('League\Plates', get_template_directory() . '/inc');
 $classLoader->register();
 
-/**
- * Sign in logic functions and Club Session class.
- */
-require get_template_directory() . '/inc/sign-in-logic.php';
-
-/**
- * Set up
- */
-require_once get_template_directory() . '/inc/set-up/run-setup.php';
-
 
 /**
  * Helper methods
  */
 require get_template_directory() . '/inc/helpers.php';
+
+
+/**
+ * Sign in logic functions and Club Session class.
+ */
+require get_template_directory() . '/inc/club-session.php';
+
+/**
+ * Set up
+ */
+require_once get_template_directory() . '/inc/set-up/run-setup.php';
