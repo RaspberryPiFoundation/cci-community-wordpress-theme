@@ -3,7 +3,7 @@
 require_once get_template_directory() . '/inc/set-up/required-pages-setup.php';
 require_once get_template_directory() . '/inc/set-up/advanced-custom-fields-setup.php';
 
-add_action('init','create_pages');
+add_action('init','create_all_pages');
 //add_action('acf/init', 'create_advanced_custom_fields');
 
 require_once get_template_directory() . '/inc/set-up/menu-setup.php';
