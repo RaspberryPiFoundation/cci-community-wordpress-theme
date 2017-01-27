@@ -27,7 +27,7 @@
 
     $error_messages = react_to_response($response, 201, function () {
       $flash_messages = Flash_Message::Singleton();
-      $flash_messages->createSuccess(__('Your club has now been registered'));
+      $flash_messages->createSuccess(__('Your club has now been registered'), 'ccw_countries');
       wp_safe_redirect('/register/thank-you/');
       exit;
     });
@@ -37,10 +37,10 @@
 
 
   <fieldset class="c-form__fieldset">
-    <h3 class="u-text--center"><?php esc_html_e('Venue details') ?>:</h3>
+    <h3 class="u-text--center"><?php esc_html_e('Venue details', 'ccw_countries') ?>:</h3>
 
     <?php echo $templates->render('input',
-      ['title' => __('Venue name'),
+      ['title' => __('Venue name', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['venue.name']),
         'attributes' => [
           'id' => 'club[venue_attributes][name]',
@@ -51,7 +51,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => __('Venue website'),
+      ['title' => __('Venue website', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['venue']),
         'attributes' => [
           'id' => 'club[venue_attributes][url]',
@@ -62,7 +62,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => __('Street address 1'),
+      ['title' => __('Street address 1', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['venue.address.address-1']),
         'attributes' => [
           'id' => 'club[venue_attributes][address_attributes][address_1]',
@@ -73,7 +73,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => __('Street address 2'),
+      ['title' => __('Street address 2', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['venue.address.address-2']),
         'attributes' => [
           'id' => 'club[venue_attributes][address_attributes][address_2]',
@@ -83,7 +83,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => __('Town / City:'),
+      ['title' => __('Town / City:', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['venue.address.city']),
         'attributes' => [
           'id' => 'club[venue_attributes][address_attributes][city]',
@@ -94,7 +94,7 @@
     ?>
 
     <?php echo $templates->render('input',
-        ['title' => __('Region'),
+        ['title' => __('Region', 'ccw_countries'),
           'error' => use_if_set($error_messages, ['venue.address.region']),
           'attributes' => [
             'id' => 'club[venue_attributes][address_attributes][region]',
@@ -104,7 +104,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => __('Postcode'),
+      ['title' => __('Postcode', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['venue.address.postcode']),
         'attributes' => [
           'id' => 'club[venue_attributes][address_attributes][postcode]',
@@ -114,7 +114,7 @@
     ?>
 
     <?php echo $templates->render('input',
-      ['title' => __('Club Skype username'),
+      ['title' => __('Club Skype username', 'ccw_countries'),
         'error' =>  use_if_set($error_messages, ['contact.skype']),
         'attributes' => [
           'id' => 'club[contact_attributes][skype]',
@@ -126,10 +126,10 @@
   </fieldset>
 
   <fieldset class="c-form__fieldset">
-    <h3 class="u-text--center"><?php esc_html_e('Contact details') ?>:</h3>
+    <h3 class="u-text--center"><?php esc_html_e('Contact details', 'ccw_countries') ?>:</h3>
 
     <?php echo $templates->render('input',
-      ['title' => __('Your name'),
+      ['title' => __('Your name', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['contact.name']),
         'attributes' => [
           'id' => 'club[contact_attributes][name]',
@@ -141,7 +141,7 @@
 
 
     <?php echo $templates->render('input',
-      ['title' => __('Your email address'),
+      ['title' => __('Your email address', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['contact.email']),
         'attributes' => [
           'id' => 'club[contact_attributes][email]',
@@ -153,7 +153,7 @@
     ?>
 
     <?php
-      echo $templates->render('info', ['message' => __('Your name and email address will never be displayed publicly')]); ?>
+      echo $templates->render('info', ['message' => __('Your name and email address will never be displayed publicly', 'ccw_countries')]);?>
 
     <div class="c-form__input-group">
       <input class="c-form__input-group-checkbox" id="terms-checkbox" name="terms-checkbox" type="checkbox" value="true" <?php echo !empty( $_POST['terms-checkbox'] ) ? 'checked="checked"' : ''; ?>>
@@ -180,7 +180,7 @@
             type="submit"
             id="register-club-submit"
             form="register-club"
-            value="Create a Code Club"><?php esc_html_e("Create a Code Club") ?></button>
+            value="Create a Code Club"><?php esc_html_e("Create a Code Club", 'ccw_countries') ?></button>
   </p>
 
 </form>

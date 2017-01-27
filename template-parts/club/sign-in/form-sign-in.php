@@ -27,7 +27,7 @@
           $session = new Club_Session();
           $session->newSession($club);
           $flash_messages = Flash_Message::Singleton();
-          $flash_messages->createSuccess(__("Sign in successful"));
+          $flash_messages->createSuccess(__("Sign in successful", 'ccw_countries'));
           wp_safe_redirect('/club');
           exit;
         });
@@ -45,7 +45,7 @@
   <?php echo $templates->render('keep-blank-field') ?>
 
   <?php echo $templates->render('input',
-    ['title' => __('Username'),
+    ['title' => __('Username', 'ccw_countries'),
       'error' => use_if_set($error_messages, ['username']),
       'attributes' => [
         'id' => 'username',
@@ -56,7 +56,7 @@
   ?>
 
   <?php echo $templates->render('input',
-    ['title' => __('Password'),
+    ['title' => __('Password', 'ccw_countries'),
       'error' => use_if_set($error_messages, ['password']),
       'attributes' => [
         'id' => 'password',
@@ -77,10 +77,10 @@
   ?>
 
   <p class="u-text--center">
-    <a href="forgotten-sign-in-details"><?php esc_html_e("I forgot my Club ID or Password!"); ?></a>
+    <a href="forgotten-sign-in-details"><?php esc_html_e("I forgot my Club ID or Password!", 'ccw_countries'); ?></a>
   </p>
   <p class="u-text--center">
-    <a href="/register/"><?php esc_html_e("I want to register!"); ?></a>
+    <a href="/register/"><?php esc_html_e("I want to register!", 'ccw_countries'); ?></a>
   </p>
 
 </form>

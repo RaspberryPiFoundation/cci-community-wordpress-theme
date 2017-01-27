@@ -17,7 +17,7 @@
   }
 
   if (!$has_token || !$is_token_valid ) {
-    $flash_messages->createError(__("Invalid Auth token. Please request another password."));
+    $flash_messages->createError(__("Invalid Auth token. Please request another password.", 'ccw_countries'));
     wp_safe_redirect('/sign-in/forgotten-sign-in-details');
     exit;
   }

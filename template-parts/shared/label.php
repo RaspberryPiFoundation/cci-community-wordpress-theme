@@ -11,7 +11,7 @@
 
 <label class="<?= $class ?>" for="<?= $for ?>">
   <?= esc_html_e($title) ?>
-  <span class="c-form__optional"><?= $required ? '(required)' : '' ?></span>
+  <span class="c-form__optional"><?= $required ? __('(required)', 'ccw_countries') : '' ?></span>
 </label>
 
 <?php if ($has_error): ?>

@@ -30,7 +30,7 @@
           $session->newSession($club);
         }
         $flash_messages = Flash_Message::Singleton();
-        $flash_messages->createSuccess(__("New password was successfully set"));
+        $flash_messages->createSuccess(__("New password was successfully set", 'ccw_countries'));
         if ($session->sessionExist()) {
           wp_safe_redirect('/club/');
           exit;
@@ -56,7 +56,7 @@
 
   <?php if ($ask_for_current_password) {
     echo $templates->render('input',
-      ['title' => __('Current password'),
+      ['title' => __('Current password', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['current-password']),
         'attributes' => [
           'id' => 'current_password',
@@ -68,27 +68,23 @@
   ?>
 
   <?php echo $templates->render('input',
-    ['title' => __('New password'),
+    ['title' => __('New password', 'ccw_countries'),
       'error' => use_if_set($error_messages, ['password']),
       'attributes' => [
         'id' => 'password',
         'type' => 'password',
         'required' => '',
-        'data-parsley-minlength-message' => __('Password is too short. It should be 8 characters or more.'),
-        'data-parsley-minlength' => '8'
       ]
     ])
   ?>
 
   <?php echo $templates->render('input',
-    ['title' => __('New password confirmation'),
+    ['title' => __('New password confirmation', 'ccw_countries'),
       'error' => use_if_set($error_messages, ['password_confirmation']),
       'attributes' => [
         'id' => 'password_confirmation',
         'type' => 'password',
         'required' => '',
-        'data-parsley-equalto-message' => __('Password confirmation does not match the password set above'),
-        'data-parsley-equalto' => '#password'
       ]
     ])
   ?>
@@ -100,7 +96,7 @@
       'attributes' => [
         'id' => 'new-password-submit',
         'form' => 'new-password',
-        'value' => __('Set New Password')
+        'value' => __('Set New Password', 'ccw_countries')
       ]
     ]);
   ?>

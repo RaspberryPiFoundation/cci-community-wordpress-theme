@@ -18,7 +18,7 @@
       $error_messages = react_to_response($response, 200, function () {
         $_POST = array();
         $flash_message = Flash_Message::Singleton();
-        $flash_message->createSuccess(__("Please check your inbox for password reset instructions."));
+        $flash_message->createSuccess(__("Please check your inbox for password reset instructions.", 'ccw_countries'));
         wp_safe_redirect('/sign-in/');
       });
 
@@ -28,7 +28,7 @@
   <?php echo $templates->render('keep-blank-field') ?>
 
   <?php echo $templates->render('input',
-    ['title' => 'Email',
+    ['title' => __('Email', 'ccw_countries'),
       'error' => use_if_set($error_messages, ['contact.email']),
       'attributes' => [
         'id' => 'email_address',
@@ -50,7 +50,7 @@
   ?>
 
   <p class="u-text--center">
-    <a href="/sign-in"><?php esc_html_e("No wait I remembered my Club ID and Password!") ?></a>
+    <a href="/sign-in"><?php esc_html_e("No wait I remembered my Club ID and Password!", 'ccw_countries') ?></a>
   </p>
 
 </form>

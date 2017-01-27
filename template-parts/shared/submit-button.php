@@ -17,5 +17,5 @@
     echo $key . "='" . $value . "' ";
   }
 ?>
-><?= isset($title) ? $title : 'Submit' ?></button>
+><?= isset($title) ? $title : __('Submit', 'ccw_countries') ?></button>
 </p>

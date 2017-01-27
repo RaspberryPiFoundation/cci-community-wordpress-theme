@@ -16,11 +16,3 @@
     </div>
   </div>
 
-  <div class="c-page-block c-page-block--alt-block">
-    <div class="c-grid">
-      <div class="c-col c-col--6 u-text--center">
-        <p>Having issues setting a new password? Email <a href="mailto:hello@codeclubworld.org">hello@codeclubworld.org</a></p>
-      </div>
-    </div>
-  </div>
-

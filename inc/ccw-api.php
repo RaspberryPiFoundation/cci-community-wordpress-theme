@@ -95,6 +95,7 @@ class CCW_API {
    * @return returns the updated club within the body and status code 200
    */
   public function updateClub($club_json) {
+    echo $club_json;
     $response = wp_remote_request(CCW_API_URL . '/authenticated_clubs/club?=',
       array(
         'method'  => 'PUT',
@@ -116,7 +117,7 @@ class CCW_API {
    * @return status code 204
    */
   public function forgotSignInDetails($email_address) {
-    $url = CCW_API_URL . '/authenticated_clubs/password?' . 'email=' .$email_address;
+    $url = CCW_API_URL . '/authenticated_clubs/password?' . 'email=' . $email_address;
     $headers = [
       'Authorization' => 'Bearer ' . CCW_API_READONLY_TOKEN,
       'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
@@ -256,6 +257,7 @@ class CCW_API {
 
   public function signOut($username) {
     $url = CCW_API_URL . '/authenticated_clubs/sign_out?' . 'username=' . $username;
+    echo $url;
     $headers = [
       'Authorization' => 'Bearer ' . CCW_API_READONLY_TOKEN,
       'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,

@@ -21,7 +21,7 @@ class Host_Volunteer_Matching {
     $response = wp_remote_get($url);
 
     if (is_wp_error($response)) {
-      $this->flash_messages->createError("Could not resolve the address");
+      $this->flash_messages->createError("Could not resolve the address", 'ccw_countries');
     } else {
       $geocode_data =  json_decode(wp_remote_retrieve_body($response), true);
       $location = $geocode_data['results']['0']['geometry']['location'];
