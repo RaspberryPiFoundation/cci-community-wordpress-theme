@@ -21,7 +21,7 @@ class Host_Volunteer_Matching {
     $response = wp_remote_get($url);
 
     if (is_wp_error($response)) {
-      $this->flash_messages->createError("Could not resolve the address", 'ccw_countries');
+      $this->flash_messages->createError(__("Could not resolve the address", 'ccw_countries'));
     } else {
       $geocode_data =  json_decode(wp_remote_retrieve_body($response), true);
       $location = $geocode_data['results']['0']['geometry']['location'];
@@ -31,7 +31,7 @@ class Host_Volunteer_Matching {
       if (!is_wp_error($ccw_api_response)) {
         $_SESSION['code_clubs'] = json_decode(wp_remote_retrieve_body($ccw_api_response), true);
       } else {
-        $this->flash_messages->createError("No code clubs found. " . $ccw_api_response->get_error_message());
+        $this->flash_messages->createError(__("No code clubs found.", 'ccw_countries'));
       }
 
     }

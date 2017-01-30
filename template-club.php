@@ -11,7 +11,7 @@ $club_session->redirectIfNoSession(); ?>
 
 <div class="c-page-block">
 
-  <h1 class="u-text--center"><?php the_field('page_title'); ?></h1>
+  <h1 class="u-text--center"><?php esc_html_e('Club', 'ccw_countries'); ?></h1>
 
   <div class="c-grid">
     <div class="c-col c-col--3">

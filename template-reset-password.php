@@ -1,7 +1,9 @@
 <?php
 /**
  * Template Name: Set New Password
- */?>
+ */
+
+get_header(); ?>
 
   <div class="c-page-block">
 
