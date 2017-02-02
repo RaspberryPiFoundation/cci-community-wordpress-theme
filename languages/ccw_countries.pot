@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: CCW Countries\n"
-"POT-Creation-Date: 2017-01-27 16:26+0000\n"
-"PO-Revision-Date: 2017-01-27 16:26+0000\n"
+"POT-Creation-Date: 2017-02-02 13:38+0000\n"
+"PO-Revision-Date: 2017-02-02 13:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -92,6 +92,14 @@ msgstr ""
 msgid "Something went wrong, please try again later."
 msgstr ""
 
+#: inc/host-volunteer-matching.php:24
+msgid "Could not resolve the address"
+msgstr ""
+
+#: inc/host-volunteer-matching.php:34
+msgid "No code clubs found."
+msgstr ""
+
 #: inc/set-up/menu-setup.php:5 template-parts/page-matching.php:14
 msgid "Find Club"
 msgstr ""
@@ -104,7 +112,7 @@ msgstr ""
 msgid "Sign Out"
 msgstr ""
 
-#: inc/set-up/menu-setup.php:19
+#: inc/set-up/menu-setup.php:19 template-sign-in.php:9
 msgid "Sign In"
 msgstr ""
 
@@ -154,6 +162,22 @@ msgstr ""
 #: search.php:19
 #, php-format
 msgid "Search Results for: %s"
+msgstr ""
+
+#: template-club-edit.php:12
+msgid "Edit Club"
+msgstr ""
+
+#: template-club.php:14 template-parts/club/show-club.php:3
+msgid "Club"
+msgstr ""
+
+#: template-contact.php:12 template-parts/page-matching.php:62
+msgid "Contact Club Host"
+msgstr ""
+
+#: template-forgotten-sign-in-details.php:10
+msgid "Forgotten Sign In Details"
 msgstr ""
 
 #: template-parts/club/club-materials.php:3
@@ -231,7 +255,7 @@ msgid "Your name and email address will never be displayed publicly"
 msgstr ""
 
 #: template-parts/club/form-edit-club.php:158
-#: template-parts/club/form-register.php:132 template-parts/form-contact.php:41
+#: template-parts/club/form-register.php:132 template-parts/form-contact.php:39
 msgid "Your name"
 msgstr ""
 
@@ -272,10 +296,6 @@ msgstr ""
 
 #: template-parts/club/form-register.php:183
 msgid "Create a Code Club"
-msgstr ""
-
-#: template-parts/club/show-club.php:3
-msgid "Club"
 msgstr ""
 
 #: template-parts/club/show-club.php:5
@@ -380,23 +400,31 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
+#: template-parts/form-contact.php:11
+msgid " Please reply to "
+msgstr ""
+
 #: template-parts/form-contact.php:13
 msgid "Volunteer has contacted you."
 msgstr ""
 
-#: template-parts/form-contact.php:20 template-parts/page-matching.php:62
-msgid "Contact Club Host"
+#: template-parts/form-contact.php:20
+msgid "Email has been sent"
 msgstr ""
 
-#: template-parts/form-contact.php:51
+#: template-parts/form-contact.php:49
 msgid "Your email"
 msgstr ""
 
-#: template-parts/form-contact.php:60
+#: template-parts/form-contact.php:59
 msgid "Message"
 msgstr ""
 
-#: template-parts/form-contact.php:68
+#: template-parts/form-contact.php:60 template-parts/shared/label.php:14
+msgid "(required)"
+msgstr ""
+
+#: template-parts/form-contact.php:67
 msgid "Send Message"
 msgstr ""
 
@@ -418,10 +446,6 @@ msgstr ""
 
 #: template-parts/page-matching.php:42
 msgid "Search results:"
-msgstr ""
-
-#: template-parts/shared/label.php:14
-msgid "(required)"
 msgstr ""
 
 #: template-parts/shared/new-password.php:33
@@ -446,6 +470,10 @@ msgstr ""
 
 #: template-parts/shared/submit-button.php:20
 msgid "Submit"
+msgstr ""
+
+#: template-register.php:9
+msgid "Register"
 msgstr ""
 
 #: template-welcome.php:9
