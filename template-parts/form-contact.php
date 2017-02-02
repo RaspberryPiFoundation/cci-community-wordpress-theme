@@ -8,7 +8,7 @@
 
   if (!empty($_POST['message_body'])) {
 
-    $message = $_POST['message_body'] . __(' Please reply to ', 'ccw_countries') . $_POST['name'] . '(' . $_POST['email'] . ')';
+    $message = $_POST['message_body'] . __(' Please reply to ', 'ccw_countries') . $_POST['contact-name'] . ' (' . $_POST['contact-email'] . ')';
 
     $email_title = __('Volunteer has contacted you.', 'ccw_countries');
 
@@ -38,8 +38,8 @@
     <?php echo $templates->render('input',
       ['title' => __('Your name', 'ccw_countries'),
         'attributes' => [
-          'id' => 'name',
-          'value' => use_if_set($_POST, ['name'], '', 'htmlspecialchars_with_quotes'),
+          'id' => 'contact-name',
+          'value' => use_if_set($_POST, ['contact-name'], '', 'htmlspecialchars_with_quotes'),
           'required' => ''
         ]
       ])
@@ -48,8 +48,8 @@
     <?php echo $templates->render('input',
       ['title' => __('Your email', 'ccw_countries'),
         'attributes' => [
-          'id' => 'email',
-          'value' => use_if_set($_POST, ['email'], '', 'htmlspecialchars_with_quotes'),
+          'id' => 'contact-email',
+          'value' => use_if_set($_POST, ['contact-email'], '', 'htmlspecialchars_with_quotes'),
           'required' => ''
         ]
       ])
