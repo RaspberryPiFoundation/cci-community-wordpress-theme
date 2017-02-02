@@ -29,7 +29,7 @@ define( 'CCW_API_TERMS_CONDITIONS_PAGE', '/' );
 // You must create a page to display a 'Registration Success' message and provide the path to it here. For example, if the page address is: 'http://codeclub.org.uk/registration-success' then the value here should be: '/registration-success' (must start with a /)
 define( 'CCW_API_REGISTRATION_SUCCESS_PAGE', '/' );
 
-define( 'DISPLAY_ERRORS', 'true');
+define( 'DISPLAY_ERRORS', 'false');
 
 
 /* Social Constants, uncomment to enable */
