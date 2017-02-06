@@ -15,12 +15,12 @@
       <?php esc_html_e("Name", 'ccw_countries'); ?>
     </dt>
     <dd class="c-def-list__definition"><?php echo htmlspecialchars($_SESSION['club']['venue']['name']) ?></dd>
-    <dt class="c-def-list__term">
-      <?php esc_html_e("Looking for Volunteer", 'ccw_countries'); ?>
+    <!--dt class="c-def-list__term">
+      <!--?php esc_html_e("Looking for Volunteer", 'ccw_countries'); ?>
     </dt>
-    <dd class="c-def-list__definition"><?php
+    <dd class="c-def-list__definition"><!--?php
       echo get_yes_no(htmlspecialchars($_SESSION['club']['looking_for_volunteer']))
-      ?></dd>
+      ?></dd-->
     <dt class="c-def-list__term">
       <?php esc_html_e("Website", 'ccw_countries'); ?>
     </dt>
