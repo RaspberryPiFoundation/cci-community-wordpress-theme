@@ -181,4 +181,3 @@ require get_template_directory() . '/inc/club-session.php';
  * Set up
  */
 require get_template_directory() . '/inc/set-up/run-setup.php';
-

@@ -4,7 +4,7 @@ function create_all_pages() {
   create_club_page();
   create_change_password_page();
   create_download_resources_page();
-  create_find_club_page();
+//  create_find_club_page();
   create_forgotten_sign_in_details_page();
   create_register_page();
   create_reset_password_page();
