@@ -8,7 +8,6 @@ class Club_Session {
 
   public function newSession($club) {
     session_start();
-    echo $club;
     $_SESSION['auth_token'] = $club['auth_token'];
     $_SESSION['club'] = $club;
     return true;

@@ -63,7 +63,7 @@
       ])
     ?>
 
-    <!--?php
+    <?php
      echo $templates->render('select',
       ['title' => __('Looking for Volunteer', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['looking_for_volunteer']),
@@ -73,7 +73,7 @@
           'id' => 'club[looking_for_volunteer]',
         ]
       ])
-    ?-->
+    ?>
 
     <?php echo $templates->render('input',
       ['title' => __('Venue website', 'ccw_countries'),
