@@ -2,9 +2,8 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [2.0.1]
-### Added
-- Added Sign In functionality
+## [Unreleased]
+- Nothing waiting to release
 
 ## [1.0.58] - 2016-08-04
 ### Changed
@@ -23,7 +22,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Added CHANGELOG.md - you're reading it right now. Hi.
 
-[2.0.1]: https://github.com/CodeClub/style-guide/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/CodeClub/style-guide/compare/v1.0.58...HEAD
 [1.0.58]: https://github.com/CodeClub/style-guide/compare/v1.0.57...v1.0.58
 [1.0.57]: https://github.com/CodeClub/style-guide/compare/v1.0.56...v1.0.57
 [1.0.56]: https://github.com/CodeClub/style-guide/compare/v1.0.55...v1.0.56
