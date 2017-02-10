@@ -29,6 +29,8 @@ define( 'CCW_API_TERMS_CONDITIONS_PAGE', '/' );
 // You must create a page to display a 'Registration Success' message and provide the path to it here. For example, if the page address is: 'http://codeclub.org.uk/registration-success' then the value here should be: '/registration-success' (must start with a /)
 define( 'CCW_API_REGISTRATION_SUCCESS_PAGE', '/' );
 
+define( 'DISPLAY_ERRORS', 'false');
+
 
 /* Social Constants, uncomment to enable */
 
@@ -40,3 +42,13 @@ define( 'CCW_API_REGISTRATION_SUCCESS_PAGE', '/' );
 #define( 'SOCIAL_GOOGLE_URL', 'https://plus.google.com/your-account-here' );
 // Provide the URL to your YouTube channel
 #define( 'SOCIAL_YOUTUBE_URL', 'https://youtube.com/your-channel-here' );
+
+/* Download link to zip file with resources */
+#define( 'RESOURCES_FILE_URL', '');
+
+
+/* GOOGLE MAPS API */
+
+define( 'GOOGLE_MAPS_ADDRESS_END_POINT', 'https://maps.googleapis.com/maps/api/geocode/json?address=');
+define( 'GOOGLE_MAPS_API_KEY', '');
+

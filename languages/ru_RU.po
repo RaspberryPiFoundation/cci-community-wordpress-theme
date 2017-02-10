@@ -1,11 +1,10 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Project-Id-Version: CCW Countries\n"
 "POT-Creation-Date: 2017-02-02 13:38+0000\n"
-"PO-Revision-Date: 2017-02-02 13:37+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2017-02-02 13:48+0000\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,64 +16,68 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: ru_RU\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: 404.php:16
 msgid "404 - Not found"
-msgstr ""
+msgstr "Ошибка 404. Запрашиваемая страница не найдена."
 
 #: 404.php:17 template-parts/content-none.php:17
 msgid "Sorry but we couldn't find the content you were looking for"
-msgstr ""
+msgstr "По вашему запросу ничего не нашлось!"
 
 #: 404.php:26
 msgid "Try the navigation menu above or search for the content"
 msgstr ""
+"Пожалуйста, воспользуйтесь меню на панеле сверху или введите запрос в поиск."
 
 #: comments.php:31
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
+msgstr[0] "Один комментарий для &ldquo;%2$s&rdquo;"
 msgstr[1] ""
+msgstr[2] ""
 
 #: comments.php:40 comments.php:61
 msgid "Comment navigation"
-msgstr ""
+msgstr "Поиск по комментариям"
 
 #: comments.php:43 comments.php:64
 msgid "Older Comments"
-msgstr ""
+msgstr "Старые комментарии"
 
 #: comments.php:44 comments.php:65
 msgid "Newer Comments"
-msgstr ""
+msgstr "Новые комментарии"
 
 #: comments.php:78
 msgid "Comments are closed."
-msgstr ""
+msgstr "Комментарии закрыты."
 
 #: functions.php:42
 msgid "Primary Navigation"
-msgstr ""
+msgstr "Основное меню навигации"
 
 #: functions.php:43
 msgid "Footer Nav 1"
-msgstr ""
+msgstr "Нижний колонтитул Nav 1"
 
 #: functions.php:44
 msgid "Footer Nav 2"
-msgstr ""
+msgstr "Нижний колонтитул Nav 2"
 
 #: functions.php:45
 msgid "Footer Nav 3"
-msgstr ""
+msgstr "Нижний колонтитул Nav 3"
 
 #: functions.php:46
 msgid "Footer Nav 4"
-msgstr ""
+msgstr "Нижний колонтитул Nav 4"
 
 #: functions.php:47
 msgid "Club Navigation Menu"
@@ -82,15 +85,15 @@ msgstr ""
 
 #: inc/club-session.php:26
 msgid "Signed out successfully!"
-msgstr ""
+msgstr "Вы успешно вышли"
 
 #: inc/club-session.php:37
 msgid "You have to be signed in to view this page."
-msgstr ""
+msgstr "Вам нужно войти в систему для просмотра этой страницы."
 
 #: inc/helpers.php:55
 msgid "Something went wrong, please try again later."
-msgstr ""
+msgstr "Похоже, что-то пошло не так. Пожалуйста, повторите попытку позже!"
 
 #: inc/host-volunteer-matching.php:24
 msgid "Could not resolve the address"
@@ -98,396 +101,399 @@ msgstr ""
 
 #: inc/host-volunteer-matching.php:34
 msgid "No code clubs found."
-msgstr ""
+msgstr "Мы не смогли найти кружки по вашему запросу."
 
 #: inc/set-up/menu-setup.php:5 template-parts/page-matching.php:14
 msgid "Find Club"
-msgstr ""
+msgstr "Найти кружок"
 
 #: inc/set-up/menu-setup.php:16
 msgid "Your Club"
-msgstr ""
+msgstr "Ваш кружок"
 
 #: inc/set-up/menu-setup.php:17
 msgid "Sign Out"
-msgstr ""
+msgstr "Выход"
 
 #: inc/set-up/menu-setup.php:19 template-sign-in.php:9
 msgid "Sign In"
-msgstr ""
+msgstr "Войти"
 
 #: inc/template-tags.php:28
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
-msgstr ""
+msgstr "Опубликовано %s"
 
 #: inc/template-tags.php:33
 #, php-format
 msgctxt "post author"
 msgid "by %s"
-msgstr ""
+msgstr "от %s"
 
 #: inc/template-tags.php:50 inc/template-tags.php:56
 msgid ", "
-msgstr ""
+msgstr ","
 
 #: inc/template-tags.php:52
 #, php-format
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "Опубликовано в %1$s"
 
 #: inc/template-tags.php:58
 #, php-format
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "Метки %1$s"
 
 #: inc/template-tags.php:64
 msgid "Leave a comment"
-msgstr ""
+msgstr "Оставьте коментарий"
 
 #: inc/template-tags.php:64
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Комментарий"
 
 #: inc/template-tags.php:64
 msgid "% Comments"
-msgstr ""
+msgstr "% комментариев"
 
 #: inc/template-tags.php:71
 #, php-format
 msgid "Edit %s"
-msgstr ""
+msgstr "Редактировать %s"
 
 #: search.php:19
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Результаты поиска: %s"
 
 #: template-club-edit.php:12
 msgid "Edit Club"
-msgstr ""
+msgstr "Редактировать"
 
 #: template-club.php:14 template-parts/club/show-club.php:3
 msgid "Club"
-msgstr ""
+msgstr "Ваш кружок"
 
 #: template-contact.php:12 template-parts/page-matching.php:62
 msgid "Contact Club Host"
-msgstr ""
+msgstr "Отправить сообщение руководителю кружка"
 
 #: template-forgotten-sign-in-details.php:10
 msgid "Forgotten Sign In Details"
-msgstr ""
+msgstr "Забыли имя пользователя или пароль?"
 
 #: template-parts/club/club-materials.php:3
 msgid "Club Resources"
-msgstr ""
+msgstr "Рессурсы"
 
 #: template-parts/club/club-materials.php:4
 msgid ""
 "Here you can access resources, materials and guidance to help you run your "
 "Code Club."
-msgstr ""
+msgstr "Здесь вы можете скачать материалы для ведения вашего кружка."
 
 #: template-parts/club/club-materials.php:6
 msgid "Get Materials"
-msgstr ""
+msgstr "Скачать учебные метериалы"
 
 #: template-parts/club/form-edit-club.php:24
 msgid "Successfully edited!"
-msgstr ""
+msgstr "Данные успешно изменены."
 
 #: template-parts/club/form-edit-club.php:53
 msgid "Venue details:"
-msgstr ""
+msgstr "Место проведения:"
 
 #: template-parts/club/form-edit-club.php:56
 #: template-parts/club/form-register.php:43
 msgid "Venue name"
-msgstr ""
+msgstr "Названия места проведения"
 
 #: template-parts/club/form-edit-club.php:68
 #: template-parts/club/show-club.php:19
 msgid "Looking for Volunteer"
-msgstr ""
+msgstr "Ищете волонтера?"
 
 #: template-parts/club/form-edit-club.php:79
 #: template-parts/club/form-register.php:54
 msgid "Venue website"
-msgstr ""
+msgstr "Сайт места проведения"
 
 #: template-parts/club/form-edit-club.php:90
 #: template-parts/club/form-register.php:65
 msgid "Street address 1"
-msgstr ""
+msgstr "Адрес 1"
 
 #: template-parts/club/form-edit-club.php:101
 #: template-parts/club/form-register.php:76
 msgid "Street address 2"
-msgstr ""
+msgstr "Адрес 2"
 
 #: template-parts/club/form-edit-club.php:111
 #: template-parts/club/form-register.php:86
 msgid "Town / City:"
-msgstr ""
+msgstr "Город, населенный пункт"
 
 #: template-parts/club/form-edit-club.php:122
 msgid "Region / State:"
-msgstr ""
+msgstr "Регион"
 
 #: template-parts/club/form-edit-club.php:132
 msgid "Postcode / Zipcode"
-msgstr ""
+msgstr "Почтовый индекс"
 
 #: template-parts/club/form-edit-club.php:142
 #: template-parts/club/form-register.php:117
 msgid "Club Skype username"
-msgstr ""
+msgstr "Skype"
 
 #: template-parts/club/form-edit-club.php:153
 msgid "Contact details:"
-msgstr ""
+msgstr "Контакная информация"
 
 #: template-parts/club/form-edit-club.php:155
 #: template-parts/club/form-register.php:156
 msgid "Your name and email address will never be displayed publicly"
-msgstr ""
+msgstr "Ваше имя и адрес не будут опубликованы на нашем сайте."
 
 #: template-parts/club/form-edit-club.php:158
 #: template-parts/club/form-register.php:132 template-parts/form-contact.php:39
 msgid "Your name"
-msgstr ""
+msgstr "ФИО"
 
 #: template-parts/club/form-edit-club.php:169
 #: template-parts/club/form-register.php:144
 msgid "Your email address"
-msgstr ""
+msgstr "Email"
 
 #: template-parts/club/form-register.php:30
 msgid "Your club has now been registered"
-msgstr ""
+msgstr "Ваш кружок успешно зарегестрирован."
 
 #: template-parts/club/form-register.php:40
 msgid "Venue details"
-msgstr ""
+msgstr "Место проведения"
 
 #: template-parts/club/form-register.php:97
 #: template-parts/club/show-club.php:41
 msgid "Region"
-msgstr ""
+msgstr "Регион"
 
 #: template-parts/club/form-register.php:107
 #: template-parts/club/show-club.php:45
 msgid "Postcode"
-msgstr ""
+msgstr "Почтовый индекс"
 
 #: template-parts/club/form-register.php:129
 msgid "Contact details"
-msgstr ""
+msgstr "Контакная информация"
 
 #: template-parts/club/form-register.php:160
 msgid "I accept the"
-msgstr ""
+msgstr "Я согласен с "
 
 #: template-parts/club/form-register.php:160
 msgid "terms &amp; conditions"
-msgstr ""
+msgstr "условиями пользовательского соглашения."
 
 #: template-parts/club/form-register.php:183
 msgid "Create a Code Club"
-msgstr ""
+msgstr "Создать кружок Code Club"
 
 #: template-parts/club/show-club.php:5
 #: template-parts/club/sign-in/form-sign-in.php:48
 msgid "Username"
-msgstr ""
+msgstr "Имя пользователя"
 
 #: template-parts/club/show-club.php:13
 msgid "Venue"
-msgstr ""
+msgstr "Место проведения"
 
 #: template-parts/club/show-club.php:15 template-parts/club/show-club.php:55
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: template-parts/club/show-club.php:25
 msgid "Website"
-msgstr ""
+msgstr "Сайт"
 
 #: template-parts/club/show-club.php:29
 msgid "Address 1"
-msgstr ""
+msgstr "Адрес 1"
 
 #: template-parts/club/show-club.php:33
 msgid "Address 2"
-msgstr ""
+msgstr "Адрес 2"
 
 #: template-parts/club/show-club.php:37
 msgid "City"
-msgstr ""
+msgstr "Город, населенный пункт"
 
 #: template-parts/club/show-club.php:53
 msgid "Contact"
-msgstr ""
+msgstr "Контактное лицо"
 
 #: template-parts/club/show-club.php:59
 #: template-parts/club/sign-in/form-forgotten-sign-in-details.php:31
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: template-parts/club/show-club.php:63
 msgid "Skype"
-msgstr ""
+msgstr "Skype"
 
 #: template-parts/club/sign-in/form-first-password.php:20
 #: template-parts/club/sign-in/form-set-new-password.php:20
 msgid "Invalid Auth token. Please request another password."
-msgstr ""
+msgstr "Ваша сессия устарела. Пожалуйста, запросите новый пароль."
 
 #: template-parts/club/sign-in/form-forgotten-sign-in-details.php:21
 msgid "Please check your inbox for password reset instructions."
 msgstr ""
+"Проверьте свой почтовый ящик для дальнейших инструкций по восстановлению "
+"вашего пароля."
 
 #: template-parts/club/sign-in/form-forgotten-sign-in-details.php:53
 msgid "No wait I remembered my Club ID and Password!"
-msgstr ""
+msgstr "Назад"
 
 #: template-parts/club/sign-in/form-sign-in.php:30
 msgid "Sign in successful"
-msgstr ""
+msgstr "Вход успешного завершен"
 
 #: template-parts/club/sign-in/form-sign-in.php:59
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: template-parts/club/sign-in/form-sign-in.php:80
 msgid "I forgot my Club ID or Password!"
-msgstr ""
+msgstr "Забыли имя или пароль?"
 
 #: template-parts/club/sign-in/form-sign-in.php:83
 msgid "I want to register!"
-msgstr ""
+msgstr "Создать новую учетную запись."
 
 #: template-parts/content-none.php:16
 msgid "Nothing Found"
-msgstr ""
+msgstr "Ничего не найдено"
 
 #: template-parts/content-none.php:29
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
+msgstr "Готовы опубликовать свой первый пост? <a href=\"%1$s\">Старт тут</a>."
 
 #: template-parts/content-none.php:33
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"По вашему запросу ничего не нашлось! Попробуйте изменить параметры запроса."
 
 #: template-parts/content-none.php:39
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
+msgstr "Ничего не найдено. Попробуйте воспользоваться поиском."
 
 #: template-parts/content-page.php:21 template-parts/content.php:38
 msgid "Pages:"
-msgstr ""
+msgstr "Страницы:"
 
 #: template-parts/content.php:33
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Читать полностью %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: template-parts/form-contact.php:11
 msgid " Please reply to "
-msgstr ""
+msgstr "Просьба направить Ваш ответ в:"
 
 #: template-parts/form-contact.php:13
 msgid "Volunteer has contacted you."
-msgstr ""
+msgstr "Волонтер отправил вам сообщение"
 
 #: template-parts/form-contact.php:20
 msgid "Email has been sent"
-msgstr ""
+msgstr "Email отправлен!"
 
 #: template-parts/form-contact.php:49
 msgid "Your email"
-msgstr ""
+msgstr "Email"
 
 #: template-parts/form-contact.php:59
 msgid "Message"
-msgstr ""
+msgstr "Сообщение"
 
 #: template-parts/form-contact.php:60 template-parts/shared/label.php:14
 msgid "(required)"
-msgstr ""
+msgstr "(обязательно)"
 
 #: template-parts/form-contact.php:67
 msgid "Send Message"
-msgstr ""
+msgstr "Отправить"
 
 #: template-parts/page-matching.php:17
 msgid "Let's find a Club near you."
-msgstr ""
+msgstr "Найдите кружок рядом с вами"
 
 #: template-parts/page-matching.php:22
 msgid "Keep this field blank"
-msgstr ""
+msgstr "Оставьте это поле пустым"
 
 #: template-parts/page-matching.php:26
 msgid "Address"
-msgstr ""
+msgstr "Адрес"
 
 #: template-parts/page-matching.php:31
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 #: template-parts/page-matching.php:42
 msgid "Search results:"
-msgstr ""
+msgstr "Результаты поиска:"
 
 #: template-parts/shared/new-password.php:33
 msgid "New password was successfully set"
-msgstr ""
+msgstr "Пароль созадан"
 
 #: template-parts/shared/new-password.php:59
 msgid "Current password"
-msgstr ""
+msgstr "Пароль"
 
 #: template-parts/shared/new-password.php:71
 msgid "New password"
-msgstr ""
+msgstr "Новый пароль"
 
 #: template-parts/shared/new-password.php:82
 msgid "New password confirmation"
-msgstr ""
+msgstr "Повторите новый пароль"
 
 #: template-parts/shared/new-password.php:99
 msgid "Set New Password"
-msgstr ""
+msgstr "Создать новый пароль"
 
 #: template-parts/shared/submit-button.php:20
 msgid "Submit"
-msgstr ""
+msgstr "Отпрвить"
 
 #: template-register.php:9
 msgid "Register"
-msgstr ""
+msgstr "Зарегистрировать"
 
 #: template-welcome.php:9
 msgid "Welcome, "
-msgstr ""
+msgstr "Добро пожаловать,"
 
 #: template-welcome.php:19
 msgid "Your username is "
-msgstr ""
+msgstr "Ваше имя пользователя"
 
 #: template-welcome.php:20
 msgid ""
 "You will need this and your password to log in to access your club details."
-msgstr ""
+msgstr "Вам понадобятся имя пользователя и пароль, чтобы "
 
 #. Theme Name of the plugin/theme
 msgid "CCW Countries"
