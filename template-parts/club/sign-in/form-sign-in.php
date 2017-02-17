@@ -12,7 +12,7 @@
     $templates = new League\Plates\Engine(get_template_directory() . '/template-parts/shared/');
 
     if ($session->sessionExist()) {
-      wp_safe_redirect('/club');
+      wp_safe_redirect('/account');
       exit;
     }
 
@@ -28,7 +28,7 @@
           $session->newSession($club);
           $flash_messages = Flash_Message::Singleton();
           $flash_messages->createSuccess(__("Sign in successful", 'ccw_countries'));
-          wp_safe_redirect('/club');
+          wp_safe_redirect('/account');
           exit;
         });
     }
