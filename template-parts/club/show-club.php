@@ -1,6 +1,6 @@
 <div class="c-content-panel">
   <dl class="c-def-list">
-    <h4><?php esc_html_e("Club", 'ccw_countries') ?></h4>
+    <h4><?php esc_html_e("Account", 'ccw_countries') ?></h4>
     <dt class="c-def-list__term">
       <?php esc_html_e("Username", 'ccw_countries') ?>
     </dt>
@@ -20,6 +20,18 @@
     </dt>
     <dd class="c-def-list__definition"><?php
       echo get_yes_no(htmlspecialchars($_SESSION['club']['looking_for_volunteer']))
+      ?></dd>
+    <dt class="c-def-list__term">
+      <?php esc_html_e("Happy to be contacted", 'ccw_countries'); ?>
+    </dt>
+    <dd class="c-def-list__definition"><?php
+      echo get_yes_no(htmlspecialchars($_SESSION['club']['happy_to_be_contacted']))
+      ?></dd>
+    <dt class="c-def-list__term">
+      <?php esc_html_e("Can run without external volunteer", 'ccw_countries'); ?>
+    </dt>
+    <dd class="c-def-list__definition"><?php
+      echo get_yes_no(htmlspecialchars($_SESSION['club']['can_run_without_volunteer']))
       ?></dd>
     <dt class="c-def-list__term">
       <?php esc_html_e("Website", 'ccw_countries'); ?>

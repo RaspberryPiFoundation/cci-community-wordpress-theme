@@ -64,13 +64,37 @@
     ?>
 
     <?php
-     echo $templates->render('select',
+    echo $templates->render('select',
       ['title' => __('Looking for Volunteer', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['looking_for_volunteer']),
         'options' => array('true' => 'Yes', 'false' => 'No'),
         'selected' => get_yes_no($_SESSION['club']['looking_for_volunteer']),
         'attributes' => [
           'id' => 'club[looking_for_volunteer]',
+        ]
+      ])
+    ?>
+
+    <?php
+     echo $templates->render('select',
+      ['title' => __('Happy to be contacted', 'ccw_countries'),
+        'error' => use_if_set($error_messages, ['happy_to_be_contacted']),
+        'options' => array('true' => 'Yes', 'false' => 'No'),
+        'selected' => get_yes_no($_SESSION['club']['happy_to_be_contacted']),
+        'attributes' => [
+          'id' => 'club[happy_to_be_contacted]',
+        ]
+      ])
+    ?>
+
+    <?php
+    echo $templates->render('select',
+      ['title' => __('Are you a host?', 'ccw_countries'),
+        'error' => use_if_set($error_messages, ['can_run_without_volunteer']),
+        'options' => array('false' => 'Yes', 'true' => 'No'),
+        'selected' => get_yes_no($_SESSION['club']['can_run_without_volunteer']),
+        'attributes' => [
+          'id' => 'club[can_run_without_volunteer]',
         ]
       ])
     ?>

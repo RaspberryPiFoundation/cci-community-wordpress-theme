@@ -11,10 +11,10 @@ if (empty( $_POST['body_text'] ) && !empty($_POST['address'])) {
 
 <div class="c-page-block">
   <h1 class="u-text--center">
-    <?php esc_html_e('Find Club', 'ccw_countries'); ?></h1>
+    <?php esc_html_e('Find Venue', 'ccw_countries'); ?></h1>
   <div class="c-grid c-grid--h-center">
     <div class="c-col c-col--6">
-      <p><?php esc_html_e("Let's find a Club near you.", 'ccw_countries'); ?></p>
+      <p><?php esc_html_e("Let's find a venue near you.", 'ccw_countries'); ?></p>
       <form  id="find-hosts" action="#" method="POST">
         <!-- anti-spam field start -->
         <div style="display: none;">
@@ -39,7 +39,10 @@ if (empty( $_POST['body_text'] ) && !empty($_POST['address'])) {
 
 <?php if (isset($code_clubs)): ?>
   <div class="c-page-block c-page-block--alt-block">
-    <h2 class="u-text--center"><?php esc_html_e("Search results:", 'ccw_countries'); echo sizeof($code_clubs);?></h2>
+    <h2 class="u-text--center">
+      <?php esc_html_e("Search results:", 'ccw_countries');
+      echo ' ' . sizeof($code_clubs);?>
+    </h2>
     <div class="c-grid c-grid--h-center">
       <?php foreach ($code_clubs as $code_club): ?>
 
@@ -59,7 +62,7 @@ if (empty( $_POST['body_text'] ) && !empty($_POST['address'])) {
           </div>
           <div class="c-card__footer">
             <a class="c-card__link" href="/find-club/contact-club/?club_id=<?php echo $code_club['id']; ?>">
-              <?php esc_html_e("Contact Club Host", 'ccw_countries'); ?>
+              <?php esc_html_e("Contact Venue", 'ccw_countries'); ?>
             </a>
           </div>
         </div>

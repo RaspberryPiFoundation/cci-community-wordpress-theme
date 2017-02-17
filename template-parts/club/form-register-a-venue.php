@@ -17,6 +17,8 @@
 
   if (empty($_POST['body_text']) && !empty($_POST['terms-checkbox'])) {
     $_POST['club']['name'] = $_POST['club']['venue_attributes']['name'];
+    $_POST['club']['can_run_without_volunteer'] = false;
+    $_POST['club']['looking_for_volunteer'] = true;
 
     $club_json = strip_slashes_json_encode($_POST);
 
@@ -162,13 +164,13 @@
     <?php
     echo $templates->render('select',
       ['title' => __('Are you happy for people to be able to contact your venue?', 'ccw_countries'),
-        'error' => use_if_set($error_messages, ['']),
+        'error' => use_if_set($error_messages, ['happy_to_be_contacted']),
         'options' => array('true' => 'Yes', 'false' => 'No'),
         'selected' => get_yes_no($_SESSION['club']['']),
-        'include_blank' => '',
         'attributes' => [
-          'id' => '',
+          'id' => 'club[happy_to_be_contacted]',
           'required'=> '',
+          'value' => use_if_set($_POST, ['club', 'happy_to_be_contacted'], '', 'htmlspecialchars_with_quotes'),
         ]
       ])
     ?>

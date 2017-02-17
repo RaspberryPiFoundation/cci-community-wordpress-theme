@@ -12,7 +12,7 @@ get_header(); ?>
     <div class="c-col c-col--4 c-card">
       <img alt="" width="100%" src="https://www.codeclubworld.org/app/themes/code-club-world/assets/images/reusable/card-getinvolved-startclub.png">
       <div class="c-card__body">
-        <h3>Register a Code Club</h3>
+        <h3>Register an active Code Club</h3>
         Explanation
         <div class="button-container">
           <a class="c-button block-button c-button--green c-button--hollow"

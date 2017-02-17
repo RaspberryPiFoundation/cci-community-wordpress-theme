@@ -1,7 +1,7 @@
 <?php
 
 function create_all_pages() {
-  create_club_page();
+  create_account_page();
   create_change_password_page();
   create_download_resources_page();
   create_find_club_page();
@@ -51,16 +51,16 @@ function create_page($page) {
 }
 
 
-function create_club_page() {
-  if (!get_page_by_title('Club')) {
+function create_account_page() {
+  if (!get_page_by_title('Account')) {
     $page = array(
-      'name' => 'Club',
-      'title' => 'Club',
+      'name' => 'Account',
+      'title' => 'Account',
       'template' => 'template-club.php',
       'child' => array(
         array(
-          'name' => 'Club Edit',
-          'title' => 'Club Edit',
+          'name' => 'Account Edit',
+          'title' => 'Account Edit',
           'template' => 'template-club-edit.php'
         ),
         array(
@@ -115,13 +115,13 @@ function create_download_resources_page() {
 function create_find_club_page() {
   if (!get_page_by_title('Find Club')) {
     $page = array(
-      'name' => 'Find Club',
-      'title' => 'Find Club',
+      'name' => 'Find Venue',
+      'title' => 'Find Venue',
       'template' => 'template-find-club.php',
       'child' => array(
         array(
-          'name' => 'Contact Club',
-          'title' => 'Contact Club',
+          'name' => 'Contact',
+          'title' => 'Contact',
           'template' => 'template-contact.php'
         ),
       )
