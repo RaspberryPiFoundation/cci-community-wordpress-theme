@@ -61,7 +61,7 @@ if (empty( $_POST['body_text'] ) && !empty($_POST['address'])) {
             <?php endif; ?>
           </div>
           <div class="c-card__footer">
-            <a class="c-card__link" href="/find-club/contact-club/?club_id=<?php echo $code_club['id']; ?>">
+            <a class="c-card__link" href="/find-club/contact/?club_id=<?php echo $code_club['id']; ?>">
               <?php esc_html_e("Contact Venue", 'ccw_countries'); ?>
             </a>
           </div>
