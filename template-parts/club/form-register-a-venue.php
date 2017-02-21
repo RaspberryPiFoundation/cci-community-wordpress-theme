@@ -22,8 +22,6 @@
 
     $club_json = strip_slashes_json_encode($_POST);
 
-    echo $club_json;
-
     $ccw_api   = new CCW_API();
     $response  = $ccw_api->createClub($club_json);
 
