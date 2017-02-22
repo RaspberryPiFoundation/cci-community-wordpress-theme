@@ -28,8 +28,7 @@
 
     }
   ?>
-
-
+  
   <fieldset class="c-form__fieldset">
     <h3 class="u-text--center"><?php esc_html_e("Contact details:", 'ccw_countries'); ?></h3>
 
@@ -60,7 +59,6 @@
                                                             be displayed publicly", 'ccw_countries')]);?>
 
   </fieldset>
-
   <?php echo $templates->render('keep-blank-field'); ?>
 
   <?php echo $templates->render('input',
@@ -94,7 +92,6 @@
         ]
       ])
     ?>
-
     <?php
     if (!$club['can_run_without_volunteer']) {
       echo $templates->render('select',
@@ -194,7 +191,7 @@
       ])
     ?>
   </fieldset>
-
+  
   <?php echo $templates->render('submit-button',
     [
       'attributes' => [
