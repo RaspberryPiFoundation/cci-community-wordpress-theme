@@ -22,13 +22,43 @@
         $_SESSION['club'] = $club;
         $flash_messages = Flash_Message::Singleton();
         $flash_messages->createSuccess(__("Successfully edited!", 'ccw_countries'));
-        wp_safe_redirect('/club');
+        wp_safe_redirect('/account');
         exit;
       });
 
     }
   ?>
+  
+  <fieldset class="c-form__fieldset">
+    <h3 class="u-text--center"><?php esc_html_e("Contact details:", 'ccw_countries'); ?></h3>
 
+    <?php echo $templates->render('input',
+      ['title' => __('Your name', 'ccw_countries'),
+        'error' => use_if_set($error_messages, ['contact.name']),
+        'attributes' => [
+          'id' => 'club[contact_attributes][name]',
+          'value' => use_if_set($_SESSION, ['club', 'contact', 'name'], '', 'htmlspecialchars_with_quotes'),
+          'required' => ''
+        ]
+      ])
+    ?>
+
+    <?php echo $templates->render('input',
+      ['title' => __('Your email address', 'ccw_countries'),
+        'error' => use_if_set($error_messages, ['contact.email']),
+        'attributes' => [
+          'id' => 'club[contact_attributes][email]',
+          'value' =>  use_if_set($_SESSION, ['club', 'contact', 'email'], '', 'htmlspecialchars_with_quotes'),
+          'type' => 'email',
+          'required' => ''
+        ]
+      ])
+    ?>
+
+    <?php echo $templates->render('info', ['message' => __("Your name and email address will never 
+                                                            be displayed publicly", 'ccw_countries')]);?>
+
+  </fieldset>
   <?php echo $templates->render('keep-blank-field'); ?>
 
   <?php echo $templates->render('input',
@@ -62,18 +92,31 @@
         ]
       ])
     ?>
+    <?php
+    if (!$club['can_run_without_volunteer']) {
+      echo $templates->render('select',
+        ['title' => __('Looking for Volunteer', 'ccw_countries'),
+          'error' => use_if_set($error_messages, ['looking_for_volunteer']),
+          'options' => array('true' => 'Yes', 'false' => 'No'),
+          'selected' => get_yes_no($_SESSION['club']['looking_for_volunteer']),
+          'attributes' => [
+            'id' => 'club[looking_for_volunteer]',
+          ]
+        ]);
+    }
+    ?>
 
-    <!--?php
+    <?php
      echo $templates->render('select',
-      ['title' => __('Looking for Volunteer', 'ccw_countries'),
-        'error' => use_if_set($error_messages, ['looking_for_volunteer']),
+      ['title' => __('Happy to be contacted', 'ccw_countries'),
+        'error' => use_if_set($error_messages, ['happy_to_be_contacted']),
         'options' => array('true' => 'Yes', 'false' => 'No'),
-        'selected' => get_yes_no($_SESSION['club']['looking_for_volunteer']),
+        'selected' => get_yes_no($_SESSION['club']['happy_to_be_contacted']),
         'attributes' => [
-          'id' => 'club[looking_for_volunteer]',
+          'id' => 'club[happy_to_be_contacted]',
         ]
       ])
-    ?-->
+    ?>
 
     <?php echo $templates->render('input',
       ['title' => __('Venue website', 'ccw_countries'),
@@ -148,38 +191,7 @@
       ])
     ?>
   </fieldset>
-
-  <fieldset class="c-form__fieldset">
-    <h3 class="u-text--center"><?php esc_html_e("Contact details:", 'ccw_countries'); ?></h3>
-
-    <?php echo $templates->render('info', ['message' => __("Your name and email address will never be displayed publicly", 'ccw_countries')]);?>
-
-    <?php echo $templates->render('input',
-      ['title' => __('Your name', 'ccw_countries'),
-        'error' => use_if_set($error_messages, ['contact.name']),
-        'attributes' => [
-          'id' => 'club[contact_attributes][name]',
-          'value' => use_if_set($_SESSION, ['club', 'contact', 'name'], '', 'htmlspecialchars_with_quotes'),
-          'required' => ''
-        ]
-      ])
-    ?>
-
-    <?php echo $templates->render('input',
-      ['title' => __('Your email address', 'ccw_countries'),
-        'error' => use_if_set($error_messages, ['contact.email']),
-        'attributes' => [
-          'id' => 'club[contact_attributes][email]',
-          'value' =>  use_if_set($_SESSION, ['club', 'contact', 'email'], '', 'htmlspecialchars_with_quotes'),
-          'type' => 'email',
-          'required' => ''
-        ]
-      ])
-    ?>
-
-  </fieldset>
-
-
+  
   <?php echo $templates->render('submit-button',
     [
       'attributes' => [

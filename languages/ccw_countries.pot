@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: CCW Countries\n"
-"POT-Creation-Date: 2017-02-02 13:38+0000\n"
-"PO-Revision-Date: 2017-02-02 13:37+0000\n"
+"POT-Creation-Date: 2017-02-22 16:33+0000\n"
+"PO-Revision-Date: 2017-02-22 16:33+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -80,11 +80,11 @@ msgstr ""
 msgid "Club Navigation Menu"
 msgstr ""
 
-#: inc/club-session.php:26
+#: inc/club-session.php:25
 msgid "Signed out successfully!"
 msgstr ""
 
-#: inc/club-session.php:37
+#: inc/club-session.php:36
 msgid "You have to be signed in to view this page."
 msgstr ""
 
@@ -101,11 +101,11 @@ msgid "No code clubs found."
 msgstr ""
 
 #: inc/set-up/menu-setup.php:5 template-parts/page-matching.php:14
-msgid "Find Club"
+msgid "Find Venue"
 msgstr ""
 
 #: inc/set-up/menu-setup.php:16
-msgid "Your Club"
+msgid "Your Account"
 msgstr ""
 
 #: inc/set-up/menu-setup.php:17
@@ -165,15 +165,15 @@ msgid "Search Results for: %s"
 msgstr ""
 
 #: template-club-edit.php:12
-msgid "Edit Club"
+msgid "Edit"
 msgstr ""
 
 #: template-club.php:14 template-parts/club/show-club.php:3
-msgid "Club"
+msgid "Account"
 msgstr ""
 
-#: template-contact.php:12 template-parts/page-matching.php:62
-msgid "Contact Club Host"
+#: template-contact.php:12 template-parts/club/show-club.php:13
+msgid "Contact"
 msgstr ""
 
 #: template-forgotten-sign-in-details.php:10
@@ -198,104 +198,153 @@ msgstr ""
 msgid "Successfully edited!"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:53
-msgid "Venue details:"
-msgstr ""
-
-#: template-parts/club/form-edit-club.php:56
-#: template-parts/club/form-register.php:43
-msgid "Venue name"
-msgstr ""
-
-#: template-parts/club/form-edit-club.php:68
-#: template-parts/club/show-club.php:19
-msgid "Looking for Volunteer"
-msgstr ""
-
-#: template-parts/club/form-edit-club.php:79
-#: template-parts/club/form-register.php:54
-msgid "Venue website"
-msgstr ""
-
-#: template-parts/club/form-edit-club.php:90
-#: template-parts/club/form-register.php:65
-msgid "Street address 1"
-msgstr ""
-
-#: template-parts/club/form-edit-club.php:101
-#: template-parts/club/form-register.php:76
-msgid "Street address 2"
-msgstr ""
-
-#: template-parts/club/form-edit-club.php:111
-#: template-parts/club/form-register.php:86
-msgid "Town / City:"
-msgstr ""
-
-#: template-parts/club/form-edit-club.php:122
-msgid "Region / State:"
-msgstr ""
-
-#: template-parts/club/form-edit-club.php:132
-msgid "Postcode / Zipcode"
-msgstr ""
-
-#: template-parts/club/form-edit-club.php:142
-#: template-parts/club/form-register.php:117
-msgid "Club Skype username"
-msgstr ""
-
-#: template-parts/club/form-edit-club.php:153
+#: template-parts/club/form-edit-club.php:34
 msgid "Contact details:"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:155
-#: template-parts/club/form-register.php:156
-msgid "Your name and email address will never be displayed publicly"
-msgstr ""
-
-#: template-parts/club/form-edit-club.php:158
-#: template-parts/club/form-register.php:132 template-parts/form-contact.php:39
+#: template-parts/club/form-edit-club.php:37
+#: template-parts/club/form-register-a-club.php:42
+#: template-parts/club/form-register-a-venue.php:43
+#: template-parts/form-contact.php:39
 msgid "Your name"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:169
-#: template-parts/club/form-register.php:144
+#: template-parts/club/form-edit-club.php:48
+#: template-parts/club/form-register-a-club.php:54
+#: template-parts/club/form-register-a-venue.php:55
 msgid "Your email address"
 msgstr ""
 
-#: template-parts/club/form-register.php:30
+#: template-parts/club/form-edit-club.php:59
+msgid ""
+"Your name and email address will never \n"
+"                                                            be displayed "
+"publicly"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:85
+msgid "Venue details:"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:88
+#: template-parts/club/form-register-a-club.php:104
+#: template-parts/club/form-register-a-venue.php:89
+msgid "Venue name"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:101
+#: template-parts/club/show-club.php:38
+msgid "Looking for Volunteer"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:114
+#: template-parts/club/show-club.php:45
+msgid "Happy to be contacted"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:125
+#: template-parts/club/form-register-a-club.php:115
+#: template-parts/club/form-register-a-venue.php:100
+msgid "Venue website"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:136
+#: template-parts/club/form-register-a-club.php:126
+#: template-parts/club/form-register-a-venue.php:111
+msgid "Street address 1"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:147
+#: template-parts/club/form-register-a-club.php:137
+#: template-parts/club/form-register-a-venue.php:122
+msgid "Street address 2"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:157
+#: template-parts/club/form-register-a-club.php:147
+#: template-parts/club/form-register-a-venue.php:132
+msgid "Town / City:"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:168
+msgid "Region / State:"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:178
+msgid "Postcode / Zipcode"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:188
+msgid "Club Skype username"
+msgstr ""
+
+#: template-parts/club/form-register-a-club.php:29
+#: template-parts/club/form-register-a-venue.php:30
 msgid "Your club has now been registered"
 msgstr ""
 
-#: template-parts/club/form-register.php:40
-msgid "Venue details"
-msgstr ""
-
-#: template-parts/club/form-register.php:97
-#: template-parts/club/show-club.php:41
-msgid "Region"
-msgstr ""
-
-#: template-parts/club/form-register.php:107
-#: template-parts/club/show-club.php:45
-msgid "Postcode"
-msgstr ""
-
-#: template-parts/club/form-register.php:129
+#: template-parts/club/form-register-a-club.php:39
+#: template-parts/club/form-register-a-venue.php:40
 msgid "Contact details"
 msgstr ""
 
-#: template-parts/club/form-register.php:160
+#: template-parts/club/form-register-a-club.php:68
+msgid "Are you a host or a volunteer?"
+msgstr ""
+
+#: template-parts/club/form-register-a-club.php:82
+#: template-parts/club/form-register-a-venue.php:67
+msgid "Your name and email address will never be displayed publicly"
+msgstr ""
+
+#: template-parts/club/form-register-a-club.php:101
+#: template-parts/club/form-register-a-venue.php:86
+msgid "Venue details"
+msgstr ""
+
+#: template-parts/club/form-register-a-club.php:158
+#: template-parts/club/form-register-a-venue.php:143
+#: template-parts/club/show-club.php:67
+msgid "Region"
+msgstr ""
+
+#: template-parts/club/form-register-a-club.php:168
+#: template-parts/club/form-register-a-venue.php:153
+#: template-parts/club/show-club.php:71
+msgid "Postcode"
+msgstr ""
+
+#: template-parts/club/form-register-a-club.php:179
+msgid "Are you a happy for people to be able to contact your club?"
+msgstr ""
+
+#: template-parts/club/form-register-a-club.php:193
+#: template-parts/club/form-register-a-venue.php:183
 msgid "I accept the"
 msgstr ""
 
-#: template-parts/club/form-register.php:160
+#: template-parts/club/form-register-a-club.php:193
+#: template-parts/club/form-register-a-venue.php:183
 msgid "terms &amp; conditions"
 msgstr ""
 
-#: template-parts/club/form-register.php:183
+#: template-parts/club/form-register-a-club.php:204
 msgid "Create a Code Club"
+msgstr ""
+
+#: template-parts/club/form-register-a-venue.php:164
+msgid "Are you happy for people to be able to contact your venue?"
+msgstr ""
+
+#: template-parts/club/form-register-a-venue.php:177
+msgid ""
+"Please, select yes so that volunteers can contact you.\n"
+"    Your can change that at any time after you log in to the site."
+msgstr ""
+
+#: template-parts/club/form-register-a-venue.php:194
+#: template-register-a-venue.php:9
+msgid "Register a Venue"
 msgstr ""
 
 #: template-parts/club/show-club.php:5
@@ -303,41 +352,37 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: template-parts/club/show-club.php:13
-msgid "Venue"
-msgstr ""
-
-#: template-parts/club/show-club.php:15 template-parts/club/show-club.php:55
+#: template-parts/club/show-club.php:15 template-parts/club/show-club.php:33
 msgid "Name"
 msgstr ""
 
-#: template-parts/club/show-club.php:25
-msgid "Website"
-msgstr ""
-
-#: template-parts/club/show-club.php:29
-msgid "Address 1"
-msgstr ""
-
-#: template-parts/club/show-club.php:33
-msgid "Address 2"
-msgstr ""
-
-#: template-parts/club/show-club.php:37
-msgid "City"
-msgstr ""
-
-#: template-parts/club/show-club.php:53
-msgid "Contact"
-msgstr ""
-
-#: template-parts/club/show-club.php:59
+#: template-parts/club/show-club.php:19
 #: template-parts/club/sign-in/form-forgotten-sign-in-details.php:31
 msgid "Email"
 msgstr ""
 
-#: template-parts/club/show-club.php:63
+#: template-parts/club/show-club.php:23
 msgid "Skype"
+msgstr ""
+
+#: template-parts/club/show-club.php:31
+msgid "Venue"
+msgstr ""
+
+#: template-parts/club/show-club.php:51
+msgid "Website"
+msgstr ""
+
+#: template-parts/club/show-club.php:55
+msgid "Address 1"
+msgstr ""
+
+#: template-parts/club/show-club.php:59
+msgid "Address 2"
+msgstr ""
+
+#: template-parts/club/show-club.php:63
+msgid "City"
 msgstr ""
 
 #: template-parts/club/sign-in/form-first-password.php:20
@@ -429,7 +474,7 @@ msgid "Send Message"
 msgstr ""
 
 #: template-parts/page-matching.php:17
-msgid "Let's find a Club near you."
+msgid "Let's find a venue near you."
 msgstr ""
 
 #: template-parts/page-matching.php:22
@@ -444,8 +489,12 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: template-parts/page-matching.php:42
+#: template-parts/page-matching.php:43
 msgid "Search results:"
+msgstr ""
+
+#: template-parts/page-matching.php:65
+msgid "Contact Venue"
 msgstr ""
 
 #: template-parts/shared/new-password.php:33
@@ -470,6 +519,10 @@ msgstr ""
 
 #: template-parts/shared/submit-button.php:20
 msgid "Submit"
+msgstr ""
+
+#: template-register-a-club.php:9
+msgid "Register a Club"
 msgstr ""
 
 #: template-register.php:9

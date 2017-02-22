@@ -14,7 +14,7 @@ class CCW_API {
     public function getClubs( $state = 'active', $per_page = 50, $page = 1 ) {
         $url = CCW_API_URL . '/clubs?state=' . strtolower( $state ). '&in_country=' . strtolower( CCW_API_COUNTRY_CODE ) . '&per_page=' . $per_page . '&page=' . $page;
         $headers = [
-            'AUTHORIZATION' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+            'AUTHORIZATION' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
             'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
         ];
 
@@ -34,7 +34,7 @@ class CCW_API {
     public function getClub( $id ) {
         $url = CCW_API_URL . '/clubs/' . $id;
         $headers = [
-            'AUTHORIZATION' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+            'AUTHORIZATION' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
             'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
         ];
 
@@ -73,11 +73,11 @@ class CCW_API {
     * @param integer $radius radius to look up code clubs within
     * @return array $response Containing 'headers' & 'body' arrays
     */
-    public function getNearbyCodeClubs($latitude, $longitude, $radius) {
-      $url = CCW_API_URL . '/clubs/near?' .
-             'radius=' . $radius . '&latitude=' . $latitude . '&longitude=' .$longitude;
+    public function getNearbyCodeClubsLookingForVolunteer($latitude, $longitude, $radius) {
+      $url = CCW_API_URL . '/clubs/near?' . 'looking_for_volunteer=true'.
+             '&radius=' . $radius . '&latitude=' . $latitude . '&longitude=' .$longitude;
       $headers = [
-        'AUTHORIZATION' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+        'AUTHORIZATION' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
         'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
       ];
       $response = wp_remote_get($url,
@@ -91,17 +91,39 @@ class CCW_API {
 
 
   /**
+   * @param float $latitude location's latitude
+   * @param float $longitude location's longitude
+   * @param integer $radius radius to look up code clubs within
+   * @return array $response Containing 'headers' & 'body' arrays
+   */
+  public function getNearbyCodeClubs($latitude, $longitude, $radius) {
+    $url = CCW_API_URL . '/clubs/near?' .
+      '&radius=' . $radius . '&latitude=' . $latitude . '&longitude=' .$longitude;
+    $headers = [
+      'AUTHORIZATION' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
+      'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
+    ];
+    $response = wp_remote_get($url,
+      array(
+        'timeout' => 30,
+        'headers' => $headers,
+      )
+    );
+    return $response;
+  }
+
+
+  /**
    * @param json $club_json Club data (inc venue, address, contact) in a JSON encoded array
    * @return returns the updated club within the body and status code 200
    */
   public function updateClub($club_json) {
-    echo $club_json;
     $response = wp_remote_request(CCW_API_URL . '/authenticated_clubs/club?=',
       array(
         'method'  => 'PUT',
         'timeout' => 30,
         'headers' => array(
-          'Authorization' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+          'Authorization' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
           'Content-Type'  => 'application/json',
           'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
         ),
@@ -119,7 +141,7 @@ class CCW_API {
   public function forgotSignInDetails($email_address) {
     $url = CCW_API_URL . '/authenticated_clubs/password?' . 'email=' . $email_address;
     $headers = [
-      'Authorization' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+      'Authorization' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
       'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
     ];
     $response = wp_remote_post($url,
@@ -138,7 +160,7 @@ class CCW_API {
   public function checkFirstPasswordToken($auth_token) {
     $url = CCW_API_URL . '/authenticated_clubs/password/first_password_token_validation?' . 'auth_token=' . $auth_token;
     $headers = [
-      'Authorization' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+      'Authorization' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
       'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
     ];
 
@@ -159,7 +181,7 @@ class CCW_API {
   public function checkResetPasswordToken($reset_password_token) {
     $url = CCW_API_URL . '/authenticated_clubs/password?' . 'reset_password_token=' . $reset_password_token;
     $headers = [
-      'Authorization' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+      'Authorization' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
       'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
     ];
 
@@ -197,7 +219,7 @@ class CCW_API {
       . '&password=' . $password
       . '&password_confirmation='. $password_confirmation;
     $headers = [
-      'Authorization' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+      'Authorization' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
       'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
     ];
     $response = wp_remote_request($url,
@@ -221,7 +243,7 @@ class CCW_API {
       . '&password=' . $password
       . '&password_confirmation='. $password_confirmation;
     $headers = [
-      'Authorization' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+      'Authorization' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
       'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
     ];
     $response = wp_remote_request($url,
@@ -241,7 +263,7 @@ class CCW_API {
   public function setNewPassword($reset_password_token, $password, $password_confirmation) {
     $url = CCW_API_URL . '/authenticated_clubs/password?' . 'reset_password_token=' . $reset_password_token . '&password=' . $password . '&password_confirmation='. $password_confirmation;
     $headers = [
-      'Authorization' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+      'Authorization' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
       'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
     ];
     $response = wp_remote_request($url,
@@ -257,9 +279,8 @@ class CCW_API {
 
   public function signOut($username) {
     $url = CCW_API_URL . '/authenticated_clubs/sign_out?' . 'username=' . $username;
-    echo $url;
     $headers = [
-      'Authorization' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+      'Authorization' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
       'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
     ];
     $response = wp_remote_request($url,
@@ -278,11 +299,12 @@ class CCW_API {
    * @return club details incl name, venue and contact information and status code 200
    */
   public function signIn($sign_in_details) {
-    $response = wp_remote_post(CCW_API_URL . '/authenticated_clubs/sign_in?',
+    $url = CCW_API_URL . '/authenticated_clubs/sign_in?';
+    $response = wp_remote_post($url,
       array(
         'timeout' => 30,
         'headers' => array(
-          'Authorization' => 'Bearer ' . CCW_API_READONLY_TOKEN,
+          'Authorization' => 'Bearer ' . CCW_API_READWRITE_TOKEN,
           'Content-Type'  => 'application/json',
           'Accept'        => 'application/vnd.codeclubworld.v' . CCW_API_VERSION,
         ),

@@ -9,7 +9,7 @@
 get_header(); ?>
 
 <div class="c-page-block">
-  <h1 class="u-text--center"><?php esc_html_e('Contact Club Host', 'ccw_countries'); ?></h1>
+  <h1 class="u-text--center"><?php esc_html_e('Contact', 'ccw_countries'); ?></h1>
   <div class="c-grid c-grid--h-center">
     <div class="c-col c-col--8">
       <?php get_template_part('template-parts/form', 'contact'); ?>

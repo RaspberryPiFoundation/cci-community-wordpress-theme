@@ -32,7 +32,7 @@
         $flash_messages = Flash_Message::Singleton();
         $flash_messages->createSuccess(__("New password was successfully set", 'ccw_countries'));
         if ($session->sessionExist()) {
-          wp_safe_redirect('/club/');
+          wp_safe_redirect('/account/');
           exit;
         }
         wp_safe_redirect('/sign-in/');
