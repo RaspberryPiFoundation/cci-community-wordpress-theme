@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: CCW Countries\n"
-"POT-Creation-Date: 2017-02-22 16:33+0000\n"
-"PO-Revision-Date: 2017-02-22 16:33+0000\n"
+"POT-Creation-Date: 2017-02-24 15:54+0000\n"
+"PO-Revision-Date: 2017-02-24 15:54+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -100,19 +100,15 @@ msgstr ""
 msgid "No code clubs found."
 msgstr ""
 
-#: inc/set-up/menu-setup.php:5 template-parts/page-matching.php:14
-msgid "Find Venue"
-msgstr ""
-
-#: inc/set-up/menu-setup.php:16
+#: inc/set-up/menu-setup.php:9
 msgid "Your Account"
 msgstr ""
 
-#: inc/set-up/menu-setup.php:17
+#: inc/set-up/menu-setup.php:10
 msgid "Sign Out"
 msgstr ""
 
-#: inc/set-up/menu-setup.php:19 template-sign-in.php:9
+#: inc/set-up/menu-setup.php:12 template-sign-in.php:9
 msgid "Sign In"
 msgstr ""
 
@@ -343,7 +339,7 @@ msgid ""
 msgstr ""
 
 #: template-parts/club/form-register-a-venue.php:194
-#: template-register-a-venue.php:9
+#: template-register-a-venue.php:9 template-register.php:26
 msgid "Register a Venue"
 msgstr ""
 
@@ -473,6 +469,10 @@ msgstr ""
 msgid "Send Message"
 msgstr ""
 
+#: template-parts/page-matching.php:14
+msgid "Find Venue"
+msgstr ""
+
 #: template-parts/page-matching.php:17
 msgid "Let's find a venue near you."
 msgstr ""
@@ -525,8 +525,16 @@ msgstr ""
 msgid "Register a Club"
 msgstr ""
 
-#: template-register.php:9
+#: template-register.php:9 template-register.php:19 template-register.php:31
 msgid "Register"
+msgstr ""
+
+#: template-register.php:15
+msgid "Register an active Code Club"
+msgstr ""
+
+#: template-register.php:27
+msgid "Explanation"
 msgstr ""
 
 #: template-welcome.php:9
