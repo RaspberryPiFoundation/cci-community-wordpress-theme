@@ -1,12 +1,5 @@
 <?php
 
-function add_find_club_menu_link($items, $args) {
-  if ($args->theme_location == 'primary_navigation') {
-    $items .= '<li class="o-nav__item"><a href="/find-venue" class="o-nav__link">'. __("Find Venue", 'ccw_countries') .'</a></li>';
-  }
-  return $items;
-}
-
 session_start();
 
 function add_sign_in_menu_link($items, $args) {

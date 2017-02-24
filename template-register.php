@@ -12,25 +12,28 @@ get_header(); ?>
     <div class="c-col c-col--4 c-card">
       <img alt="" width="100%" src="https://www.codeclubworld.org/app/themes/code-club-world/assets/images/reusable/card-getinvolved-startclub.png">
       <div class="c-card__body">
-        <h3>Register an active Code Club</h3>
+        <h3><?php esc_html_e('Register an active Code Club', 'ccw_countries' ); ?></h3>
         Explanation
         <div class="button-container">
           <a class="c-button block-button c-button--green c-button--hollow"
-             href="/register/register-a-club/">Register</a>
+             href="/register/register-a-club/"><?php esc_html_e('Register', 'ccw_countries' ); ?></a>
         </div>
       </div>
     </div>
     <div class="c-col c-col--4 c-card">
       <img alt="" width="100%" src="https://www.codeclubworld.org/app/themes/code-club-world/assets/images/reusable/card-getinvolved-startclub.png">
       <div class="c-card__body">
-        <h3>Register a Venue</h3>
-        Explanation
+        <h3><?php esc_html_e('Register a Venue', 'ccw_countries'); ?></h3>
+        <?php esc_html_e('Explanation', 'ccw_countries' ); ?>
         <div class="button-container">
           <a class="c-button block-button c-button--green c-button--hollow"
-             href="/register/register-a-venue/">Register</a>
+             href="/register/register-a-venue/">
+            <?php esc_html_e('Register', 'ccw_countries' ); ?>
+          </a>
         </div>
       </div>
     </div>
   </div>
+
 </div>
 

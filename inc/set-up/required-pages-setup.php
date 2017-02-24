@@ -1,16 +1,18 @@
 <?php
 
-function create_all_pages() {
+function create_find_venue_pages() {
+  create_find_club_page();
+}
+
+function create_log_in_pages() {
   create_account_page();
   create_change_password_page();
   create_download_resources_page();
-  create_find_club_page();
   create_forgotten_sign_in_details_page();
   create_register_page();
   create_reset_password_page();
   create_sign_in_page();
   create_set_new_password_page();
-  create_thank_you_for_registering_page();
   create_welcome_page();
 }
 
@@ -43,7 +45,7 @@ function create_page($page) {
           'post_parent' => $id
         );
         $child_page = array_merge($child_page, $template);
-        $id = wp_insert_post($child_page);
+        wp_insert_post($child_page);
       }
     }
   }
@@ -113,7 +115,7 @@ function create_download_resources_page() {
 
 
 function create_find_club_page() {
-  if (!get_page_by_title('Find Club')) {
+  if (!get_page_by_title('Find Venue')) {
     $page = array(
       'name' => 'Find Venue',
       'title' => 'Find Venue',
@@ -209,7 +211,6 @@ function create_sign_in_page() {
   }
 }
 
-
 function create_set_new_password_page() {
   if (!get_page_by_title('Set New Password')) {
     $createPage = array(
@@ -224,23 +225,6 @@ function create_set_new_password_page() {
     wp_insert_post($createPage);
   }
 }
-
-
-function create_thank_you_for_registering_page() {
-  if (!get_page_by_title('Thank you for Registering')) {
-    $createPage = array(
-      'page_template' => 'template-thank-you-for-registering.php',
-      'post_title'    => 'Thank you for Registering',
-      'post_status'   => 'publish',
-      'post_author'   =>  1,
-      'post_type'     => 'page',
-      'post_name'     => 'Thank you for Registering'
-    );
-
-    wp_insert_post($createPage);
-  }
-}
-
 
 function create_welcome_page() {
   if (!get_page_by_title('Welcome')) {
