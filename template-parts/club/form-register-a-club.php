@@ -25,7 +25,7 @@
     $response  = $ccw_api->createClub($club_json);
 
     $error_messages = react_to_response($response, 201, function () {
-      $flash_messages = Flash_Message::Singleton();
+      $flash_messages = new Flash_Message();
       $flash_messages->createSuccess(__('Your club has now been registered'), 'ccw_countries');
       wp_safe_redirect('/register/thank-you/');
       exit;

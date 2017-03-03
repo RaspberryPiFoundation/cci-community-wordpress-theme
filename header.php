@@ -61,6 +61,6 @@ ob_start();
 <main class="o-main">
 <?php
 
-$flash_message = Flash_Message::Singleton();
+$flash_message = new Flash_Message();
 $flash_message->display();
 ?>

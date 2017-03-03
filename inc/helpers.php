@@ -36,7 +36,7 @@ function htmlspecialchars_with_quotes($str) {
 
 function react_to_response($response, $success_code, callable $success_function) {
   $error_messages = array();
-  $flash_messages = Flash_Message::Singleton();
+  $flash_messages = new Flash_Message();
 
   if (!is_wp_error($response)) {
 

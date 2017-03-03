@@ -23,16 +23,6 @@ final class Flash_Message {
       self::SUCCESS => 'c-icon--tick-circle c-icon--white',
       self::WARNING => 'c-icon--warning');
 
-  public static function Singleton() {
-    if (!isset($instance)) $instance = new Flash_Message();
-
-    if (!isset($_SESSION)) session_start();
-
-    return $instance;
-  }
-
-  private function __construct() {}
-
   public function hasMessages() {
     return isset($_SESSION['flash']);
   }

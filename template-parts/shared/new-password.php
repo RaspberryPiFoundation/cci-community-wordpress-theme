@@ -29,7 +29,7 @@
         if (isset($club['auth_token'])) {
           $session->newSession($club);
         }
-        $flash_messages = Flash_Message::Singleton();
+        $flash_messages = new Flash_Message();
         $flash_messages->createSuccess(__("New password was successfully set", 'ccw_countries'));
         if ($session->sessionExist()) {
           wp_safe_redirect('/account/');
