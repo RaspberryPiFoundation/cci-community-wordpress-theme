@@ -26,7 +26,7 @@
           $club = json_decode( wp_remote_retrieve_body($response), true );
           $session = new Club_Session();
           $session->newSession($club);
-          $flash_messages = Flash_Message::Singleton();
+          $flash_messages = new Flash_Message();
           $flash_messages->createSuccess(__("Sign in successful", 'ccw_countries'));
           wp_safe_redirect('/account');
           exit;

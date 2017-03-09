@@ -20,7 +20,7 @@
         $_POST = array();
         $club = json_decode( wp_remote_retrieve_body( $response ), true );
         $_SESSION['club'] = $club;
-        $flash_messages = Flash_Message::Singleton();
+        $flash_messages = new Flash_Message();
         $flash_messages->createSuccess(__("Successfully edited!", 'ccw_countries'));
         wp_safe_redirect('/account');
         exit;

@@ -3,7 +3,7 @@
   $is_token_valid = false;
   $auth_token = use_if_set($_GET, ['auth_token']);
   $has_token = isset($auth_token);
-  $flash_messages = Flash_Message::Singleton();
+  $flash_messages = new Flash_Message();
 
   if ($has_token) {
     // do API call to check if valid token

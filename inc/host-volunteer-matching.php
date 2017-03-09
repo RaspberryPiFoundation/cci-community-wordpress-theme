@@ -11,7 +11,7 @@ class Host_Volunteer_Matching {
       session_start();
     }
 
-    $this->flash_messages = Flash_Message::Singleton();
+    $this->flash_messages = new Flash_Message();
   }
 
   public function getCodeClubs($address) {

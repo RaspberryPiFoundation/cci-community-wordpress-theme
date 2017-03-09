@@ -16,7 +16,7 @@
             $email_title,
             $message);
 
-    $flash_message = Flash_Message::Singleton();
+    $flash_message = new Flash_Message();
     $flash_message->createSuccess(__('Email has been sent', 'ccw_countries'));
   }
 
