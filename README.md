@@ -180,6 +180,8 @@ The CCW API can be used store new clubs and to retrieve club data. This theme in
 
 The full API documentation is available here: http://docs.codeclubworldapiv2.apiary.io/
 
+Documentation on testing the API with a mock server is here: https://github.com/CodeClubInternational/cci-community-wordpress-theme/wiki/Club-API-&-Testing
+
 ### Club Creation Form
 
 An example template for outputting a form which allows visitors to register their clubs via the Code Club World API is located in `template-parts/form-register-club.php`. It is completely self-contained to keep things as simple as possible. To use it:
