@@ -4,7 +4,7 @@
  */
 class Host_Volunteer_Matching {
 
-  private $flash_messages;
+  protected $flash_messages;
 
   function __construct() {
     if (!isset($_SESSION)) {
