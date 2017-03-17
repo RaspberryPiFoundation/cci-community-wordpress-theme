@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CCW_Countries functions and definitions.
  *
@@ -136,7 +137,8 @@ require get_template_directory() . '/inc/utilities.php';
 /**
  * Country-specific config.
  */
-require get_template_directory() . '/inc/country-config.php';
+ if (file_exists( get_stylesheet_directory().'/inc/country-config.php'))
+	require get_template_directory() . '/inc/country-config.php';
 
 /**
  * CCW API class.
