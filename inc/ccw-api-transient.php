@@ -78,7 +78,7 @@ class  CCW_API_TRANSIENT extends CCW_API {
    * @param float $latitude location's latitude
    * @param float $longitude location's longitude
    * @param integer $nClubs max number of clubs to get
-   * @return array $response Containing 'headers' & 'body' arrays
+   * @return array $response Containing 'clubs' arrays
    */
    
   public function getNClosestCodeClubs($latitude, $longitude, $nClubs) {
@@ -96,8 +96,34 @@ class  CCW_API_TRANSIENT extends CCW_API {
 
      return array_slice($response ,0,$nClubs);
 }
-   
+/**
+ * @param float $latitude location's latitude
+ * @param float $longitude location's longitude
+ * @param integer $radius radius to look up code clubs within
+ * @param integer $nClubs max number of clubs to get
+ * @return array $response Containing at least the closest $nClubs and all the clubs with $radius
+ */
+  public function getBestMatchCodeClubs($latitude, $longitude, $radius, $nClubs) {
+     $response=$this->getAllClubs();
 
+     if (is_wp_error($response)) 
+         return $response;
+     foreach ($response as &$value) {
+             $value['distance']= $dist=$this->distanceInMeters($latitude, $longitude,$value["venue"]["address"]["latitude"],$value["venue"]["address"]["longitude"] ); 
+     }
+     uasort($response , array('CCW_API_TRANSIENT','cmp_distances'));
+	 $i=0;
+	 $output=array();
+	 foreach ($response as &$value) {
+	     $i++;
+		 if($i>$nClubs&&$value['distance']>$radius)
+			 break;
+		 $output[]=$value;
+		
+	 }
+
+     return $output;
+}
 
   /**
    * @param json $club_json Club data (inc venue, address, contact) in a JSON encoded array
