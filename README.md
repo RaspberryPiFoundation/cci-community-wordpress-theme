@@ -197,6 +197,11 @@ An example template for outputting a form which allows visitors to register thei
  * Country-specific config.
  */
 require get_stylesheet_directory() . '/inc/country-config.php';
+// Load translation files from child theme instead of the parent theme
+function child_theme_locale() {
+    load_child_theme_textdomain( 'ccw_countries', get_stylesheet_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'child_theme_locale' );
 ```
 
 (Note the use of `get_stylesheet_directory()` rather than `get_template_directory()`, this is required in order to return the child theme directory instead of the parent theme directory. For more info see: https://codex.wordpress.org/Child_Themes#Referencing_.2F_Including_Files_in_Your_Child_Theme)
