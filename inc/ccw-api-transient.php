@@ -106,7 +106,7 @@ class  CCW_API_TRANSIENT extends CCW_API {
   public function getBestMatchCodeClubs($latitude, $longitude, $radius, $nClubs) {
      $response=$this->getAllClubs();
 
-     if (is_wp_error($response)) 
+     if (is_wp_error($response)||!is_array($response)) 
          return $response;
      foreach ($response as &$value) {
              $value['distance']= $dist=$this->distanceInMeters($latitude, $longitude,$value["venue"]["address"]["latitude"],$value["venue"]["address"]["longitude"] ); 
