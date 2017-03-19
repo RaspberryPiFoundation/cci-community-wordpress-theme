@@ -1,24 +1,16 @@
-#, fuzzy
+# Copyright (C) 2017 Code Club World Ltd
+# This file is distributed under the same license as the CCW Countries package.
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: CCW Countries\n"
-"POT-Creation-Date: 2017-02-24 15:54+0000\n"
-"PO-Revision-Date: 2017-02-24 15:54+0000\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Project-Id-Version: CCW Countries 1.4.4\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cci-community-"
+"wordpress-theme\n"
+"POT-Creation-Date: 2017-03-19 20:03:25+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-WPHeader: style.css\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+
 
 #: 404.php:16
 msgid "404 - Not found"
@@ -32,9 +24,11 @@ msgstr ""
 msgid "Try the navigation menu above or search for the content"
 msgstr ""
 
+#: archive.php:21 index.php:24
+msgid "Archives"
+msgstr ""
+
 #: comments.php:31
-#, php-format
-msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
@@ -56,27 +50,27 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:42
+#: functions.php:43
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:43
+#: functions.php:44
 msgid "Footer Nav 1"
 msgstr ""
 
-#: functions.php:44
+#: functions.php:45
 msgid "Footer Nav 2"
 msgstr ""
 
-#: functions.php:45
+#: functions.php:46
 msgid "Footer Nav 3"
 msgstr ""
 
-#: functions.php:46
+#: functions.php:47
 msgid "Footer Nav 4"
 msgstr ""
 
-#: functions.php:47
+#: functions.php:48
 msgid "Club Navigation Menu"
 msgstr ""
 
@@ -92,12 +86,17 @@ msgstr ""
 msgid "Something went wrong, please try again later."
 msgstr ""
 
-#: inc/host-volunteer-matching.php:24
-msgid "Could not resolve the address"
+#: inc/host-volunteer-matching-transient.php:19
+#: inc/host-volunteer-matching-transient.php:38
+#: inc/host-volunteer-matching-transient.php:57
+#: inc/host-volunteer-matching-transient.php:82
+#: inc/host-volunteer-matching.php:42
+msgid "No code clubs found."
 msgstr ""
 
-#: inc/host-volunteer-matching.php:34
-msgid "No code clubs found."
+#: inc/host-volunteer-matching-transient.php:71
+#: inc/host-volunteer-matching.php:22
+msgid "Could not resolve the address"
 msgstr ""
 
 #: inc/set-up/menu-setup.php:9
@@ -112,51 +111,33 @@ msgstr ""
 msgid "Sign In"
 msgstr ""
 
-#: inc/template-tags.php:28
-#, php-format
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr ""
-
-#: inc/template-tags.php:33
-#, php-format
-msgctxt "post author"
+#: inc/template-tags.php:19
 msgid "by %s"
 msgstr ""
 
-#: inc/template-tags.php:50 inc/template-tags.php:56
+#: inc/template-tags.php:47
+msgid "Posted on"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:59
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:52
-#, php-format
-msgid "Posted in %1$s"
+#: inc/template-tags.php:78
+msgid "Categories"
 msgstr ""
 
-#: inc/template-tags.php:58
-#, php-format
-msgid "Tagged %1$s"
+#: inc/template-tags.php:82
+msgid "Tags"
 msgstr ""
 
-#: inc/template-tags.php:64
-msgid "Leave a comment"
-msgstr ""
-
-#: inc/template-tags.php:64
-msgid "1 Comment"
-msgstr ""
-
-#: inc/template-tags.php:64
-msgid "% Comments"
-msgstr ""
-
-#: inc/template-tags.php:71
-#, php-format
-msgid "Edit %s"
+#. translators: %s: Name of current post
+#: inc/template-tags.php:111
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
 #: search.php:19
-#, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -172,6 +153,8 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#. #-#-#-#-#  cci-community-wordpress-theme.pot (CCW Countries 1.4.4)  #-#-#-#-#
+#. Template Name of the plugin/theme
 #: template-forgotten-sign-in-details.php:10
 msgid "Forgotten Sign In Details"
 msgstr ""
@@ -195,7 +178,9 @@ msgid "Successfully edited!"
 msgstr ""
 
 #: template-parts/club/form-edit-club.php:34
-msgid "Contact details:"
+#: template-parts/club/form-register-a-club.php:39
+#: template-parts/club/form-register-a-venue.php:40
+msgid "Contact details"
 msgstr ""
 
 #: template-parts/club/form-edit-club.php:37
@@ -208,70 +193,77 @@ msgstr ""
 #: template-parts/club/form-edit-club.php:48
 #: template-parts/club/form-register-a-club.php:54
 #: template-parts/club/form-register-a-venue.php:55
+#: template-parts/form-contact.php:49
 msgid "Your email address"
 msgstr ""
 
 #: template-parts/club/form-edit-club.php:59
-msgid ""
-"Your name and email address will never \n"
-"                                                            be displayed "
-"publicly"
+#: template-parts/club/form-register-a-club.php:82
+#: template-parts/club/form-register-a-venue.php:67
+msgid "Your name and email address will never be displayed publicly"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:85
-msgid "Venue details:"
+#: template-parts/club/form-edit-club.php:84
+#: template-parts/club/form-register-a-club.php:101
+#: template-parts/club/form-register-a-venue.php:86
+msgid "Venue details"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:88
+#: template-parts/club/form-edit-club.php:87
 #: template-parts/club/form-register-a-club.php:104
 #: template-parts/club/form-register-a-venue.php:89
 msgid "Venue name"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:101
+#: template-parts/club/form-edit-club.php:100
 #: template-parts/club/show-club.php:38
 msgid "Looking for Volunteer"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:114
+#: template-parts/club/form-edit-club.php:113
 #: template-parts/club/show-club.php:45
 msgid "Happy to be contacted"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:125
+#: template-parts/club/form-edit-club.php:124
 #: template-parts/club/form-register-a-club.php:115
 #: template-parts/club/form-register-a-venue.php:100
 msgid "Venue website"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:136
+#: template-parts/club/form-edit-club.php:135
 #: template-parts/club/form-register-a-club.php:126
 #: template-parts/club/form-register-a-venue.php:111
+#: template-parts/club/show-club.php:55
 msgid "Street address 1"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:147
+#: template-parts/club/form-edit-club.php:146
 #: template-parts/club/form-register-a-club.php:137
 #: template-parts/club/form-register-a-venue.php:122
+#: template-parts/club/show-club.php:59
 msgid "Street address 2"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:157
+#: template-parts/club/form-edit-club.php:156
 #: template-parts/club/form-register-a-club.php:147
 #: template-parts/club/form-register-a-venue.php:132
-msgid "Town / City:"
+#: template-parts/club/show-club.php:63
+msgid "Town / City"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:168
-msgid "Region / State:"
+#: template-parts/club/form-edit-club.php:167
+#: template-parts/club/form-register-a-club.php:158
+#: template-parts/club/form-register-a-venue.php:143
+#: template-parts/club/show-club.php:67
+msgid "Region / State"
 msgstr ""
 
-#: template-parts/club/form-edit-club.php:178
+#: template-parts/club/form-edit-club.php:177
+#: template-parts/club/form-register-a-club.php:168
+#: template-parts/club/form-register-a-venue.php:153
+#: template-parts/club/show-club.php:71
 msgid "Postcode / Zipcode"
-msgstr ""
-
-#: template-parts/club/form-edit-club.php:188
-msgid "Club Skype username"
 msgstr ""
 
 #: template-parts/club/form-register-a-club.php:29
@@ -279,35 +271,8 @@ msgstr ""
 msgid "Your club has now been registered"
 msgstr ""
 
-#: template-parts/club/form-register-a-club.php:39
-#: template-parts/club/form-register-a-venue.php:40
-msgid "Contact details"
-msgstr ""
-
 #: template-parts/club/form-register-a-club.php:68
 msgid "Are you a host or a volunteer?"
-msgstr ""
-
-#: template-parts/club/form-register-a-club.php:82
-#: template-parts/club/form-register-a-venue.php:67
-msgid "Your name and email address will never be displayed publicly"
-msgstr ""
-
-#: template-parts/club/form-register-a-club.php:101
-#: template-parts/club/form-register-a-venue.php:86
-msgid "Venue details"
-msgstr ""
-
-#: template-parts/club/form-register-a-club.php:158
-#: template-parts/club/form-register-a-venue.php:143
-#: template-parts/club/show-club.php:67
-msgid "Region"
-msgstr ""
-
-#: template-parts/club/form-register-a-club.php:168
-#: template-parts/club/form-register-a-venue.php:153
-#: template-parts/club/show-club.php:71
-msgid "Postcode"
 msgstr ""
 
 #: template-parts/club/form-register-a-club.php:179
@@ -338,6 +303,8 @@ msgid ""
 "    Your can change that at any time after you log in to the site."
 msgstr ""
 
+#. #-#-#-#-#  cci-community-wordpress-theme.pot (CCW Countries 1.4.4)  #-#-#-#-#
+#. Template Name of the plugin/theme
 #: template-parts/club/form-register-a-venue.php:194
 #: template-register-a-venue.php:9 template-register.php:26
 msgid "Register a Venue"
@@ -357,28 +324,12 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: template-parts/club/show-club.php:23
-msgid "Skype"
-msgstr ""
-
 #: template-parts/club/show-club.php:31
 msgid "Venue"
 msgstr ""
 
 #: template-parts/club/show-club.php:51
 msgid "Website"
-msgstr ""
-
-#: template-parts/club/show-club.php:55
-msgid "Address 1"
-msgstr ""
-
-#: template-parts/club/show-club.php:59
-msgid "Address 2"
-msgstr ""
-
-#: template-parts/club/show-club.php:63
-msgid "City"
 msgstr ""
 
 #: template-parts/club/sign-in/form-first-password.php:20
@@ -415,7 +366,6 @@ msgid "Nothing Found"
 msgstr ""
 
 #: template-parts/content-none.php:29
-#, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
@@ -436,8 +386,8 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
+#. translators: %s: Name of current post.
 #: template-parts/content.php:33
-#, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
@@ -451,10 +401,6 @@ msgstr ""
 
 #: template-parts/form-contact.php:20
 msgid "Email has been sent"
-msgstr ""
-
-#: template-parts/form-contact.php:49
-msgid "Your email"
 msgstr ""
 
 #: template-parts/form-contact.php:59
@@ -513,6 +459,8 @@ msgstr ""
 msgid "New password confirmation"
 msgstr ""
 
+#. #-#-#-#-#  cci-community-wordpress-theme.pot (CCW Countries 1.4.4)  #-#-#-#-#
+#. Template Name of the plugin/theme
 #: template-parts/shared/new-password.php:99
 msgid "Set New Password"
 msgstr ""
@@ -521,10 +469,14 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
+#. #-#-#-#-#  cci-community-wordpress-theme.pot (CCW Countries 1.4.4)  #-#-#-#-#
+#. Template Name of the plugin/theme
 #: template-register-a-club.php:9
 msgid "Register a Club"
 msgstr ""
 
+#. #-#-#-#-#  cci-community-wordpress-theme.pot (CCW Countries 1.4.4)  #-#-#-#-#
+#. Template Name of the plugin/theme
 #: template-register.php:9 template-register.php:19 template-register.php:31
 msgid "Register"
 msgstr ""
@@ -564,4 +516,48 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://codeclubworld.org"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Archive"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Change Password"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Edit Club"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Club"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Contact Form"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Download Resources"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Find Club"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Home"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Sign in"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Thank you for Registering"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Welcome"
 msgstr ""
