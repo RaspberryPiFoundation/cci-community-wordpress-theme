@@ -1,21 +1,23 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: CCW Countries\n"
-"POT-Creation-Date: 2016-07-29 14:26+0100\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cci-community-"
+"wordpress-theme\n"
+"POT-Creation-Date: 2017-03-20 08:25:01+00:00\n"
 "PO-Revision-Date: 2016-07-29 14:27+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;"
-"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
-"esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "Language: en_001\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
@@ -24,7 +26,7 @@ msgstr ""
 msgid "404 - Not found"
 msgstr "404 - Not found"
 
-#: 404.php:17
+#: 404.php:17 template-parts/content-none.php:17
 msgid "Sorry but we couldn't find the content you were looking for"
 msgstr "Sorry but we couldn't find the content you were looking for"
 
@@ -32,13 +34,15 @@ msgstr "Sorry but we couldn't find the content you were looking for"
 msgid "Try the navigation menu above or search for the content"
 msgstr "Try the navigation menu above or search for the content"
 
+#: archive.php:21 index.php:24
+msgid "Archives"
+msgstr ""
+
 #: comments.php:31
-#, php-format
-msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "One thought on &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
 
 #: comments.php:40 comments.php:61
 msgid "Comment navigation"
@@ -56,169 +60,462 @@ msgstr "Newer Comments"
 msgid "Comments are closed."
 msgstr "Comments are closed."
 
-#: functions.php:42
+#: functions.php:43
 msgid "Primary Navigation"
 msgstr "Primary Navigation"
 
-#: functions.php:43
+#: functions.php:44
 msgid "Footer Nav 1"
 msgstr "Footer Nav 1"
 
-#: functions.php:44
+#: functions.php:45
 msgid "Footer Nav 2"
 msgstr "Footer Nav 2"
 
-#: functions.php:45
+#: functions.php:46
 msgid "Footer Nav 3"
 msgstr "Footer Nav 3"
 
-#: functions.php:46
+#: functions.php:47
 msgid "Footer Nav 4"
 msgstr "Footer Nav 4"
 
-#: inc/template-tags.php:28
-#, php-format
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr "Posted on %s"
+#: functions.php:48
+msgid "Club Navigation Menu"
+msgstr ""
 
-#: inc/template-tags.php:33
-#, php-format
-msgctxt "post author"
+#: inc/club-session.php:25
+msgid "Signed out successfully!"
+msgstr ""
+
+#: inc/club-session.php:36
+msgid "You have to be signed in to view this page."
+msgstr ""
+
+#: inc/helpers.php:55
+msgid "Something went wrong, please try again later."
+msgstr ""
+
+#: inc/host-volunteer-matching-transient.php:19
+#: inc/host-volunteer-matching-transient.php:38
+#: inc/host-volunteer-matching-transient.php:57
+#: inc/host-volunteer-matching-transient.php:82
+#: inc/host-volunteer-matching.php:42
+msgid "No code clubs found."
+msgstr ""
+
+#: inc/host-volunteer-matching-transient.php:71
+#: inc/host-volunteer-matching.php:22
+msgid "Could not resolve the address"
+msgstr ""
+
+#: inc/set-up/menu-setup.php:9
+msgid "Your Account"
+msgstr ""
+
+#: inc/set-up/menu-setup.php:10
+msgid "Sign Out"
+msgstr ""
+
+#: inc/set-up/menu-setup.php:12 template-sign-in.php:9
+msgid "Sign In"
+msgstr ""
+
+#: inc/template-tags.php:19
 msgid "by %s"
-msgstr "by %s"
+msgstr ""
 
-#: inc/template-tags.php:50 inc/template-tags.php:56
+#: inc/template-tags.php:47
+msgid "Posted on"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:59
 msgid ", "
 msgstr ", "
 
-#: inc/template-tags.php:52
-#, php-format
-msgid "Posted in %1$s"
-msgstr "Posted in %1$s"
+#: inc/template-tags.php:78
+msgid "Categories"
+msgstr ""
 
-#: inc/template-tags.php:58
-#, php-format
-msgid "Tagged %1$s"
-msgstr "Tagged %1$s"
+#: inc/template-tags.php:82
+msgid "Tags"
+msgstr ""
 
-#: inc/template-tags.php:64
-msgid "Leave a comment"
-msgstr "Leave a comment"
-
-#: inc/template-tags.php:64
-msgid "1 Comment"
-msgstr "1 Comment"
-
-#: inc/template-tags.php:64
-msgid "% Comments"
-msgstr "% Comments"
-
-#: inc/template-tags.php:71 template-parts/content-page.php:33
-#, php-format
-msgid "Edit %s"
-msgstr "Edit %s"
+#. translators: %s: Name of current post
+#: inc/template-tags.php:111
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
 
 #: search.php:19
-#, php-format
 msgid "Search Results for: %s"
 msgstr "Search Results for: %s"
 
-#: template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr "Nothing Found"
-
-#: template-parts/content-none.php:21
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#: template-club-edit.php:12
+msgid "Edit"
 msgstr ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 
-#: template-parts/content-none.php:25
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
+#: template-club.php:14 template-parts/club/show-club.php:3
+msgid "Account"
 msgstr ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
 
-#: template-parts/content-none.php:31
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+#: template-contact.php:12 template-parts/club/show-club.php:13
+msgid "Contact"
 msgstr ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
 
-#: template-parts/content-page.php:22 template-parts/content.php:38
-msgid "Pages:"
-msgstr "Pages:"
+#. #-#-#-#-#  cci-community-wordpress-theme.pot (CCW Countries 1.4.4)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: template-forgotten-sign-in-details.php:10
+msgid "Forgotten Sign In Details"
+msgstr ""
 
-#: template-parts/content.php:33
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+#: template-parts/club/club-materials.php:3
+msgid "Club Resources"
+msgstr ""
 
-#: template-parts/form-register-club.php:63
-msgid "You must accept the terms &amp; conditions"
-msgstr "You must accept the terms &amp; conditions"
+#: template-parts/club/club-materials.php:4
+msgid ""
+"Here you can access resources, materials and guidance to help you run your "
+"Code Club."
+msgstr ""
 
-#: template-parts/form-register-club.php:71
-msgid "Venue name"
-msgstr "Venue name"
+#: template-parts/club/club-materials.php:6
+msgid "Get Materials"
+msgstr ""
 
-#: template-parts/form-register-club.php:74
-msgid "Venue website"
-msgstr "Venue website"
+#: template-parts/club/form-edit-club.php:24
+msgid "Successfully edited!"
+msgstr ""
 
-#: template-parts/form-register-club.php:77
-msgid "Street address 1"
-msgstr "Street address 1"
+#: template-parts/club/form-edit-club.php:34
+#: template-parts/club/form-register-a-club.php:39
+#: template-parts/club/form-register-a-venue.php:40
+msgid "Contact details"
+msgstr ""
 
-#: template-parts/form-register-club.php:80
-msgid "Street address 2"
-msgstr "Street address 2"
-
-#: template-parts/form-register-club.php:83
-msgid "Town/City"
-msgstr "Town/City"
-
-#: template-parts/form-register-club.php:86
-msgid "Region/State"
-msgstr "Region/State"
-
-#: template-parts/form-register-club.php:89
-msgid "Postcode/Zipcode"
-msgstr "Postcode/Zipcode"
-
-#: template-parts/form-register-club.php:94
-msgid "Club Skype username"
-msgstr "Club Skype username"
-
-#: template-parts/form-register-club.php:99
+#: template-parts/club/form-edit-club.php:37
+#: template-parts/club/form-register-a-club.php:42
+#: template-parts/club/form-register-a-venue.php:43
+#: template-parts/form-contact.php:39
 msgid "Your name"
 msgstr "Your name"
 
-#: template-parts/form-register-club.php:102
+#: template-parts/club/form-edit-club.php:48
+#: template-parts/club/form-register-a-club.php:54
+#: template-parts/club/form-register-a-venue.php:55
+#: template-parts/form-contact.php:49
 msgid "Your email address"
 msgstr "Your email address"
 
-#: template-parts/form-register-club.php:110
+#: template-parts/club/form-edit-club.php:59
+#: template-parts/club/form-register-a-club.php:82
+#: template-parts/club/form-register-a-venue.php:67
 msgid "Your name and email address will never be displayed publicly"
 msgstr "Your name and email address will never be displayed publicly"
 
-#: template-parts/form-register-club.php:116
+#: template-parts/club/form-edit-club.php:84
+#: template-parts/club/form-register-a-club.php:101
+#: template-parts/club/form-register-a-venue.php:86
+msgid "Venue details"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:87
+#: template-parts/club/form-register-a-club.php:104
+#: template-parts/club/form-register-a-venue.php:89
+msgid "Venue name"
+msgstr "Venue name"
+
+#: template-parts/club/form-edit-club.php:100
+#: template-parts/club/show-club.php:38
+msgid "Looking for Volunteer"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:113
+#: template-parts/club/show-club.php:45
+msgid "Happy to be contacted"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:124
+#: template-parts/club/form-register-a-club.php:115
+#: template-parts/club/form-register-a-venue.php:100
+msgid "Venue website"
+msgstr "Venue website"
+
+#: template-parts/club/form-edit-club.php:135
+#: template-parts/club/form-register-a-club.php:126
+#: template-parts/club/form-register-a-venue.php:111
+#: template-parts/club/show-club.php:55
+msgid "Street address 1"
+msgstr "Street address 1"
+
+#: template-parts/club/form-edit-club.php:146
+#: template-parts/club/form-register-a-club.php:137
+#: template-parts/club/form-register-a-venue.php:122
+#: template-parts/club/show-club.php:59
+msgid "Street address 2"
+msgstr "Street address 2"
+
+#: template-parts/club/form-edit-club.php:156
+#: template-parts/club/form-register-a-club.php:147
+#: template-parts/club/form-register-a-venue.php:132
+#: template-parts/club/show-club.php:63
+msgid "Town / City"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:167
+#: template-parts/club/form-register-a-club.php:158
+#: template-parts/club/form-register-a-venue.php:143
+#: template-parts/club/show-club.php:67
+msgid "Region / State"
+msgstr ""
+
+#: template-parts/club/form-edit-club.php:177
+#: template-parts/club/form-register-a-club.php:168
+#: template-parts/club/form-register-a-venue.php:153
+#: template-parts/club/show-club.php:71
+msgid "Postcode / Zipcode"
+msgstr ""
+
+#: template-parts/club/form-register-a-club.php:29
+#: template-parts/club/form-register-a-venue.php:30
+msgid "Your club has now been registered"
+msgstr ""
+
+#: template-parts/club/form-register-a-club.php:68
+msgid "Are you a host or a volunteer?"
+msgstr ""
+
+#: template-parts/club/form-register-a-club.php:179
+msgid "Are you a happy for people to be able to contact your club?"
+msgstr ""
+
+#: template-parts/club/form-register-a-club.php:193
+#: template-parts/club/form-register-a-venue.php:183
 msgid "I accept the"
 msgstr "I accept the"
 
-#: template-parts/form-register-club.php:116
+#: template-parts/club/form-register-a-club.php:193
+#: template-parts/club/form-register-a-venue.php:183
 msgid "terms &amp; conditions"
 msgstr "terms &amp; conditions"
 
-#: template-parts/form-register-club.php:126
+#: template-parts/club/form-register-a-club.php:204
 msgid "Create a Code Club"
 msgstr "Create a Code Club"
+
+#: template-parts/club/form-register-a-venue.php:164
+msgid "Are you happy for people to be able to contact your venue?"
+msgstr ""
+
+#: template-parts/club/form-register-a-venue.php:177
+msgid ""
+"Please, select yes so that volunteers can contact you.\n"
+"    Your can change that at any time after you log in to the site."
+msgstr ""
+
+#. #-#-#-#-#  cci-community-wordpress-theme.pot (CCW Countries 1.4.4)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: template-parts/club/form-register-a-venue.php:194
+#: template-register-a-venue.php:9 template-register.php:26
+msgid "Register a Venue"
+msgstr ""
+
+#: template-parts/club/show-club.php:5
+#: template-parts/club/sign-in/form-sign-in.php:48
+msgid "Username"
+msgstr ""
+
+#: template-parts/club/show-club.php:15 template-parts/club/show-club.php:33
+msgid "Name"
+msgstr ""
+
+#: template-parts/club/show-club.php:19
+#: template-parts/club/sign-in/form-forgotten-sign-in-details.php:31
+msgid "Email"
+msgstr ""
+
+#: template-parts/club/show-club.php:31
+msgid "Venue"
+msgstr ""
+
+#: template-parts/club/show-club.php:51
+msgid "Website"
+msgstr ""
+
+#: template-parts/club/sign-in/form-first-password.php:20
+#: template-parts/club/sign-in/form-set-new-password.php:20
+msgid "Invalid Auth token. Please request another password."
+msgstr ""
+
+#: template-parts/club/sign-in/form-forgotten-sign-in-details.php:21
+msgid "Please check your inbox for password reset instructions."
+msgstr ""
+
+#: template-parts/club/sign-in/form-forgotten-sign-in-details.php:53
+msgid "No wait I remembered my Club ID and Password!"
+msgstr ""
+
+#: template-parts/club/sign-in/form-sign-in.php:30
+msgid "Sign in successful"
+msgstr ""
+
+#: template-parts/club/sign-in/form-sign-in.php:59
+msgid "Password"
+msgstr ""
+
+#: template-parts/club/sign-in/form-sign-in.php:80
+msgid "I forgot my Club ID or Password!"
+msgstr ""
+
+#: template-parts/club/sign-in/form-sign-in.php:83
+msgid "I want to register!"
+msgstr ""
+
+#: template-parts/content-none.php:16
+msgid "Nothing Found"
+msgstr "Nothing Found"
+
+#: template-parts/content-none.php:29
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+
+#: template-parts/content-none.php:33
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+
+#: template-parts/content-none.php:39
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+
+#: template-parts/content-page.php:21 template-parts/content.php:38
+msgid "Pages:"
+msgstr "Pages:"
+
+#. translators: %s: Name of current post.
+#: template-parts/content.php:33
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: template-parts/form-contact.php:11
+msgid " Please reply to "
+msgstr ""
+
+#: template-parts/form-contact.php:13
+msgid "Volunteer has contacted you."
+msgstr ""
+
+#: template-parts/form-contact.php:20
+msgid "Email has been sent"
+msgstr ""
+
+#: template-parts/form-contact.php:59
+msgid "Message"
+msgstr ""
+
+#: template-parts/form-contact.php:60 template-parts/shared/label.php:14
+msgid "(required)"
+msgstr ""
+
+#: template-parts/form-contact.php:67
+msgid "Send Message"
+msgstr ""
+
+#: template-parts/page-matching.php:14
+msgid "Find Venue"
+msgstr ""
+
+#: template-parts/page-matching.php:17
+msgid "Let's find a venue near you."
+msgstr ""
+
+#: template-parts/page-matching.php:22
+msgid "Keep this field blank"
+msgstr ""
+
+#: template-parts/page-matching.php:26
+msgid "Address"
+msgstr ""
+
+#: template-parts/page-matching.php:31
+msgid "Search"
+msgstr ""
+
+#: template-parts/page-matching.php:43
+msgid "Search results:"
+msgstr ""
+
+#: template-parts/page-matching.php:65
+msgid "Contact Venue"
+msgstr ""
+
+#: template-parts/shared/new-password.php:33
+msgid "New password was successfully set"
+msgstr ""
+
+#: template-parts/shared/new-password.php:59
+msgid "Current password"
+msgstr ""
+
+#: template-parts/shared/new-password.php:71
+msgid "New password"
+msgstr ""
+
+#: template-parts/shared/new-password.php:82
+msgid "New password confirmation"
+msgstr ""
+
+#. #-#-#-#-#  cci-community-wordpress-theme.pot (CCW Countries 1.4.4)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: template-parts/shared/new-password.php:99
+msgid "Set New Password"
+msgstr ""
+
+#: template-parts/shared/submit-button.php:20
+msgid "Submit"
+msgstr ""
+
+#. #-#-#-#-#  cci-community-wordpress-theme.pot (CCW Countries 1.4.4)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: template-register-a-club.php:9
+msgid "Register a Club"
+msgstr ""
+
+#. #-#-#-#-#  cci-community-wordpress-theme.pot (CCW Countries 1.4.4)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: template-register.php:9 template-register.php:19 template-register.php:31
+msgid "Register"
+msgstr ""
+
+#: template-register.php:15
+msgid "Register an active Code Club"
+msgstr ""
+
+#: template-register.php:27
+msgid "Explanation"
+msgstr ""
+
+#: template-welcome.php:9
+msgid "Welcome, "
+msgstr ""
+
+#: template-welcome.php:19
+msgid "Your username is "
+msgstr ""
+
+#: template-welcome.php:20
+msgid ""
+"You will need this and your password to log in to access your club details."
+msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "CCW Countries"
@@ -235,3 +532,94 @@ msgstr "Code Club World Ltd"
 #. Author URI of the plugin/theme
 msgid "https://codeclubworld.org"
 msgstr "https://codeclubworld.org"
+
+#. Template Name of the plugin/theme
+msgid "Archive"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Change Password"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Edit Club"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Club"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Contact Form"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Download Resources"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Find Club"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Home"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Sign in"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Thank you for Registering"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Welcome"
+msgstr ""
+
+#~ msgctxt "comments title"
+#~ msgid "One thought on &ldquo;%2$s&rdquo;"
+#~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+#~ msgstr[0] "One thought on &ldquo;%2$s&rdquo;"
+#~ msgstr[1] "%1$s thoughts on &ldquo;%2$s&rdquo;"
+
+#~ msgctxt "post date"
+#~ msgid "Posted on %s"
+#~ msgstr "Posted on %s"
+
+#~ msgctxt "post author"
+#~ msgid "by %s"
+#~ msgstr "by %s"
+
+#~ msgid "Posted in %1$s"
+#~ msgstr "Posted in %1$s"
+
+#~ msgid "Tagged %1$s"
+#~ msgstr "Tagged %1$s"
+
+#~ msgid "Leave a comment"
+#~ msgstr "Leave a comment"
+
+#~ msgid "1 Comment"
+#~ msgstr "1 Comment"
+
+#~ msgid "% Comments"
+#~ msgstr "% Comments"
+
+#~ msgid "Edit %s"
+#~ msgstr "Edit %s"
+
+#~ msgid "You must accept the terms &amp; conditions"
+#~ msgstr "You must accept the terms &amp; conditions"
+
+#~ msgid "Town/City"
+#~ msgstr "Town/City"
+
+#~ msgid "Region/State"
+#~ msgstr "Region/State"
+
+#~ msgid "Postcode/Zipcode"
+#~ msgstr "Postcode/Zipcode"
+
+#~ msgid "Club Skype username"
+#~ msgstr "Club Skype username"
