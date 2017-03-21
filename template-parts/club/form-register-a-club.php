@@ -187,6 +187,9 @@
         ]
       ])
     ?>
+    <?php
+    echo $templates->render('info', ['message' => __('Please, select yes so that volunteers can contact you.
+    Your can change that at any time after you log in to the site.', 'ccw_countries')]);?>
 
     <div class="c-form__input-group">
       <input class="c-form__input-group-checkbox" id="terms-checkbox" name="terms-checkbox" type="checkbox" value="true" <?php echo !empty( $_POST['terms-checkbox'] ) ? 'checked="checked"' : ''; ?>>
