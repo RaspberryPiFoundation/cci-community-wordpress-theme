@@ -179,7 +179,7 @@
       ['title' => __('Are you a happy for people to be able to contact your club?', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['happy_to_be_contacted']),
         'options' => array('true' => 'Yes', 'false' => 'No'),
-        'selected' => get_yes_no($_SESSION['club']['']),
+        'selected' => 'Yes',
         'attributes' => [
           'id' => 'club[happy_to_be_contacted]',
           'required'=> '',
@@ -187,6 +187,9 @@
         ]
       ])
     ?>
+    <?php
+    echo $templates->render('info', ['message' => __('Please, select yes so that volunteers can contact you.
+    Your can change that at any time after you log in to the site.', 'ccw_countries')]);?>
 
     <div class="c-form__input-group">
       <input class="c-form__input-group-checkbox" id="terms-checkbox" name="terms-checkbox" type="checkbox" value="true" <?php echo !empty( $_POST['terms-checkbox'] ) ? 'checked="checked"' : ''; ?>>

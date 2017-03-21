@@ -164,7 +164,7 @@
       ['title' => __('Are you happy for people to be able to contact your venue?', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['happy_to_be_contacted']),
         'options' => array('true' => 'Yes', 'false' => 'No'),
-        'selected' => get_yes_no($_SESSION['club']['']),
+        'selected' => 'Yes',
         'attributes' => [
           'id' => 'club[happy_to_be_contacted]',
           'required'=> '',

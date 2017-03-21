@@ -45,7 +45,7 @@ function ccw_countries_setup() {
 		'footer_navigation_2'  => esc_html__( 'Footer Nav 2', 'ccw_countries' ),
 		'footer_navigation_3'  => esc_html__( 'Footer Nav 3', 'ccw_countries' ),
 		'footer_navigation_4'  => esc_html__( 'Footer Nav 4', 'ccw_countries' ),
-    'club_navigation_menu' => esc_html__( 'Club Navigation Menu', 'ccw_countries' ),
+    	'club_navigation_menu' => esc_html__( 'Club Navigation Menu', 'ccw_countries' ),
 	) );
 
 
@@ -172,12 +172,10 @@ require get_template_directory() . '/inc/SplClassLoader.php';
 $classLoader = new SplClassLoader('League\Plates', get_template_directory() . '/inc');
 $classLoader->register();
 
-
 /**
  * Helper methods
  */
 require get_template_directory() . '/inc/helpers.php';
-
 
 /**
  * Sign in logic functions and Club Session class.
