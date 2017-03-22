@@ -60,37 +60,17 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 		if ( $tokens[ $lastContent ]['line'] === $tokens[ $arrayEnd ]['line'] ) {
 			$error = 'Closing parenthesis of array declaration must be on a new line';
 			$fix   = $phpcsFile->addFixableError( $error, $arrayEnd, 'CloseBraceNewLine' );
-			if ($fix === true) {
+			if ( $fix === true ) {
 				$phpcsFile->fixer->addNewlineBefore( $arrayEnd );
 			}
-			/*
-		} elseif ( $tokens[ $arrayEnd ]['column'] !== $keywordStart ) {
-			// Check the closing bracket is lined up under the "a" in array.
-			$expected = ( $keywordStart - 1 );
-			$found    = ( $tokens[ $arrayEnd ]['column'] - 1 );
-			$error    = 'Closing parenthesis not aligned correctly; expected %s space(s) but found %s';
-			$data     = array(
-				$expected,
-				$found,
-			);
-
-			$fix = $phpcsFile->addFixableError( $error, $arrayEnd, 'CloseBraceNotAligned', $data );
-			if ($fix === true) {
-				if ($found === 0) {
-					$phpcsFile->fixer->addContent( ( $arrayEnd - 1 ), str_repeat(' ', $expected ) );
-				} else {
-					$phpcsFile->fixer->replaceToken( ( $arrayEnd - 1 ), str_repeat(' ', $expected ) );
-				}
-			}
-			*/
-		} // end if
+		} // End if().
 
 		$keyUsed    = false;
 		$singleUsed = false;
 		$indices    = array();
 		$maxLength  = 0;
 
-		if ($tokens[$stackPtr]['code'] === T_ARRAY) {
+		if ( $tokens[ $stackPtr ]['code'] === T_ARRAY ) {
 			$lastToken = $tokens[ $stackPtr ]['parenthesis_opener'];
 		} else {
 			$lastToken = $stackPtr;
@@ -99,8 +79,8 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 		// Find all the double arrows that reside in this scope.
 		for ( $nextToken = ( $stackPtr + 1 ); $nextToken < $arrayEnd; $nextToken++ ) {
 			// Skip bracketed statements, like function calls.
-			if ($tokens[$nextToken]['code'] === T_OPEN_PARENTHESIS
-				&& (isset($tokens[$nextToken]['parenthesis_owner']) === false
+			if ( $tokens[ $nextToken ]['code'] === T_OPEN_PARENTHESIS
+				&& (isset( $tokens[ $nextToken ]['parenthesis_owner'] ) === false
 					|| $tokens[ $nextToken ]['parenthesis_owner'] !== $stackPtr )
 			) {
 				$nextToken = $tokens[ $nextToken ]['parenthesis_closer'];
@@ -109,14 +89,16 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 
 			if ( in_array( $tokens[ $nextToken ]['code'], array( T_ARRAY, T_OPEN_SHORT_ARRAY, T_CLOSURE ), true ) === true ) {
 				// Let subsequent calls of this test handle nested arrays.
-				if ($tokens[$lastToken]['code'] !== T_DOUBLE_ARROW) {
-					$indices[] = array( 'value' => $nextToken );
+				if ( $tokens[ $lastToken ]['code'] !== T_DOUBLE_ARROW ) {
+					$indices[] = array(
+						'value' => $nextToken,
+					);
 					$lastToken = $nextToken;
 				}
 
-				if ($tokens[$nextToken]['code'] === T_ARRAY) {
+				if ( $tokens[ $nextToken ]['code'] === T_ARRAY ) {
 					$nextToken = $tokens[ $tokens[ $nextToken ]['parenthesis_opener'] ]['parenthesis_closer'];
-				} else if ($tokens[$nextToken]['code'] === T_OPEN_SHORT_ARRAY) {
+				} elseif ( $tokens[ $nextToken ]['code'] === T_OPEN_SHORT_ARRAY ) {
 					$nextToken = $tokens[ $nextToken ]['bracket_closer'];
 				} else {
 					// T_CLOSURE.
@@ -124,33 +106,33 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 				}
 
 				$nextToken = $phpcsFile->findNext( T_WHITESPACE, ( $nextToken + 1 ), null, true );
-				if ($tokens[$nextToken]['code'] !== T_COMMA) {
+				if ( $tokens[ $nextToken ]['code'] !== T_COMMA ) {
 					$nextToken--;
 				} else {
 					$lastToken = $nextToken;
 				}
 
 				continue;
-			}//end if
+			}// End if().
 
-			if ($tokens[$nextToken]['code'] !== T_DOUBLE_ARROW
-				&& $tokens[$nextToken]['code'] !== T_COMMA
+			if ( $tokens[ $nextToken ]['code'] !== T_DOUBLE_ARROW
+				&& $tokens[ $nextToken ]['code'] !== T_COMMA
 			) {
 				continue;
 			}
 
 			$currentEntry = array();
 
-			if ($tokens[$nextToken]['code'] === T_COMMA) {
+			if ( $tokens[ $nextToken ]['code'] === T_COMMA ) {
 				$stackPtrCount = 0;
-				if (isset($tokens[$stackPtr]['nested_parenthesis']) === true) {
+				if ( isset( $tokens[ $stackPtr ]['nested_parenthesis'] ) === true ) {
 					$stackPtrCount = count( $tokens[ $stackPtr ]['nested_parenthesis'] );
 				}
 
 				$commaCount = 0;
-				if (isset($tokens[$nextToken]['nested_parenthesis']) === true) {
+				if ( isset( $tokens[ $nextToken ]['nested_parenthesis'] ) === true ) {
 					$commaCount = count( $tokens[ $nextToken ]['nested_parenthesis'] );
-					if ($tokens[$stackPtr]['code'] === T_ARRAY) {
+					if ( $tokens[ $stackPtr ]['code'] === T_ARRAY ) {
 						// Remove parenthesis that are used to define the array.
 						$commaCount--;
 					}
@@ -171,8 +153,8 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 				}
 				*/
 
-				if ($keyUsed === false) {
-					if ($tokens[($nextToken - 1)]['code'] === T_WHITESPACE) {
+				if ( $keyUsed === false ) {
+					if ( $tokens[ ($nextToken - 1) ]['code'] === T_WHITESPACE ) {
 						$content = $tokens[ ( $nextToken - 2 ) ]['content'];
 						if ( $tokens[ ( $nextToken - 1 ) ]['content'] === $phpcsFile->eolChar ) {
 							$spaceLength = 'newline';
@@ -187,7 +169,7 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 						);
 
 						$fix = $phpcsFile->addFixableError( $error, $nextToken, 'SpaceBeforeComma', $data );
-						if ($fix === true) {
+						if ( $fix === true ) {
 							$phpcsFile->fixer->replaceToken( ( $nextToken - 1 ), '' );
 						}
 					}
@@ -199,16 +181,18 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 						true
 					);
 
-					$indices[]  = array( 'value' => $valueContent );
+					$indices[]  = array(
+						'value' => $valueContent,
+					);
 					$singleUsed = true;
-				}//end if
+				}// End if().
 
 				$lastToken = $nextToken;
 				continue;
 
-			}//end if
+			}// End if().
 
-			if ($tokens[$nextToken]['code'] === T_DOUBLE_ARROW) {
+			if ( $tokens[ $nextToken ]['code'] === T_DOUBLE_ARROW ) {
 				/*
 				if ($singleUsed === true) {
 					$error = 'Key specified for array entry; first entry has no key';
@@ -248,20 +232,20 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 				$currentEntry['value'] = $nextContent;
 				$indices[]             = $currentEntry;
 				$lastToken             = $nextToken;
-			}//end if
-		}//end for
+			}// End if().
+		}// End for().
 
 		// Check for mutli-line arrays that should be single-line.
 		$singleValue = false;
 
-		if (empty($indices) === true) {
+		if ( empty( $indices ) === true ) {
 			$singleValue = true;
-		} else if (count($indices) === 1 && $tokens[$lastToken]['code'] === T_COMMA) {
+		} elseif ( count( $indices ) === 1 && $tokens[ $lastToken ]['code'] === T_COMMA ) {
 			// There may be another array value without a comma.
 			$exclude     = PHP_CodeSniffer_Tokens::$emptyTokens;
 			$exclude[]   = T_COMMA;
 			$nextContent = $phpcsFile->findNext( $exclude, ( $indices[0]['value'] + 1 ), $arrayEnd, true );
-			if ($nextContent === false) {
+			if ( $nextContent === false ) {
 				$singleValue = true;
 			}
 		}
@@ -309,7 +293,7 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 			   );
 		*/
 
-		if ($keyUsed === false && empty($indices) === false) {
+		if ( $keyUsed === false && empty( $indices ) === false ) {
 			$count     = count( $indices );
 			$lastIndex = $indices[ ( $count - 1 ) ]['value'];
 
@@ -320,11 +304,11 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 				true
 			);
 
-			if ($tokens[$trailingContent]['code'] !== T_COMMA) {
+			if ( $tokens[ $trailingContent ]['code'] !== T_COMMA ) {
 				$phpcsFile->recordMetric( $stackPtr, 'Array end comma', 'no' );
 				$error = 'Comma required after last value in array declaration';
 				$fix   = $phpcsFile->addFixableError( $error, $trailingContent, 'NoCommaAfterLast' );
-				if ($fix === true) {
+				if ( $fix === true ) {
 					$phpcsFile->fixer->addContent( $trailingContent, ',' );
 				}
 			} else {
@@ -333,51 +317,28 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 
 			$lastValueLine = false;
 			foreach ( $indices as $value ) {
-				if (empty($value['value']) === true) {
+				if ( empty( $value['value'] ) === true ) {
 					// Array was malformed and we couldn't figure out
 					// the array value correctly, so we have to ignore it.
 					// Other parts of this sniff will correct the error.
 					continue;
 				}
 
-				if ($lastValueLine !== false && $tokens[$value['value']]['line'] === $lastValueLine) {
+				if ( $lastValueLine !== false && $tokens[ $value['value'] ]['line'] === $lastValueLine ) {
 					$error = 'Each value in a multi-line array must be on a new line';
 					$fix   = $phpcsFile->addFixableError( $error, $value['value'], 'ValueNoNewline' );
-					if ($fix === true) {
-						if ($tokens[($value['value'] - 1)]['code'] === T_WHITESPACE) {
+					if ( $fix === true ) {
+						if ( $tokens[ ($value['value'] - 1) ]['code'] === T_WHITESPACE ) {
 							$phpcsFile->fixer->replaceToken( ( $value['value'] - 1 ), '' );
 						}
 
 						$phpcsFile->fixer->addNewlineBefore( $value['value'] );
 					}
-					/*
-				} else if ($tokens[($value['value'] - 1)]['code'] === T_WHITESPACE) {
-					$expected = $keywordStart;
-
-					$first = $phpcsFile->findFirstOnLine( T_WHITESPACE, $value['value'], true );
-					$found = ($tokens[ $first ]['column'] - 1);
-					if ( $found !== $expected ) {
-						$error = 'Array value not aligned correctly; expected %s spaces but found %s';
-						$data  = array(
-							$expected,
-							$found,
-						);
-
-						$fix = $phpcsFile->addFixableError( $error, $value['value'], 'ValueNotAligned', $data );
-						if ($fix === true) {
-							if ($found === 0) {
-								$phpcsFile->fixer->addContent( ( $value['value'] - 1 ), str_repeat(' ', $expected ) );
-							} else {
-								$phpcsFile->fixer->replaceToken( ( $value['value'] - 1 ), str_repeat(' ', $expected ) );
-							}
-						}
-					}
-					*/
-				} // end if
+				} // End if().
 
 				$lastValueLine = $tokens[ $value['value'] ]['line'];
-			}//end foreach
-		}//end if
+			}// End foreach().
+		}// End if().
 
 		/*
 			Below the actual indentation of the array is checked.
@@ -410,16 +371,16 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 
 		$indicesStart  = ( $keywordStart + 1 );
 		$arrowStart    = ( $indicesStart + $maxLength + 1 );
-		//$valueStart    = ($arrowStart + 3);
+		// $valueStart    = ($arrowStart + 3);
 		$indexLine     = $tokens[ $stackPtr ]['line'];
-		//$lastIndexLine = null;
+		// $lastIndexLine = null;
 		foreach ( $indices as $index ) {
-			if (isset($index['index']) === false) {
+			if ( isset( $index['index'] ) === false ) {
 				// Array value only.
 				if ( $tokens[ $index['value'] ]['line'] === $tokens[ $stackPtr ]['line'] && $numValues > 1 ) {
 					$error = 'The first value in a multi-value array must be on a new line';
 					$fix   = $phpcsFile->addFixableError( $error, $stackPtr, 'FirstValueNoNewline' );
-					if ($fix === true) {
+					if ( $fix === true ) {
 						$phpcsFile->fixer->addNewlineBefore( $index['value'] );
 					}
 				}
@@ -433,7 +394,7 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 			if ( $indexLine === $tokens[ $stackPtr ]['line'] ) {
 				$error = 'The first index in a multi-value array must be on a new line';
 				$fix   = $phpcsFile->addFixableError( $error, $index['index'], 'FirstIndexNoNewline' );
-				if ($fix === true) {
+				if ( $fix === true ) {
 					$phpcsFile->fixer->addNewlineBefore( $index['index'] );
 				}
 
@@ -443,8 +404,8 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 			if ( $indexLine === $lastIndexLine ) {
 				$error = 'Each index in a multi-line array must be on a new line';
 				$fix   = $phpcsFile->addFixableError( $error, $index['index'], 'IndexNoNewline' );
-				if ($fix === true) {
-					if ($tokens[($index['index'] - 1)]['code'] === T_WHITESPACE) {
+				if ( $fix === true ) {
+					if ( $tokens[ ($index['index'] - 1) ]['code'] === T_WHITESPACE ) {
 						$phpcsFile->fixer->replaceToken( ( $index['index'] - 1 ), '' );
 					}
 
@@ -535,51 +496,51 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 			$nextComma = false;
 			for ( $i = $index['value']; $i < $arrayEnd; $i++ ) {
 				// Skip bracketed statements, like function calls.
-				if ($tokens[$i]['code'] === T_OPEN_PARENTHESIS) {
+				if ( $tokens[ $i ]['code'] === T_OPEN_PARENTHESIS ) {
 					$i         = $tokens[ $i ]['parenthesis_closer'];
 					$valueLine = $tokens[ $i ]['line'];
 					continue;
 				}
 
-				if ($tokens[$i]['code'] === T_ARRAY) {
+				if ( $tokens[ $i ]['code'] === T_ARRAY ) {
 					$i         = $tokens[ $tokens[ $i ]['parenthesis_opener'] ]['parenthesis_closer'];
 					$valueLine = $tokens[ $i ]['line'];
 					continue;
 				}
 
 				// Skip to the end of multi-line strings.
-				if (isset(PHP_CodeSniffer_Tokens::$stringTokens[$tokens[$i]['code']]) === true) {
-					$i = $phpcsFile->findNext($tokens[$i]['code'], ($i + 1), null, true);
+				if ( isset( PHP_CodeSniffer_Tokens::$stringTokens[ $tokens[ $i ]['code'] ] ) === true ) {
+					$i = $phpcsFile->findNext( $tokens[ $i ]['code'], ($i + 1), null, true );
 					$i--;
-					$valueLine = $tokens[$i]['line'];
+					$valueLine = $tokens[ $i ]['line'];
 					continue;
 				}
 
-				if ($tokens[$i]['code'] === T_OPEN_SHORT_ARRAY) {
+				if ( $tokens[ $i ]['code'] === T_OPEN_SHORT_ARRAY ) {
 					$i         = $tokens[ $i ]['bracket_closer'];
 					$valueLine = $tokens[ $i ]['line'];
 					continue;
 				}
 
-				if ($tokens[$i]['code'] === T_CLOSURE) {
+				if ( $tokens[ $i ]['code'] === T_CLOSURE ) {
 					$i         = $tokens[ $i ]['scope_closer'];
 					$valueLine = $tokens[ $i ]['line'];
 					continue;
 				}
 
-				if ($tokens[$i]['code'] === T_COMMA) {
+				if ( $tokens[ $i ]['code'] === T_COMMA ) {
 					$nextComma = $i;
 					break;
 				}
-			}//end for
+			}// End for().
 
-			if ($nextComma === false || ($tokens[$nextComma]['line'] !== $valueLine)) {
+			if ( $nextComma === false || ($tokens[ $nextComma ]['line'] !== $valueLine) ) {
 				$error = 'Each line in an array declaration must end in a comma';
 				$fix   = $phpcsFile->addFixableError( $error, $index['value'], 'NoComma' );
 
-				if ($fix === true) {
+				if ( $fix === true ) {
 					// Find the end of the line and put a comma there.
-					for ($i = ($index['value'] + 1); $i < $arrayEnd; $i++) {
+					for ( $i = ($index['value'] + 1); $i < $arrayEnd; $i++ ) {
 						if ( $tokens[ $i ]['line'] > $valueLine ) {
 							break;
 						}
@@ -590,7 +551,7 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 			}
 
 			// Check that there is no space before the comma.
-			if ($nextComma !== false && $tokens[($nextComma - 1)]['code'] === T_WHITESPACE) {
+			if ( $nextComma !== false && $tokens[ ($nextComma - 1) ]['code'] === T_WHITESPACE ) {
 				$content     = $tokens[ ( $nextComma - 2 ) ]['content'];
 				$spaceLength = $tokens[ ( $nextComma - 1 ) ]['length'];
 				$error       = 'Expected 0 spaces between "%s" and comma; %s found';
@@ -600,11 +561,11 @@ class WordPress_Sniffs_Arrays_ArrayDeclarationSniff extends Squiz_Sniffs_Arrays_
 				);
 
 				$fix = $phpcsFile->addFixableError( $error, $nextComma, 'SpaceBeforeComma', $data );
-				if ($fix === true) {
+				if ( $fix === true ) {
 					$phpcsFile->fixer->replaceToken( ( $nextComma - 1 ), '' );
 				}
 			}
-		}//end foreach
+		}// End foreach().
 
 	}//end processMultiLineArray()
 

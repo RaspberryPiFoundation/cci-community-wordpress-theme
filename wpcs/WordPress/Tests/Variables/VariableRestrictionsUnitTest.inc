@@ -22,7 +22,7 @@ FOO::$static; // Matches: 'FOO::$static'.
 
 $foo['test']; // Matches: '$foo['test']'.
 
-$foo["test"]; // Matches: '$foo['test']' AND $foo['test'].
+$foo['test']; // Matches: '$foo['test']' AND $foo['test'].
 
 bar( $tallyho ); // Matches: '$tallyho'.
 test( $bar->bar ); // Matches: '$bar->bar'.

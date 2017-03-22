@@ -30,7 +30,7 @@
 		display: none !important; /* Bad. */
 		opacity: 0; /* Bad. */
 	}
-	
+
 /* Multi-line selector. */
 .something-else,
 .show-admin-bar,

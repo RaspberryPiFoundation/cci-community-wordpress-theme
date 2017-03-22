@@ -20,7 +20,7 @@ $wpdb->query( $wpdb->prepare( "SELECT * FROM $wpdb->posts WHERE post_title = 'Th
 $wpdb->query( "SELECT * FROM $wpdb->posts WHERE post_title LIKE '" . foo() . "';" ); // Bad.
 $wpdb->query( $wpdb->prepare( "SELECT * FROM $wpdb->posts WHERE post_title LIKE '" . foo() . "';" ) ); // Bad.
 
-$wpdb->query( "SELECT * FROM " . $wpdb->posts . " WHERE post_title LIKE 'foo';" ); // Ok.
+$wpdb->query( 'SELECT * FROM ' . $wpdb->posts . " WHERE post_title LIKE 'foo';" ); // Ok.
 
 // All OK.
 $all_post_meta = $wpdb->get_results( $wpdb->prepare( sprintf(
@@ -30,4 +30,4 @@ $all_post_meta = $wpdb->get_results( $wpdb->prepare( sprintf(
 ), $post_ids ) );
 
 $wpdb->query( "SELECT * FROM $wpdb->posts WHERE post_title LIKE '" . esc_sql( $foo ) . "';" ); // Ok.
-$wpdb->query( "SELECT * FROM $wpdb->posts WHERE ID = " . absint( $foo ) . ";" ); // Ok.
+$wpdb->query( "SELECT * FROM $wpdb->posts WHERE ID = " . absint( $foo ) . ';' ); // Ok.

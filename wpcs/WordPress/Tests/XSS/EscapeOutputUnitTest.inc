@@ -20,15 +20,14 @@ while ( have_posts() ) {
 
 <?php
 // Issue:#53.
-function custom_column_display( $column, $post_id )
-{
-    global $post;
-    switch ( $column ) {
-        case 'some_number' : 
-            echo (int) $test;
-            echo (int) get_post_meta( $post_id, SOME_NUMBER, true );
-        break;
-    }
+function custom_column_display( $column, $post_id ) {
+	global $post;
+	switch ( $column ) {
+		case 'some_number' :
+			echo (int) $test;
+			echo (int) get_post_meta( $post_id, SOME_NUMBER, true );
+		break;
+	}
 }
 
 
@@ -39,7 +38,7 @@ echo 'Some Raw String';  // Good.
 echo '' . $bad; // Bad, should not validate.
 echo "this is $bad"; // Bad.
 echo esc_html( $good . $better ) . $foo; // Bad, should escape all concatenated elements.
-echo esc_html( $food . 'include'  ); // Good, eveything inside the escaping/sanitizing function should pass.
+echo esc_html( $food . 'include' ); // Good, eveything inside the escaping/sanitizing function should pass.
 echo esc_html( strtoupper( $ok ) ) . $foo; // Bad, again.
 echo esc_html( strtoupper( $ok ) ) . ' ' . esc_html( strtolower( $ok ) ); // Ok.
 
@@ -102,9 +101,15 @@ wp_die( $message ); // Bad.
 wp_die( esc_html( $message ) ); // Ok.
 wp_die( esc_html( $message ), $title ); // Bad.
 wp_die( esc_html( $message ), esc_html( $title ) ); // Ok.
-wp_die( esc_html( $message ), '', array( 'back_link' => true ) ); // Ok.
-wp_die( esc_html( $message ), '', array( 'back_link' => false ) ); // Ok.
-wp_die( esc_html( $message ), '', array( 'response' => 200 ) ); // Ok.
+wp_die( esc_html( $message ), '', array(
+	'back_link' => true,
+) ); // Ok.
+wp_die( esc_html( $message ), '', array(
+	'back_link' => false,
+) ); // Ok.
+wp_die( esc_html( $message ), '', array(
+	'response' => 200,
+) ); // Ok.
 
 echo '<h2>', esc_html( $foo ), '</h2>'; // Ok.
 echo 'a', 'b'; // Ok.
@@ -133,12 +138,14 @@ _deprecated_function( __FUNCTION__, '1.3.0', esc_html( $another_func ) ); // Ok.
 _deprecated_file( __FILE__, '1.3.0' ); // Ok.
 _deprecated_argument( __METHOD__, '1.3.0', 'The $arg is deprecated.' ); // Ok.
 _doing_it_wrong( __METHOD__, "Invalid value for the 'bob' argument {$args['bob']}." ); // Bad.
-_doing_it_wrong( __METHOD__, "Invalid value for the 'bob' argument " . esc_html( $args['bob'] ) . "." ); // Ok.
+_doing_it_wrong( __METHOD__, "Invalid value for the 'bob' argument " . esc_html( $args['bob'] ) . '.' ); // Ok.
 
 trigger_error( "There was an error: {$message}", E_USER_NOTICE ); // Bad.
-trigger_error( "There was an error: " . esc_html( $message ), E_USER_NOTICE ); // Ok.
+trigger_error( 'There was an error: ' . esc_html( $message ), E_USER_NOTICE ); // Ok.
 
-echo '<p>' . sprintf( esc_html__( 'Some text -> %sLink text%s', 'textdomain' ), '<a href="' . esc_url( add_query_arg( array( 'page' => 'my_page' ), admin_url( 'admin.php' ) ) ) . '">', '</a>' ). '</p>'; // Ok.
+echo '<p>' . sprintf( esc_html__( 'Some text -> %1$sLink text%2$s', 'textdomain' ), '<a href="' . esc_url( add_query_arg( array(
+	'page' => 'my_page',
+), admin_url( 'admin.php' ) ) ) . '">', '</a>' ) . '</p>'; // Ok.
 
 echo '<br/><strong>' . sprintf( esc_html__( 'Found %d results', 'textdomain' ), (int) $result_count ) . '</strong><br/><br/>'; // Ok.
 
@@ -160,11 +167,11 @@ _e( 'Something' ); // Bad.
 esc_html_e( 'Something' ); // Ok.
 
 echo $something // Bad.
-     . esc_attr( 'baz-' // Rest is OK.
+	 . esc_attr( 'baz-' // Rest is OK.
 	         . $r
 	         . ( $r === $active_round ? ' foo' : '' )
 	         . ( $r < $active_round ? ' bar' : '' )
-	) . 'something';
+	 ) . 'something';
 
 echo implode( '<br>', $items ); // Bad.
 echo implode( '<br>', urlencode_deep( $items ) ); // Ok.
@@ -174,14 +181,14 @@ echo join( '<br>', $items ); // Bad.
 echo join( '<br>', array_map( 'esc_html', $items ) ); // Ok.
 
 echo '<option name="' . esc_attr( $name ) . '"' .
-     ( $name === $selected ? ' selected' : '' ) .
-     '>' . esc_html( $value )
-     . '</option>';
+	 ( $name === $selected ? ' selected' : '' ) .
+	 '>' . esc_html( $value )
+	 . '</option>';
 
 _deprecated_hook( 'some_filter', '1.3.0', esc_html__( 'The $arg is deprecated.' ), 'some_other_filter' ); // Ok.
 _deprecated_hook( "filter_{$context}", '1.3.0', __( 'The $arg is deprecated.' ), sprintf( __( 'Some parsed message %s', $variable ) ) ); // Bad.
 
-echo add_filter( get_the_excerpt( get_the_ID() ) ; // Bad, but ignored as code contains a parse error.
+echo add_filter( get_the_excerpt( get_the_ID() ); // Bad, but ignored as code contains a parse error.
 
 /*
  * Test using custom properties, setting & unsetting (resetting).
@@ -192,16 +199,14 @@ my_print( $var1, $var2 ); // Bad x 2.
 
 // @codingStandardsChangeSetting WordPress.XSS.EscapeOutput customEscapingFunctions esc_form_field
 // @codingStandardsChangeSetting WordPress.XSS.EscapeOutput customAutoEscapedFunctions post_info,cpt_info
-
 echo esc_form_field( $var ); // Ok.
 echo post_info( $post_id, 'field' ); // Ok.
 echo cpt_info( $post_type, 'query' ); // Ok.
-to_screen( esc_form_field( $var1), esc_attr( $var2 ) ); // Ok.
+to_screen( esc_form_field( $var1 ), esc_attr( $var2 ) ); // Ok.
 
 // @codingStandardsChangeSetting WordPress.XSS.EscapeOutput customPrintingFunctions false
 // @codingStandardsChangeSetting WordPress.XSS.EscapeOutput customEscapingFunctions false
 // @codingStandardsChangeSetting WordPress.XSS.EscapeOutput customAutoEscapedFunctions false
-
 echo esc_form_field( $var ); // Bad.
 echo post_info( $post_id, 'field' ); // Bad.
 echo cpt_info( $post_type, 'query' ); // Bad.

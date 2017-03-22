@@ -10,10 +10,11 @@ $title = preg_split( 'cool', get_the_title() ); // Good.
 
 
 // These should all trigger an error.
-if ( ereg( '[A-Za-z]+', $title, $regs ) ) // Bad, ereg deprecated. Use preg_match instead.
+if ( ereg( '[A-Za-z]+', $title, $regs ) ) { // Bad, ereg deprecated. Use preg_match instead.
 	die( $regs );
+}
 
-if ( eregi( '[a-z]+', $title, $regs ) ) {} // Bad, eregi deprecated. Use preg_match instead.
+if ( eregi( '[a-z]+', $title, $regs ) ) {} // End if().
 
 $title = ereg_replace( 'cool', 'not cool', get_the_title() ); // Bad, ereg_replace has been deprecated. Use preg_replace instead.
 
@@ -23,4 +24,4 @@ list( $year, $month, $day ) = split( ':', $date ); // Bad, split has been deprec
 
 $title_parts = spliti( ' ', get_the_title(), 4 ); // Bad, spliti also deprecated. Use preg_split instead.
 
-sql_regcase( 'Foo - bar.'); // Bad. Deprecated.
+sql_regcase( 'Foo - bar.' ); // Bad. Deprecated.

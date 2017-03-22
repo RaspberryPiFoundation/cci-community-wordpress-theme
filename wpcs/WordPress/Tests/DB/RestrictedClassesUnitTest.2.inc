@@ -1,25 +1,27 @@
 <?php
 
 // Additional unit tests testing the abstract class with namespace resolution.
-
 namespace My;
 
 class DBlayer {
 	const VERSION = '1.0';
-	
+
 	public static $property = true;
 
 	public static function connect() {
 	}
 }
 
-class DBextended extends DBlayer { // Bad.
+class DBextended extends DBlayer {
+	// Bad.
 }
 
-class DBextender implements PDO { // Ok -> resolves to \My\PDO.
+class DBextender implements PDO {
+	// Ok -> resolves to \My\PDO.
 }
 
-class DBextendes implements \PDO { // Bad -> fully qualified as \PDO.
+class DBextendes implements \PDO {
+	// Bad -> fully qualified as \PDO.
 }
 
 $db0 = new \DBlayer; // Ok - fully qualified as \DBlayer.

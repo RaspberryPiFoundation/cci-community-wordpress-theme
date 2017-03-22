@@ -8,10 +8,10 @@ prefix_do_action( 'someAction' ); // Ok - not WP do_action.
 do_action( "admin_head-$hook_suffix" ); // Warning - use underscore.
 do_action( 'admin_head.media.upload_popup' ); // Warning - use underscore.
 apply_filters( "bulk_actions {$this->screen->id}", $this->_actions ); // Warning - use underscore.
-apply_filters( "current_theme/supports-{$feature}", true, $args, $_wp_theme_features[$feature] ); // Warning - use underscore.
+apply_filters( "current_theme/supports-{$feature}", true, $args, $_wp_theme_features[ $feature ] ); // Warning - use underscore.
 
 // Simple strings.
-do_action( "adminHead" ); // Error - use lowercase.
+do_action( 'adminHead' ); // Error - use lowercase.
 do_action_ref_array( 'ADMINHEAD', array( $variable ) ); // Error - use lowercase.
 apply_filters( 'adminHead', $variable ); // Error - use lowercase.
 apply_filters_ref_array( 'ADMINHEAD', array( $variable ) ); // Error - use lowercase.
@@ -22,11 +22,11 @@ do_action( "{$Hook_Name}" ); // Ok.
 
 // Compound hook names.
 do_action( 'admin_head_' . $Type . '_action' ); // ok.
-do_action( 'admin_head_' .  get_ID() . '_action' ); // Ok.
+do_action( 'admin_head_' . get_ID() . '_action' ); // Ok.
 do_action( 'admin_head_' . $post->ID . '_action' ); // Ok.
 
 do_action( 'admin_Head_' . $Type . '_Action' ); // Error - use lowercase.
-do_action( 'admin_Head_' .  get_ID() . '_Action' ); // Error - use lowercase.
+do_action( 'admin_Head_' . get_ID() . '_Action' ); // Error - use lowercase.
 do_action( 'admin_Head_' . $post->ID . '_Action' ); // Error - use lowercase.
 
 do_action(

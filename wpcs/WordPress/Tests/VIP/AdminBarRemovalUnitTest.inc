@@ -12,7 +12,6 @@ add_filter( 'show_admin_bar', 'my_own_return_false' ); // Bad.
 add_filter( 'show_admin_bar', '__return_true' ); // Bad.
 show_admin_bar( true ); // Bad.
 // @codingStandardsChangeSetting WordPress.VIP.AdminBarRemoval remove_only true
-
 // Testing T_CONSTANT_ENCAPSED_STRING.
 echo '<style type="text/css">
 #wpadminbar {

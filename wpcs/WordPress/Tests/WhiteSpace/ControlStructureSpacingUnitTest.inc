@@ -1,9 +1,9 @@
 <?php
 
 // Bad, no space after opening control structure.
-while( have_posts() ) { // Okay, comments are okay here.
+while ( have_posts() ) { // Okay, comments are okay here.
 	// Okay, comments are okay here as well.
-} // Okay, comments are okay here.
+} // End while().
 
 // See https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/40 .
 if ( true ) {
@@ -14,8 +14,7 @@ if ( true ) {
 }
 
 // Bad.
-if  ( 'update' === $option_operation['operation'] )
-{
+if ( 'update' === $option_operation['operation'] ) {
 	update_option( $option_operation['option_name'], $option_operation['old_value'] );
 
 }
@@ -26,7 +25,7 @@ if ( 'update' === $option_operation['operation'] ) {
 }
 
 // Bad.
-if(true){}
+if ( true ) {}
 
 
 if ( true ) {
@@ -35,18 +34,17 @@ if ( true ) {
 		echo 'OK';
 
 	}
-
 }
 
-if ( false ):
-else:
+if ( false ) :
+else :
 endif;
 
 if ( false ) :
 else :
 endif;
 // @codingStandardsChangeSetting WordPress.WhiteSpace.ControlStructureSpacing spaces_before_closure_open_paren 1
-function($arg){} // Bad.
+function ( $arg ) {} // Bad.
 function ( $arg ) {
 	// Ok.
 }
@@ -55,7 +53,7 @@ function () {
 	// Ok.
 }
 
-function something($arg){} // Bad.
+function something( $arg ) {} // Bad.
 function foo( $arg ) {
 	// Ok.
 }
@@ -64,44 +62,39 @@ function no_params() {
 	// Ok.
 }
 
-function another () {} // Bad, space before open parenthesis prohibited.
-function    and_another() {} // Bad, space before function name prohibited.
-function
-bar() {} // Bad.
-function baz()     {} // Bad.
-function test()
-{} // Bad.
+function another() {} // Bad, space before open parenthesis prohibited.
+function and_another() {} // Bad, space before function name prohibited.
+function bar() {} // Bad.
+function baz() {} // Bad.
+function test() {} // Bad.
 
 function &return_by_ref() {} // Ok.
 
 // @codingStandardsChangeSetting WordPress.WhiteSpace.ControlStructureSpacing spaces_before_closure_open_paren 0
-
 function() {} // Ok.
 function( $arg ) {} // Ok.
-function($arg){} // Bad.
-function () {} // Bad.
+function( $arg ) {} // Bad.
+function() {} // Bad.
 
 $closureWithArgsAndVars = function( $arg1, $arg2 ) use ( $var1, $var2 ) {}; // Ok.
-$closureWithArgsAndVars = function ( $arg1, $arg2 ) use ( $var1, $var2 ) {}; // Bad.
+$closureWithArgsAndVars = function( $arg1, $arg2 ) use ( $var1, $var2 ) {}; // Bad.
 
 // @codingStandardsChangeSetting WordPress.WhiteSpace.ControlStructureSpacing spaces_before_closure_open_paren 1
-
 $closureWithArgsAndVars = function ( $arg1, $arg2 ) use ( $var1, $var2 ) {}; // Ok.
 
-$closureWithArgsAndVars = function ( $arg1, $arg2 ) use( $var1, $var2 ) {}; // Bad, no space before open parenthesis prohibited.
-$closureWithArgsAndVars = function ( $arg1, $arg2 ) use  ( $var1, $var2 ) {}; // Bad, expected exactly one space before opening parenthesis.
+$closureWithArgsAndVars = function ( $arg1, $arg2 ) use ( $var1, $var2 ) {}; // Bad, no space before open parenthesis prohibited.
+$closureWithArgsAndVars = function ( $arg1, $arg2 ) use ( $var1, $var2 ) {}; // Bad, expected exactly one space before opening parenthesis.
 
-$closureWithArgsAndVars = function ( $arg1, $arg2 ) use ( $var1, $var2 ){}; // Bad, space between closing parenthesis and control structure required.
-$closureWithArgsAndVars = function ( $arg1, $arg2 ) use ( $var1, $var2 )  {}; // Bad, expected exactly one space between closing parenthesis and control structure.
+$closureWithArgsAndVars = function ( $arg1, $arg2 ) use ( $var1, $var2 ) {}; // Bad, space between closing parenthesis and control structure required.
+$closureWithArgsAndVars = function ( $arg1, $arg2 ) use ( $var1, $var2 ) {}; // Bad, expected exactly one space between closing parenthesis and control structure.
 
-$closureWithArgsAndVars = function ( $arg1, $arg2 )use ( $var1, $var2 ) {}; // Bad, expected exactly one space between closing parenthesis and control structure.
-$closureWithArgsAndVars = function ( $arg1, $arg2 )  use ( $var1, $var2 ) {}; // Bad, expected exactly one space between closing parenthesis and control structure.
+$closureWithArgsAndVars = function ( $arg1, $arg2 ) use ( $var1, $var2 ) {}; // Bad, expected exactly one space between closing parenthesis and control structure.
+$closureWithArgsAndVars = function ( $arg1, $arg2 ) use ( $var1, $var2 ) {}; // Bad, expected exactly one space between closing parenthesis and control structure.
 
 // Namespaces.
 use Foo\Admin;
 
 // @codingStandardsChangeSetting WordPress.WhiteSpace.ControlStructureSpacing spaces_before_closure_open_paren -1
-
 function( $arg ) {} // Ok.
 function ( $arg ) {} // Ok.
 
@@ -132,9 +125,9 @@ class Foo_Bar {
 }
 
 // Handle try/catch statements as well.
-try{ // Bad.
+try { // Bad.
 	// Something
-} catch(Exception $e){ // Bad.
+} catch ( Exception $e ) { // Bad.
 	// Something
 }
 
@@ -142,62 +135,59 @@ try{ // Bad.
 // @codingStandardsChangeSetting WordPress.WhiteSpace.ControlStructureSpacing blank_line_check true
 // Bad.
 if ( $one ) {
-
 }
 // @codingStandardsChangeSetting WordPress.WhiteSpace.ControlStructureSpacing blank_line_check false
-
 // Upstream bug PEAR #20247.
 do {
 	echo 'hi';
-} while ($blah); // Bad.
+} while ( $blah ); // Bad.
 
 // Upstream bug GH #782
 // @codingStandardsChangeSetting WordPress.WhiteSpace.ControlStructureSpacing blank_line_check true
 if ( $foo ) {
 
 
-    /**
-     * Comment
-     */
-    function foo() {
-        // Code here
-    }
+	/**
+	 * Comment
+	 */
+	function foo() {
+		// Code here
+	}
 
 
-    /**
-     * Comment
-     */
-    class bar() {
+	/**
+	 * Comment
+	 */
+	class bar() {
 
-    }//end class
+	}//end class
 
 
 }
 // @codingStandardsChangeSetting WordPress.WhiteSpace.ControlStructureSpacing blank_line_check false
-
 // Check for too many spaces as long as the next non-blank token is on the same line.
-function test( $blah   ) {} // Bad.
-function(   $bar   ) {}  // Bad.
+function test( $blah ) {} // Bad.
+function( $bar ) {}  // Bad.
 
-if (    'abc' === $test ) { // Bad.
+if ( 'abc' === $test ) { // Bad.
 	echo 'hi';
-} elseif ( false === $foo    ) { // Bad.
+} elseif ( false === $foo ) { // Bad.
 	echo 'bye';
 }
 
 do {
 	echo 'hi';
-} while (   $blah ); // Bad.
+} while ( $blah ); // Bad.
 
-while ( $blah   ) { // Bad.
+while ( $blah ) { // Bad.
 	echo 'bye bye';
 }
 
-for (   $i = 0; $i < 1; $++    ) { // Bad.
+for ( $i = 0; $i < 1; $++ ) { // Bad.
 	echo 'hi';
 }
 
-foreach (   $foo as $bar   ) { // Bad.
+foreach ( $foo as $bar ) { // Bad.
 	echo 'hi';
 }
 

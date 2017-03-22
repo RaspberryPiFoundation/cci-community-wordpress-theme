@@ -13,7 +13,6 @@ wp_remote_get( $url ); // Warning.
 
 
 // Empty line - function moved to another sniff.
-
 add_role( 'test' ); // Error.
 
 array_pop( $array ); // Ok.

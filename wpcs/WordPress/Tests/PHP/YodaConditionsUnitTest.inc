@@ -36,7 +36,7 @@ if ( $true !== true ) { // Bad x 1.
 }
 
 // Make sure the test excludes functions on the conditional check.
-if ( strtolower( $check ) == $true  ) { // Good.
+if ( strtolower( $check ) == $true ) { // Good.
 	echo 'True';
 }
 // Makes sure the test excludes variable casting in the conditional check.
@@ -71,7 +71,7 @@ if ( $foo === FOO_CONSTANT ) { // Bad.
 	$link = false;
 }
 
-if ( $foo == $bar ) {} // Ok.
+if ( $foo == $bar ) {} // End if().
 
 $accessibility_mode = ( 'on' === sanitize_key( $_GET['accessibility-mode'] ) ) ? 'on' : 'off'; // Ok.
 
@@ -83,10 +83,10 @@ return 0 === strpos( $foo, 'a' ); // Ok.
 return 0 == $foo; // Ok.
 return $foo == 0; // Bad.
 
-if ( (int) $a['interval'] === (int) $b['interval'] ) {} // Ok.
+if ( (int) $a['interval'] === (int) $b['interval'] ) {} // End if().
 
-if ( $GLOBALS['wpdb']->num_rows === 0 ) {} // Bad.
+if ( $GLOBALS['wpdb']->num_rows === 0 ) {} // End if().
 
-if ( $true == strtolower( $check ) ) {} // Bad.
+if ( $true == strtolower( $check ) ) {} // End if().
 
 $update = 'yes' === strtolower( $this->from_post( 'update' ) ); // Ok.

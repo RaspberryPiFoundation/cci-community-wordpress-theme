@@ -78,7 +78,9 @@ class Some_Class {
 
 // Assignments are allowed.
 function foo_2() {
-	$_POST = array( 'a' => 'b' ); // OK.
+	$_POST = array(
+		'a' => 'b',
+	); // OK.
 	$_POST['test'] = somethin(); // OK.
 	$_POST['settings'][ $setting ] = 'bb'; // OK.
 }
@@ -132,7 +134,6 @@ $b = function () {
 // @codingStandardsChangeSetting WordPress.CSRF.NonceVerification customNonceVerificationFunctions my_nonce_check
 // @codingStandardsChangeSetting WordPress.CSRF.NonceVerification customSanitizingFunctions sanitize_pc,sanitize_twitter
 // @codingStandardsChangeSetting WordPress.CSRF.NonceVerification customUnslashingSanitizingFunctions do_something
-
 function foo_5() {
 
 	sanitize_twitter( $_POST['foo'] ); // OK.
@@ -142,7 +143,6 @@ function foo_5() {
 
 // @codingStandardsChangeSetting WordPress.CSRF.NonceVerification customSanitizingFunctions sanitize_pc
 // @codingStandardsChangeSetting WordPress.CSRF.NonceVerification customUnslashingSanitizingFunctions false
-
 function foo_5() {
 
 	do_something( $_POST['foo'] ); // Bad.
@@ -153,7 +153,6 @@ function foo_5() {
 
 // @codingStandardsChangeSetting WordPress.CSRF.NonceVerification customNonceVerificationFunctions false
 // @codingStandardsChangeSetting WordPress.CSRF.NonceVerification customSanitizingFunctions false
-
 function foo_5() {
 
 	do_something( $_POST['foo'] ); // Bad.

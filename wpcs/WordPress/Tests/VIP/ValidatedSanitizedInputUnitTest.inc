@@ -12,9 +12,7 @@ if ( isset( $_POST['foo2'] ) ) {
 
 // @TODO: Cover non-parenthesis'd conditions
 // if ( isset( $_POST['foo'] ) )
-// 	bar( $_POST['foo'] );
-
-
+// bar( $_POST['foo'] );
 if ( isset( $_POST['foo3'] ) ) {
 	bar( sanitize_text_field( wp_unslash( $_POST['foo3'] ) ) ); // Good, validated and sanitized.
 	bar( wp_unslash( $_POST['foo3'] ) ); // Error, validated but not sanitized.
@@ -56,7 +54,7 @@ $_REQUEST['wp_customize'] = 'on'; // Ok.
 // All OK.
 $keys = array_keys( $_POST );
 $values = array_values( $_POST );
-foreach( $_POST as $key => $value ) {
+foreach ( $_POST as $key => $value ) {
 	// ..
 }
 
@@ -85,12 +83,12 @@ echo array_map( array( $obj, 'sanitize_text_field' ), wp_unslash( $_GET['test'] 
 $foo = (int) $_POST['foo6']; // Bad.
 
 // Non-assignment checks are OK.
-if ( 'bar' === $_POST['foo'] ) {} // Ok.
-if ( $_GET['test'] != 'a' ) {} // Ok.
-if ( 'bar' === do_something( wp_unslash( $_POST['foo'] ) ) ) {} // Bad.
+if ( 'bar' === $_POST['foo'] ) {} // End if().
+if ( $_GET['test'] != 'a' ) {} // End if().
+if ( 'bar' === do_something( wp_unslash( $_POST['foo'] ) ) ) {} // End if().
 
-switch ( $_POST['foo'] ) {} // Ok.
-switch ( do_something( wp_unslash( $_POST['foo'] ) ) ) {} // Bad.
+switch ( $_POST['foo'] ) {} // End switch().
+switch ( do_something( wp_unslash( $_POST['foo'] ) ) ) {} // End switch().
 
 // Sanitization is required even when the value is being escaped.
 echo esc_html( wp_unslash( $_POST['foo'] ) ); // Bad.
@@ -108,9 +106,9 @@ echo array_map( 'sanitize_key', $_GET['test'] ); // Ok.
 foo( absint( $_GET['foo'] ) ); // Ok.
 $ids = array_map( 'absint', $_GET['test'] ); // Ok.
 
-if ( is_array( $_GET['test'] ) ) {} // Ok.
+if ( is_array( $_GET['test'] ) ) {} // End if().
 
-output( "some string \$_POST[some_var]" ); // Ok.
+output( 'some string \$_POST[some_var]' ); // Ok.
 output( "some string \\$_POST[some_var] $_GET[evil]" ); // Bad x2.
 
 echo esc_html( wp_strip_all_tags( wp_unslash( $_GET['a'] ) ) ); // Ok.
@@ -128,24 +126,21 @@ function test_this() {
 	if ( ! isset( $_POST['abc_field'] ) ) {
 		return;
 	}
-	
+
 	$abc = sanitize_color( wp_unslash( $_POST['abc_field'] ) ); // Bad x1 - sanitize.
 
 	// @codingStandardsChangeSetting WordPress.VIP.ValidatedSanitizedInput customSanitizingFunctions sanitize_color,sanitize_twitter_handle
-
 	$abc = sanitize_color( wp_unslash( $_POST['abc_field'] ) ); // OK.
 	$abc = sanitize_facebook_id( wp_unslash( $_POST['abc_field'] ) ); // Bad x1 - sanitize.
 	$abc = sanitize_twitter_handle( $_POST['abc_field'] ); // Bad x1 - unslash.
 
 	// @codingStandardsChangeSetting WordPress.VIP.ValidatedSanitizedInput customSanitizingFunctions sanitize_color,sanitize_facebook_id
 	// @codingStandardsChangeSetting WordPress.VIP.ValidatedSanitizedInput customUnslashingSanitizingFunctions sanitize_twitter_handle
-
 	$abc = sanitize_color( wp_unslash( $_POST['abc_field'] ) ); // OK.
 	$abc = sanitize_facebook_id( wp_unslash( $_POST['abc_field'] ) ); // OK.
 	$abc = sanitize_twitter_handle( $_POST['abc_field'] ); // OK.
 
 	// @codingStandardsChangeSetting WordPress.VIP.ValidatedSanitizedInput customSanitizingFunctions false
 	// @codingStandardsChangeSetting WordPress.VIP.ValidatedSanitizedInput customUnslashingSanitizingFunctions false
-
 	$abc = sanitize_twitter_handle( $_POST['abc_field'] ); // Bad x2, sanitize + unslash.
 }

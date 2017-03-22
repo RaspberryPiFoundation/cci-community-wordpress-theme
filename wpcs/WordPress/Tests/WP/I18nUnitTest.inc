@@ -2,9 +2,9 @@
 // @codingStandardsChangeSetting WordPress.WP.I18n check_translator_comments false
 __( "hell$varo", 'my-slug' ); // Bad, shouldn't use a string with variables.
 
-__( "hell\$varo", 'my-slug' ); // OK, Variable is not interpolated.
+__( 'hell\$varo', 'my-slug' ); // OK, Variable is not interpolated.
 __( "hell\\$varo", 'my-slug' ); // Bad, is interpolated.
-__( "hell\\\$varo", 'my-slug' ); // OK, variable is escaped.
+__( 'hell\\\$varo', 'my-slug' ); // OK, variable is escaped.
 
 __( $var, 'my-slug' ); // Bad, shouldn't use variables.
 
@@ -84,15 +84,15 @@ _nx( 'I have
 really.', 'my-slug' ); // OK.
 
 // Ensure lack of spaces doesn't cause i18n error.
-_n_noop('I have %d cat.', 'I have %d cats.', 'my-slug'); // OK.
+_n_noop( 'I have %d cat.', 'I have %d cats.', 'my-slug' ); // OK.
 
 // Dollar sign in literal string is not interpolated, so OK.
 _n_noop( 'I have %d cat.', 'I have %d cats literal-string-so-$variable-not-interpolated.', 'my-slug' ); // OK.
 
 // Multiple placeholders should have orderable placeholders.
-__( 'There are %d monkeys in the %s', 'my-slug' ); // Multiple arguments should be numbered.
+__( 'There are %1$d monkeys in the %2$s', 'my-slug' ); // Multiple arguments should be numbered.
 __( 'There are %1$d monkeys in the %2$s', 'my-slug' ); // OK.
-_n( 'There is %d monkey in the %s', 'There are %d monkeys in the %s', $number, 'my-slug' ); // Multiple arguments should be numbered.
+_n( 'There is %1$d monkey in the %2$s', 'There are %1$d monkeys in the %2$s', $number, 'my-slug' ); // Multiple arguments should be numbered.
 _n( 'There is %1$d monkey in the %2$s', 'In the %2$s there are %1$d monkeys', $number, 'my-slug' ); // OK.
 
 // The singular form should use placeholders if the plural does.
@@ -108,21 +108,21 @@ _n( 'I have %d cat.', '%d', $number, 'my-slug' ); // Bad, move the logic out of 
 __( '\'%s\'', 'my-slug' ); // OK (ish. this is a technical test, not a great string).
 
 // Issue #681.
-__( 'String with a literal %%', 'my-slug'); // Ok, replacement would be a single %.
-__( 'String with a literal %% and a %s placeholder', 'my-slug'); // Ok.
+__( 'String with a literal %%', 'my-slug' ); // Ok, replacement would be a single %.
+__( 'String with a literal %% and a %s placeholder', 'my-slug' ); // Ok.
 __( 'A replacement variable can not start with "%%cf_" or "%%ct_" as these are reserved for the WPSEO standard variable variables for custom fields and custom taxonomies. Try making your variable name unique.', 'my-slug' ); // Ok.
 
 // The domain 'default' was also added to the text domains.
 __( 'String default text domain.', 'default' ); // Ok.
-__( "String default text domain.", "default" ); // Ok.
+__( 'String default text domain.', 'default' ); // Ok.
 
 // Issue #698 - fix for auto-fixing placeholder ordering.
-__( '%s - %s - %s - %s', 'my-slug' ); // Bad - Multiple of the same placeholders.
-__( '%d - %d - %d - %d', 'my-slug' ); // Bad - Multiple of the same placeholders.
-__( '%% - %b - %c - %d - %e - %E - %f - %F - %g - %G - %o - %s - %u - %x - %X', 'my-slug' ); // Bad - All simple variations.
-__( "%d for %d 'item'", 'my-slug' ); // Bad - Multiple of the same placeholders in a double quoted string.
-__( '%04d for %02d item', 'my-slug' ); // Bad - Placeholder with other specifier, but no position.
-__( "%04d for %'.9d item", 'my-slug' ); // Bad - Placeholder with other specifier, but no position, double quoted string.
+__( '%1$s - %2$s - %3$s - %4$s', 'my-slug' ); // Bad - Multiple of the same placeholders.
+__( '%1$d - %2$d - %3$d - %4$d', 'my-slug' ); // Bad - Multiple of the same placeholders.
+__( '%% - %1$b - %2$c - %3$d - %4$e - %5$E - %6$f - %7$F - %8$g - %9$G - %10$o - %11$s - %12$u - %13$x - %14$X', 'my-slug' ); // Bad - All simple variations.
+__( "%1\$d for %2\$d 'item'", 'my-slug' ); // Bad - Multiple of the same placeholders in a double quoted string.
+__( '%1$04d for %2$02d item', 'my-slug' ); // Bad - Placeholder with other specifier, but no position.
+__( "%1\$04d for %2\$'.9d item", 'my-slug' ); // Bad - Placeholder with other specifier, but no position, double quoted string.
 
 // Related to issue #698 - mixed ordered and non-ordered placeholders.
 __( '%1$d for %d item', 'my-slug' ); // Bad.

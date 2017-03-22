@@ -1,9 +1,7 @@
 <?php
 
 // DEPRECATED WORDPRESS FUNCTIONS.
-
 // Error.
-
 // The methods are being checked till https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/731 is solved.
 find_base_dir(); // WP_Filesystem_Base::find_base_dir() use WP_Filesystem::abspath instead.
 get_base_dir(); // WP_Filesystem_Base::get_base_dir() use WP_Filesystem::abspath instead.

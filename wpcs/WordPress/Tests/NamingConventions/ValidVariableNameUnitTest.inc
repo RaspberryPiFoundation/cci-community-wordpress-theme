@@ -37,10 +37,10 @@ echo "Hello ${var_name}";
 echo "Hello $varname";
 echo "Hello $_varName"; // Bad.
 
-echo 'Hello '.$varName; // Bad.
-echo 'Hello '.$var_name;
-echo 'Hello '.$varname;
-echo 'Hello '.$_varName; // Bad.
+echo 'Hello ' . $varName; // Bad.
+echo 'Hello ' . $var_name;
+echo 'Hello ' . $varname;
+echo 'Hello ' . $_varName; // Bad.
 
 echo $_SERVER['var_name'];
 echo $_REQUEST['var_name'];
@@ -64,8 +64,8 @@ echo $object_name->varname2;
 echo $object_name->_varName2; // Bad.
 echo $object_name->VAR_name; // Bad.
 
-echo $this->myFunction($one, $two);
-echo $object->myFunction($one_two);
+echo $this->myFunction( $one, $two );
+echo $object->myFunction( $one_two );
 
 $error = "format is \$GLOBALS['$varName']"; // Bad.
 
@@ -95,8 +95,9 @@ echo $comment->comment_author_IP;
 class Foo {
 	public $_public_leading_underscore;
 	private $private_no_underscore_loading;
-	
-	function Bar( $VARname ) { // Bad.
+
+	function Bar( $VARname ) {
+		// Bad.
 		$localVariable = false; // Bad.
 		echo Some_Class::$VarName; // Bad.
 		echo $this->VAR_name; // Bad.
@@ -105,7 +106,8 @@ class Foo {
 		echo $this->_VAR_name; // Bad.
 	}
 
-	function Baz( $var_name ) { // Ok.
+	function Baz( $var_name ) {
+		// Ok.
 		$local_variable = false; // Ok.
 		echo Some_Class::$var_name; // Ok.
 		echo $this->var_name; // Ok.
@@ -134,5 +136,4 @@ echo MyClass::$varName; // Ok, whitelisted.
 echo $this->DOMProperty; // Ok, whitelisted.
 echo $object->varName;  // Ok, whitelisted.
 // @codingStandardsChangeSetting WordPress.NamingConventions.ValidVariableName customPropertiesWhitelist false
-
 echo $object->varName;  // Bad, no longer whitelisted.

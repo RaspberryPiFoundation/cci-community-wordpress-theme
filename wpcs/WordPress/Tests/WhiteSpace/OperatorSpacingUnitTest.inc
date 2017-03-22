@@ -2,7 +2,7 @@
 
 $posts = get_posts( 'cat=3' );
 // Bad, no operator spacing.
-for ( $i=0; $i<sizeof( $posts ); $i++ ) {
+for ( $i = 0; $i < sizeof( $posts ); $i++ ) {
 	// ...
 }
 
@@ -15,7 +15,7 @@ if ( ! $var ) {
 	// ...
 }
 // Bad.
-if ( !$var ) {
+if ( ! $var ) {
 	// ...
 }
 
@@ -30,26 +30,26 @@ while ( have_posts() ) {
 // All OK.
 if ( 'bb' !== 'bb' ) {
 	if (
-		empty($_GET['refid']) &&
-		empty($_GET['nolinks']) &&
-		! is_page_template('page_strategy-center.php') &&
-		! is_page_template('page_confirmation.php') &&
-		! is_page_template('page_debartolo.php') &&
-		! is_singular('offer')
+		empty( $_GET['refid'] ) &&
+		empty( $_GET['nolinks'] ) &&
+		! is_page_template( 'page_strategy-center.php' ) &&
+		! is_page_template( 'page_confirmation.php' ) &&
+		! is_page_template( 'page_debartolo.php' ) &&
+		! is_singular( 'offer' )
 	) {
 		hello();
 	}
 }
 
 // Bad.
-for ( $i =  0; $i < sizeof( $posts ); $i++ ) {
+for ( $i = 0; $i < sizeof( $posts ); $i++ ) {
 	// ...
 }
 // Bad.
-if (  ! $var ) {
+if ( ! $var ) {
 	// ...
 }
 
 // Ok: Test skipping of default values in function declarations.
-function my_test( $a=true, $b = 123, $c=  'string' ) {}
-$a = function ( $a=true, $b = 123, $c=  'string' ) {};
+function my_test( $a = true, $b = 123, $c = 'string' ) {}
+$a = function ( $a = true, $b = 123, $c = 'string' ) {};
