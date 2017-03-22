@@ -11,6 +11,7 @@ This is a WordPress theme designed to help coordinators build a site to service 
 * [Menus](#menus)
 * [Localisation / Translation](#localisation--translation)
 * [Use of the CCW API](#use-of-the-ccw-api)
+* [Contributing](#contributing)
 * [Legal Stuff](#legal-stuff)
 
 ## General Info
@@ -308,6 +309,20 @@ if ( !is_wp_error( $response ) ) {
 }
 ?>
 ```
+
+## Contributing
+
+Issues and pull requests are welcomed / encouraged!
+
+When submitting PRs, please run PHP CodeSniffer locally to automatically fix code standard issues:
+```
+php phpcbf.phar --standard=WordPress .
+```
+
+Full documentation is available here: https://github.com/squizlabs/PHP_CodeSniffer
+See WordPress' PHP coding standards here: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/)
+
+Please also refer to the [contributor license agreement](CONTRIBUTING.txt)
 
 ## Legal Stuff
 
