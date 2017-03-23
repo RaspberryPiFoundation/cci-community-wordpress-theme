@@ -136,6 +136,8 @@ require get_template_directory() . '/inc/utilities.php';
  * Country-specific config.
  */
 if ( file_exists( get_stylesheet_directory() . '/inc/country-config.php' ) ) {
+	require get_stylesheet_directory() . '/inc/country-config.php';
+} else {
 	require get_template_directory() . '/inc/country-config.php';
 }
 
