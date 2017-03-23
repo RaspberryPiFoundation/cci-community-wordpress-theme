@@ -9,7 +9,7 @@ engines:
   phpcodesniffer:
     enabled: true
     config:
-      standard: "WordPress"
+      standard: "ruleset.xml"
 ratings:
   paths:
   - "**.css"

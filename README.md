@@ -314,9 +314,14 @@ if ( !is_wp_error( $response ) ) {
 
 Issues and pull requests are welcomed / encouraged!
 
-When submitting PRs, please run PHP CodeSniffer locally to automatically fix code standard issues:
+When submitting PRs, please run PHP CodeSniffer locally to alert of code standard issues:
 ```
-php phpcbf.phar ./
+php phpcs.phar --standard=ruleset.xml ./
+```
+
+To automatically _fix_ code standard issues, run:
+```
+php phpcbf.phar --standard=ruleset.xml ./
 ```
 
 Full documentation is available here: https://github.com/squizlabs/PHP_CodeSniffer
