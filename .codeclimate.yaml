@@ -9,5 +9,5 @@ ratings:
   - "**.php"
 
 exclude_paths:
-- "wpcs"
-- "inc/League"
+- "wpcs/**/*"
+- "inc/League/**/*"
