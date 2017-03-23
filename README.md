@@ -316,7 +316,7 @@ Issues and pull requests are welcomed / encouraged!
 
 When submitting PRs, please run PHP CodeSniffer locally to automatically fix code standard issues:
 ```
-php phpcbf.phar --standard=WordPress .
+php phpcbf.phar ./
 ```
 
 Full documentation is available here: https://github.com/squizlabs/PHP_CodeSniffer
