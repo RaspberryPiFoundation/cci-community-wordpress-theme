@@ -7,3 +7,7 @@ engines:
 ratings:
   paths:
   - "**.php"
+
+exclude_paths:
+- "wpcs"
+- "inc/League"
