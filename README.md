@@ -320,7 +320,8 @@ php phpcbf.phar ./
 ```
 
 Full documentation is available here: https://github.com/squizlabs/PHP_CodeSniffer
-See WordPress' PHP coding standards here: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/)
+
+See WordPress' PHP coding standards here: https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/
 
 Please also refer to the [contributor license agreement](CONTRIBUTING.txt)
 
