@@ -26,7 +26,7 @@ function produce_errors_message_map($errors) {
 }
 
 function strip_slashes_json_encode($json) {
-  return stripslashes(json_encode($json));
+  return stripslashes(json_encode($json,JSON_UNESCAPED_UNICODE));
 }
 
 function htmlspecialchars_with_quotes($str) {
