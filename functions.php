@@ -143,7 +143,7 @@ require get_template_directory() . '/inc/utilities.php';
 /**
  * CCW API class.
  */
-require get_template_directory() . '/inc/ccw-api.php';
+require_once get_template_directory() . '/inc/ccw-api.php';
 
 /**
  * Host Volunteer Matching class.

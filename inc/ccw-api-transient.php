@@ -3,6 +3,8 @@
  * CCW_API_TRANSIENT Class & Functions
  * Constants are set in `country-config.php`
  */
+require_once get_template_directory () . '/inc/ccw-api.php';
+
 
 class  CCW_API_TRANSIENT extends CCW_API {
      
