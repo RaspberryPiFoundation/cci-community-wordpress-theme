@@ -163,8 +163,8 @@
     echo $templates->render('select',
       ['title' => __('Are you happy for people to be able to contact your venue?', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['happy_to_be_contacted']),
-        'options' => array('true' => 'Yes', 'false' => 'No'),
-        'selected' => 'Yes',
+        'options' => array('true' =>  __('Yes', 'ccw_countries'), 'false' =>  __('No', 'ccw_countries')),
+        'selected' =>  __('Yes', 'ccw_countries'),
         'attributes' => [
           'id' => 'club[happy_to_be_contacted]',
           'required'=> '',
