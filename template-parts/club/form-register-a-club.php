@@ -67,7 +67,7 @@
     echo $templates->render('select',
       ['title' => __('Are you a host or a volunteer?', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['can_run_without_volunteer']),
-        'options' => array('false' => 'Host', 'true' => 'Volunteer'),
+        'options' => array('false' => __('Host','ccw_countries'), 'true' => __('Volunteer','ccw_countries')),
         'selected' => get_yes_no($_SESSION['club']['can_run_without_volunteer']),
         'include_blank' => '',
         'attributes' => [
