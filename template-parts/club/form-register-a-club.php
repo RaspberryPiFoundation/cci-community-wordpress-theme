@@ -67,7 +67,7 @@
     echo $templates->render('select',
       ['title' => __('Are you a host or a volunteer?', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['can_run_without_volunteer']),
-        'options' => array('false' => 'Host', 'true' => 'Volunteer'),
+        'options' => array('false' => __('Host', 'ccw_countries'), 'true' => __('Volunteer', 'ccw_countries')),
         'selected' => get_yes_no($_SESSION['club']['can_run_without_volunteer']),
         'include_blank' => '',
         'attributes' => [
@@ -178,8 +178,8 @@
     echo $templates->render('select',
       ['title' => __('Are you a happy for people to be able to contact your club?', 'ccw_countries'),
         'error' => use_if_set($error_messages, ['happy_to_be_contacted']),
-        'options' => array('true' => 'Yes', 'false' => 'No'),
-        'selected' => get_yes_no($_SESSION['club']['']),
+        'options' => array('true' =>  __('Yes', 'ccw_countries'), 'false' =>  __('No', 'ccw_countries')),
+        'selected' =>  __('Yes', 'ccw_countries'),
         'attributes' => [
           'id' => 'club[happy_to_be_contacted]',
           'required'=> '',
@@ -187,6 +187,9 @@
         ]
       ])
     ?>
+    <?php
+    echo $templates->render('info', ['message' => __('Selecting yes will allow potential volunteers to contact you.
+    This setting can be changed at any time once your account has been created.', 'ccw_countries')]);?>
 
     <div class="c-form__input-group">
       <input class="c-form__input-group-checkbox" id="terms-checkbox" name="terms-checkbox" type="checkbox" value="true" <?php echo !empty( $_POST['terms-checkbox'] ) ? 'checked="checked"' : ''; ?>>
