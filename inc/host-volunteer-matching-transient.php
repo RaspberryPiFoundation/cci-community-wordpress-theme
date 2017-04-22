@@ -2,7 +2,7 @@
 /**
  * Host Volunteer Matching Class
  */
-require get_template_directory () . '/inc/ccw-api-transient.php';
+require_once get_template_directory () . '/inc/ccw-api-transient.php';
 class Host_Volunteer_Matching_Transient extends Host_Volunteer_Matching {
     public function getCodeClubsWithinRadius($address, $radius) {
         $location = $this->getCoordinates ( $address );
@@ -10,8 +10,7 @@ class Host_Volunteer_Matching_Transient extends Host_Volunteer_Matching {
             return;
         
         $ccw_api = new CCW_API_TRANSIENT ();
-        $ccw_api_response = $ccw_api->getNearbyCodeClubs ( $location ["lat"], $location ["lng"], $radius );
-        $ccw_api_response = $ccw_api->getNClosestCodeClubs ( $location ["lat"], $location ["lng"], 6 );
+        $ccw_api_response = $ccw_api->getNearbyCodeClubsWithinRadius ( $location ["lat"], $location ["lng"], $radius );
         
         if (! is_wp_error ( $ccw_api_response )) {
             $_SESSION ['code_clubs'] = $ccw_api_response;
@@ -87,6 +86,14 @@ class Host_Volunteer_Matching_Transient extends Host_Volunteer_Matching {
         
         return $_SESSION ['code_clubs'];
     }
+  public function getCodeClub($id) {
+    $ccw_api = new CCW_API_TRANSIENT ();
+    $club = $ccw_api->getClub ( $id );
+	
+    if ($club['id'] == $id) return $club;
+
+    wp_safe_redirect('/');
+  }
 }
 
 ?>

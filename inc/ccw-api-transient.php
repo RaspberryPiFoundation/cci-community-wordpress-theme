@@ -16,6 +16,11 @@ class  CCW_API_TRANSIENT extends CCW_API {
 				 $transient_time= defined('REFRESH_CLUBS_AFTER_MINUTES')?REFRESH_CLUBS_AFTER_MINUTES:60;
 				
                  $result=json_decode(wp_remote_retrieve_body($result), true);
+		 $idArray=array();
+     		foreach ($result as $value) {
+			$idArray[$value["id"]]=$value;
+		}
+		$result=$idArray;
                   set_transient( 'all_clubs_result', $result, $transient_time* MINUTE_IN_SECONDS);
               }
            
@@ -26,6 +31,29 @@ class  CCW_API_TRANSIENT extends CCW_API {
 
    
 
+    /**
+     * @param integer $id The ID of the club
+     * @return array $response Containing 'headers' & 'body' arrays
+     */
+    public function getClub( $id ) {
+	$all_clubs=$this->getAllClubs();
+        $club=$all_clubs[$id];
+        if(!$club)
+            return array();
+        $lat=$club['venue']['address']['latitude'];
+        $lng=$club['venue']['address']['longitude'];
+	
+        $ccw_api_response = parent::getNearbyCodeClubs($lat, $lng, 1);
+
+        if (!is_wp_error($ccw_api_response)) {
+            $result_clubs = json_decode(wp_remote_retrieve_body($ccw_api_response), true);
+            foreach ($result_clubs as $club2) {
+                if ($club2['id'] == $id) return $club2;
+            }
+        }  
+            return $club;
+        
+    }
 
     /**
      * @param json $club_json Club data (inc. venue, address, contact) in a JSON encoded array
@@ -55,7 +83,7 @@ class  CCW_API_TRANSIENT extends CCW_API {
    * @return array $response Containing 'headers' & 'body' arrays
    */
     
-  public function getNearbyCodeClubs($latitude, $longitude, $radius) {
+  public function getNearbyCodeClubsWithinRadius($latitude, $longitude, $radius) {
    $response=$this->getAllClubs();
   
     if (is_wp_error($response)) 
