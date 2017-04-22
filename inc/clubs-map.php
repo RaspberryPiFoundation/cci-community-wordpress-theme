@@ -1,5 +1,5 @@
 <?php
-require get_template_directory() . '/inc/ccw-api-transient.php';
+require_once get_template_directory() . '/inc/ccw-api-transient.php';
 function cci_map_handler($atts = array())
 {
     ob_start();

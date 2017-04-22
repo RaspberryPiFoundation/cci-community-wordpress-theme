@@ -138,7 +138,7 @@ require get_template_directory() . '/inc/utilities.php';
 /**
  * Load maps file 
  */
-require get_template_directory()."/inc/clubs-map.php";
+require_once get_template_directory()."/inc/clubs-map.php";
 
 
 /**
