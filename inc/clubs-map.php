@@ -16,7 +16,7 @@ function cci_map_handler($atts = array())
 	function initMap()
 	{
 		fillMap( {lat: <?php echo $atts["center_lat"];?>, lng: <?php echo $atts["center_lng"]; ?>,zoom:<?php echo $atts["zoom_level"];?>,
-			  icon:'<?php echo  get_stylesheet_directory_uri(); ?>/images/',
+			  icon:'<?php echo  get_template_directory_uri(); ?>/images/',
 			  contactVenue:'<?php esc_html_e("Contact Venue", 'ccw_countries');?>'});
     }
 
