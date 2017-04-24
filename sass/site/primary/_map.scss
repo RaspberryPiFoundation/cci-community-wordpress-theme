@@ -1,0 +1,24 @@
+
+.club_map
+{
+position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.club_map_wrapper {
+  width: 100%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
+}
+.club_map_wrapper:after {
+  padding-top: 100%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+.club_map{
+    border-radius: 40px;
+}
