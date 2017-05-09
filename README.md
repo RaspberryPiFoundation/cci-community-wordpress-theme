@@ -52,19 +52,19 @@ Making changes to the theme itself is the most basic way to get started, however
 
 The full WordPress child theme documentation is available here: https://codex.wordpress.org/Child_Themes but the main steps are:
 
-* Create a new folder within the `wp-content/themes` directory and name it whatever you'd like your theme to be called eg. `ccw-child-theme`.
-* Within `ccw-child-theme` create the file `style.css` and place the following inside:
+* Create a new folder within the `wp-content/themes` directory and name it whatever you'd like your theme to be called eg. `cci-child-theme`.
+* Within `cci-child-theme` create the file `style.css` and place the following inside:
 ```
 /*
- Theme Name:   CCW Countries Child Theme
+ Theme Name:   CCI Child Theme
  Theme URI:
- Description:  A child theme based on the CCW Countries theme
- Template:     ccw-countries-wordpress-theme
+ Description:  A child theme based on the CCI Countries/Communities theme
+ Template:     cci-community-wordpress-theme
  Version:      1.0.0
- Text Domain:  ccw-child-theme
+ Text Domain:  cci-child-theme
 */
 ```
-* Within `ccw-child-theme` create the file `functions.php` and place the following inside:
+* Within `cci-child-theme` create the file `functions.php` and place the following inside:
 ```
 <?php
 add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_styles' );
@@ -132,14 +132,14 @@ You may use the style guide assets for guidance, see: `bower_components/code-clu
 
 ### Fonts
 
-Museo Sans Rounded is used throughout (at varying weights) and is served via the CCW Typekit account using this snippet in `header.php`:
+Museo Sans Rounded is used throughout (at varying weights) and is served via the CCI Typekit account using this snippet in `header.php`:
 
 ```
 <script src="https://use.typekit.net/hos3npy.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 ```
 
-However, since Typekit performs domain name checks against a whitelist before serving any assets, fonts on your site won't be loaded until you inform the CCW team of the domain names you will be using (eg. `codeclub.org.uk`, `test.codeclub.org.uk`, `dev.codeclub.org.uk`) and we add them to Typekit's whitelist, so please let us know!
+However, since Typekit performs domain name checks against a whitelist before serving any assets, fonts on your site won't be loaded until you inform the CCI team of the domain names you will be using (eg. `codeclub.org.uk`, `test.codeclub.org.uk`, `dev.codeclub.org.uk`) and we add them to Typekit's whitelist, so please let us know!
 
 ## Menus
 
@@ -174,9 +174,9 @@ In particular, the club registration form (`template-parts/form-register-club.ph
 
 Right-to-left languages are supported via the `rtl.css` file. See https://codex.wordpress.org/Right_to_Left_Language_Support
 
-## Use of the CCW API
+## Use of the CCW/CCI API
 
-The CCW API can be used store new clubs and to retrieve club data. This theme includes examples of each to get you started, both examples utilise the `CCW_API` class located in `inc/ccw-api.php`.
+The CCW/CCI API can be used store new clubs and to retrieve club data. This theme includes examples of each to get you started, both examples utilise the `CCW_API` class located in `inc/ccw-api.php`.
 
 The full API documentation is available here: http://docs.codeclubworldapiv2.apiary.io/
 
