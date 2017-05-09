@@ -72,7 +72,7 @@ function child_theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
 ```
-* In the WordPress admin, go to Appearance > Themes and activate the theme `CCW Countries Child Theme`
+* In the WordPress admin, go to Appearance > Themes and activate the theme `CCI Child Theme`
 
 That's all! (don't forget to read the docs for extra info and path-related caveats: https://codex.wordpress.org/Child_Themes)
 
@@ -186,9 +186,9 @@ Documentation on testing the API with a mock server is here: https://github.com/
 
 An example template for outputting a form which allows visitors to register their clubs via the Code Club World API is located in `template-parts/form-register-club.php`. It is completely self-contained to keep things as simple as possible. To use it:
 
-* First, ensure that _all_ of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' and 'Registration Success' pages in WordPress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the CCW team.
+* First, ensure that _all_ of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' and 'Registration Success' pages in WordPress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the CCI team.
 * Include the form in one of your page templates using: `<?php get_template_part( 'template-parts/form', 'register-club' ); ?>`
-* You're all set! The form will appear on the page and submissions to the form will be viewable in your CCW API admin account: https://api.codeclubworld.org/admin/clubs
+* You're all set! The form will appear on the page and submissions to the form will be viewable in your CCI/CCW API admin account: https://api.codeclubworld.org/admin/clubs
 
 **Note**: If using a child theme (see above), the `inc/country-config.php` file in the parent theme will need to be re-created within the child theme's directory, it can then be modified there. However, it won't automatically be included by `functions.php`  now that it exists in the child theme, so within your child theme's `functions.php` add the following:
 
