@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+
+  mysql:
+    image: mariadb
+    volumes:
+       - <local path>/db-data:/var/lib/mysql
+    restart: always  
+    ports:
+      - 3308:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: wp
+
+  wordpress:
+    depends_on:
+       - mysql
+    image: wordpress:latest
+    ports:
+      - 8081:80
+    restart: always
+    volumes:
+      - <local path>/ccbr-theme:/var/www/html/wp-content/ccbr-theme
+      - <local path>/uploads:/var/www/html/wp-content/uploads
+      - <local path>/plugins:/var/www/html/wp-content/plugins
+    links:
+      - mysql
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_PASSWORD: wp
+
+volumes:
+    db-data:
