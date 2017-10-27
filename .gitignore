@@ -13,27 +13,8 @@ Thumbs.db
 # ignore log files
 *.log
 
-# ignore MySQL database
-db-data/
-
-# ignore everything in the "wp-content" directory, except:
-# "mu-plugins" directory
-# "plugins" directory
-# "themes" directory
-wp-content/*
-!wp-content/languages
-!wp-content/mu-plugins/
-!wp-content/plugins/
-!wp-content/themes/
-
 # ignore these plugins
-wp-content/plugins/hello.php
-
-# ignore specific themes
-wp-content/themes/twenty*/
+plugins/hello.php
 
 # ignore node/grunt dependency directories
-node_modules/
-
-# ignore docker-compose file
-docker-compose.yml
+ccbr-theme/node_modules/
