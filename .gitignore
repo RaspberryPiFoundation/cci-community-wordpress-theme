@@ -15,6 +15,7 @@ Thumbs.db
 
 # ignore these plugins
 plugins/hello.php
+plugins/akismet
 
 # ignore node/grunt dependency directories
 ccbr-theme/node_modules/

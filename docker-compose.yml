@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  mysql:
+  wpdb:
     image: mysql:5.7
     volumes:
        - db-data:/var/lib/mysql
@@ -16,20 +16,20 @@ services:
       MYSQL_PASSWORD: wordpress
 
   wordpress:
+    image: tatemz/wp-cli
     depends_on:
-       - mysql
-    image: wordpress:latest
+       - wpdb    
     ports:
       - 9000:80
     restart: always
     volumes:
-      - ./ccbr-theme:/var/www/html/wp-content/ccbr-theme
+      - ./ccbr-theme:/var/www/html/wp-content/themes/ccbr-theme
       - ./uploads:/var/www/html/wp-content/uploads
       - ./plugins:/var/www/html/wp-content/plugins
     links:
-      - mysql
+      - wpdb
     environment:
-      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_HOST: wpdb:3306
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: wordpress        
       WORDPRESS_DB_PASSWORD: wordpress
