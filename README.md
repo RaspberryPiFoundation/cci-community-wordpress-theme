@@ -1,19 +1,33 @@
-#Installation
+# Installation
 
-##Pre-requisites
+## Pre-requisites
 
-Docker
+You need a [Docker](https://docs.docker.com/engine/installation/) installed and configured on your local machine. 
 
-##Setup
+## Build
 
-1. Update the `docker-compose.yml` file with the local path for database and volumes:
-```
-      - <YOUR LOCAL PATH HERE>/ccbr-theme:/var/www/html/wp-content/ccbr-theme
-      - <YOUR LOCAL PATH HERE>/uploads:/var/www/html/wp-content/uploads
-      - <YOUR LOCAL PATH HERE>/plugins:/var/www/html/wp-content/plugins
-```
+ - Run `# ./build.sh`
 
-2. Run `# docker-compose up` to rise the local environment
+ The build process will download (if you don't have already) the images from DockerHub and up the containers using the setup params placed on the `docker-compose.yml` file.
 
+ After build process ran, you can access on your prefered browser `http://localhost:9000`.
+ 
+ At the our project root folder, we will have some new folders to ensure some persistent data and our codebase:
+ ```
+  - db-data (persistent mysql data)
+  - ccbr-theme (the code club theme)
+  - plugins (theme plugins)
+  - uploads (persistent upload data)
+ ```
 
+## How to halt the Docker environment
 
+ - Run project root path `# docker-compose down`
+
+ ---
+
+ If you have any suggestion or doubt, please create an [issue](https://github.com/CodeClubBrasil/ccbr-wordpress-theme/issues).
+
+ For any new please follow the [Code Club Guidelines](https://styleguide.codeclubworld.org/).
+
+ 
