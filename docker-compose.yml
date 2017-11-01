@@ -13,7 +13,7 @@ services:
       MYSQL_ROOT_PASSWORD: somewordpress
 
   wordpress:
-    image: tatemz/wp-cli
+    image: wordpress:4.8.3-php5.6-apache
     depends_on:
        - wpdb    
     ports:
