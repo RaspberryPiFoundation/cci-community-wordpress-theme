@@ -24,6 +24,11 @@ You need a [Docker](https://docs.docker.com/engine/installation/) installed and 
 
  - Run project root path `# docker-compose down`
 
+
+## How to reset the Docker environment
+
+ - Run `# ./clear.sh`
+
  ---
 
  If you have any suggestion or doubt, please create an [issue](https://github.com/CodeClubBrasil/ccbr-wordpress-theme/issues).
