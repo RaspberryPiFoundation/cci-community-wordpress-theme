@@ -31,6 +31,13 @@ You need a [Docker](https://docs.docker.com/engine/installation/) installed and 
 
  ---
 
+## How try it fast
+
+- Log in to https://labs.play-with-docker.com/
+- Add a new instance
+- Run `$ git clone https://github.com/CodeClubBrasil/ccbr-wordpress-theme.git && cd ccbr-wordpress-theme && git checkout develop && ./build.sh`
+- Wait for it and when it stops click in the link 9000 at the top of the page.
+
  If you have any suggestion or doubt, please create an [issue](https://github.com/CodeClubBrasil/ccbr-wordpress-theme/issues).
 
  For any new please follow the [Code Club Guidelines](https://styleguide.codeclubworld.org/).

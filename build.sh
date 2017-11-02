@@ -6,6 +6,9 @@ echo "Instanciamento e construção docker..."
 echo ""
 docker-compose up -d --remove-orphans
 # espera o wordpress ficar pronto
+echo ""
+echo "Dando um tempo para o wordpress se preparar para receber comandos da cli..."
+echo ""
 sleep 20
 
 # Instalação do Wordpress
