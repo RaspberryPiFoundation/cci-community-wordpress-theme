@@ -14,6 +14,7 @@ services:
 
   wordpress:
     image: wordpress:4.8.3-php5.6-apache
+    container_name: cc-wp
     depends_on:
        - wpdb    
     ports:
