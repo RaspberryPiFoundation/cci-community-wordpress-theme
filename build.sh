@@ -27,7 +27,7 @@ wp plugin activate advanced-custom-fields
 echo ""
 echo "Habilitando tema Code Club Brasil..."
 echo ""
-docker run -it --rm --volumes-from cc-wp --network container:cc-wp wordpress:cli \
+docker run -it --rm --volumes-from cc-wp --network container:cc-wpdb wordpress:cli \
 wp theme activate ccbr-theme
 
 echo ""
