@@ -26,13 +26,12 @@ function produce_errors_message_map($errors) {
 }
 
 function strip_slashes_json_encode($json) {
-  return stripslashes(json_encode($json));
+  return stripslashes(json_encode($json, JSON_UNESCAPED_UNICODE));
 }
 
 function htmlspecialchars_with_quotes($str) {
   return htmlspecialchars($str, ENT_QUOTES);
 }
-
 
 function react_to_response($response, $success_code, callable $success_function) {
   $error_messages = array();
