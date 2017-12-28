@@ -35,7 +35,6 @@ get_header(); ?>
 	<?php wp_enqueue_script( 'app maps scripts', get_template_directory_uri() . '/js/maps.js' ); ?>
 	<?php wp_enqueue_script( 'google maps', get_template_directory_uri() . '/js/gmap.js' ); ?>
 	<?php wp_enqueue_script( 'infobox maps', get_template_directory_uri() . '/js/infobox.js' ); ?>
-	<?php wp_enqueue_script( 'app scripts', get_template_directory_uri() . '/js/app.js' ); ?>
 
     <style>
       /* Always set the map height explicitly to define the size of the div
@@ -48,4 +47,4 @@ get_header(); ?>
     <div id="map"></div>
 
 <?php
-get_footer();
+get_footer();	
