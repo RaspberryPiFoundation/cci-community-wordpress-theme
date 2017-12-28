@@ -6,16 +6,16 @@
 /* CCW API Constants */
 
 // The 2-character (Alpha-2) code of your country. For example: 'FR', 'DE', 'US'. See: https://www.iso.org/obp/ui/#search
-define( 'CCW_API_COUNTRY_CODE', '' );
+define( 'CCW_API_COUNTRY_CODE', 'BR' );
 
 // CCW API URL
 define( 'CCW_API_URL', 'https://api.codeclubworld.org' );
 
 // The read/write API bearer token assigned to you, visible in the CCW API admin
-define( 'CCW_API_READWRITE_TOKEN', '' );
+define( 'CCW_API_READWRITE_TOKEN', 'RWd24531c067de3287813345b4fc538b6d2da9e858cf560de0cf34df286ed33e2d' );
 
 // The readonly API bearer token assigned to you, visible in the CCW API admin
-define( 'CCW_API_READONLY_TOKEN', '' );
+define( 'CCW_API_READONLY_TOKEN', 'RObf83e126283b38f1e512429cb4539ab360aabda9f41682348af5a8aed530c2aa' );
 
 // The CCW API version, currently at '2'
 define( 'CCW_API_VERSION', '2' );
@@ -50,7 +50,7 @@ define( 'DISPLAY_ERRORS', false );
 /* GOOGLE MAPS API */
 
 define( 'GOOGLE_MAPS_ADDRESS_END_POINT', 'https://maps.googleapis.com/maps/api/geocode/json?address=');
-define( 'GOOGLE_MAPS_API_KEY', '');
+define( 'GOOGLE_MAPS_API_KEY', 'AIzaSyDoZFn11-WmecouAx2hVxfrAt5wP-XjUPE');
 
 /* v2 Set up flags */
 define( 'GENERATE_LOG_IN_PAGES', false );
