@@ -20,12 +20,14 @@ ob_start();
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php wp_head(); ?>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
 <script src="https://use.typekit.net/hos3npy.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
 <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" sizes="32x32">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<script>sitepath='<?php echo get_template_directory_uri(); ?>'</script>
 </head>
 
 <body <?php body_class(); ?>>

@@ -14,7 +14,7 @@ Thumbs.db
 *.log
 
 # ignore these plugins
-plugins/akismet
+plugins/akismet/
 plugins/hello.php
 uploads/
 
