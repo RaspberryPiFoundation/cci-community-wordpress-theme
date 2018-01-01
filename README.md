@@ -50,9 +50,6 @@ You need a [Docker](https://docs.docker.com/engine/installation/) installed and 
 
  For any new please follow the [Code Club Guidelines](https://styleguide.codeclubworld.org/).
 
-<<<<<<< HEAD
- 
-=======
 Making changes to the theme itself is the most basic way to get started, however it is *highly* recommended that instead of modifying the source theme, you utilise a child theme instead. This will allow you to make changes / additions to your theme without modifying the source theme (ie. this one) in any way, allowing it to be overwritten easily as and when we publish updates.
 
 The full WordPress child theme documentation is available here: https://codex.wordpress.org/Child_Themes but the main steps are:
@@ -320,4 +317,3 @@ Copyright (c) 2017 Raspberry Pi Foundation, UK Registered Charity 1129409
 
 - [License](LICENSE.txt)
 - [Contributing](CONTRIBUTING.txt)
->>>>>>> 3b4939f73b99114ecbee2d934cbbeb0bfa571e05
