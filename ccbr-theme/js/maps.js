@@ -30,7 +30,7 @@ function FormatInfoWindowContent(club) {
   let canBeContacted = `${club.happy_to_be_contacted}`;
   let lookingForVolunteers = `${club.looking_for_volunteer}`;
 
-  let infoWindowContent = `<h5>${club.name}</h5><hr>`
+  let infoWindowContent = `<h5>${club.name}</h5>`
 
   // open address
   if(canBeContacted === 'true')
@@ -46,17 +46,20 @@ function FormatInfoWindowContent(club) {
   if (club.venue.url !== null && club.venue.url !== '')  
     infoWindowContent = infoWindowContent + `<strong>Site:</strong> ${club.venue.url}<br><br>`;
 
-  // open address
-  if(canBeContacted === 'true')
-    infoWindowContent = infoWindowContent + `<strong>Líder do Clube:</strong> ${club.contact.name}<br>`;
-
-  // to be volunteer cta
-  if(lookingForVolunteers === 'true')
-    infoWindowContent = infoWindowContent + `<br><a class="c-button c-button--green" href="https://www.codeclubbrasil.org.br/voluntariado/" target="blank">Voluntariar</a>`;
+  infoWindowContent += `<br><p class="mapinfo-obs">Os clubes tem uma capacidade limitada, então é necessário enviar uma mensagem para o lider verificando se está tudo bem para seu filho participar.</p>`
 
   // open address
   if(canBeContacted === 'true')
+  {
+    infoWindowContent = infoWindowContent + `<strong>Líder do Clube:</strong> ${club.contact.name}<br><br>`;
     infoWindowContent = infoWindowContent + `<a class="c-button c-button--green" style="margin-left:5px;" href="mailto:contato@codeclubbrasil.org.br?subject=Contato com o Code Club ${club.name} em ${club.venue.address.city}">Contato</a>`;
+
+      // to be volunteer cta
+    if(lookingForVolunteers === 'true')
+    {
+      infoWindowContent = infoWindowContent + `<a class="c-button c-button--green" href="https://www.codeclubbrasil.org.br/voluntariado/" target="blank">Voluntariar</a>`;
+    }
+  }
 
   //console.log((canBeContacted === 'true')?club.name:"não");
   //console.log((lookingForVolunteers === 'true')?club.name:"não");
@@ -84,7 +87,7 @@ function createGoogleMapMarker(map, club, infowindow) {
 
   marker.addListener('click', function() {      
     infowindow.setContent(contentString);
-    infowindow.open(map, marker);    
+    infowindow.open(map, marker);
   });
 
   markers.push(marker);  
@@ -92,7 +95,9 @@ function createGoogleMapMarker(map, club, infowindow) {
 
 function initMap() {  
 
-  var infowindow = new google.maps.InfoWindow;
+  var infowindow = new google.maps.InfoWindow({
+    maxWidth: 300
+  });
 
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,

@@ -33,8 +33,6 @@ get_header(); ?>
 	<?php wp_enqueue_script( 'maker scripts', get_template_directory_uri() . '/js/marker-clusterer.js' ); ?>
 	<?php wp_enqueue_script( 'parsley scripts', get_template_directory_uri() . '/js/parsley.js' ); ?>
 	<?php wp_enqueue_script( 'app maps scripts', get_template_directory_uri() . '/js/maps.js' ); ?>
-	<?php wp_enqueue_script( 'google maps', get_template_directory_uri() . '/js/gmap.js' ); ?>
-	<?php wp_enqueue_script( 'infobox maps', get_template_directory_uri() . '/js/infobox.js' ); ?>
 
     <style>
       /* Always set the map height explicitly to define the size of the div

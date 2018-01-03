@@ -203,3 +203,15 @@ object {
   display: block; }
 
 /*# sourceMappingURL=style.css.map */
+
+.mapinfo-obs {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+#map {
+  width: 600px;
+  height: 500px;
+}
