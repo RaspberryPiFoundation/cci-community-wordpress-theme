@@ -1,0 +1,3 @@
+*.log
+.sass-cache/
+.DS_Store

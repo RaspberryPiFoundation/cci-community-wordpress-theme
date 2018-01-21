@@ -1,3 +1,22 @@
+#ignore Mysql Data files
+db-data/
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore log files
 *.log
-.sass-cache/
-.DS_Store
+
+# ignore these plugins
+plugins/akismet/
+plugins/hello.php
+uploads/
+
+# ignore node/grunt dependency directories
+ccbr-theme/node_modules/

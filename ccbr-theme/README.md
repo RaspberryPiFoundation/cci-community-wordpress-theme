@@ -1,72 +1,70 @@
-**Homolog**
+# Code Club International Country/Community Base WordPress Theme
 
-[![Deployment status from DeployBot](https://felipefernandes.deploybot.com/badge/56046448067712/119163.svg)](http://deploybot.com)
+This is a WordPress theme designed to help coordinators build a site to service their community.
 
-[homolog.codeclubbrasil.org.br](http://homolog.codeclubbrasil.org.br/)
+**Note:** this theme and accompanying documentation are in their early stages. Many changes and improvements will be made. You're encouraged to provide feedback and log issues via the Issues feature attached to this repository as well as provide fixes and new features via Pull Requests.
 
----
+#### Table of Contents
+* [General Info](#general-info)
+* [Setup](#setup)
+* [Assets](#assets)
+* [Menus](#menus)
+* [Localisation / Translation](#localisation--translation)
+* [Use of the CCW API](#use-of-the-ccw-api)
+* [Legal Stuff](#legal-stuff)
 
-# Installation
+## General Info
 
-## Pre-requisites
+The theme sets up some basic templates and a set of styles that should cover the majority of use-cases required by a community site in its infancy. Styling is based off the [official Code Club style guide](https://styleguide.codeclubworld.org).
 
-You need a [Docker](https://docs.docker.com/engine/installation/) installed and configured on your local machine. 
+In order to work with this theme and build a content-managed WordPress site, it's expected that you have at least some experience of creating WordPress themes (HTML and at least some PHP knowledge assumed) and are familiar with setting up WordPress in a local development environment as well as in a hosted environment. Additional experience of the Advanced Custom Fields plugin for WordPress is a bonus but not required.
 
-## Build
+## Setup
 
- - Run `# ./build.sh`
+### Install WordPress
 
- The build process will download (if you don't have already) the images from DockerHub and up the containers using the setup params placed on the `docker-compose.yml` file.
+The best resource is the [WordPress Codex](https://codex.wordpress.org/Installing_WordPress). When installing in a hosted environment, you'll need an appropriate account with a web hosting provider (linked with the relevant domain name) as well (we'll have a short list of recommended hosting providers ready soon).
 
- After build process ran, you can access on your prefered browser `http://localhost:9000`.
- 
- At the our project root folder, we will have some new folders to ensure some persistent data and our codebase:
- ```
-  - db-data (persistent mysql data)
-  - ccbr-theme (the code club theme)
-  - plugins (theme plugins)
-  - uploads (persistent upload data)
- ```
+WordPress' minimum requirements can be found here: https://codex.wordpress.org/Hosting_WordPress and whilst it's stated that PHP 5.2.4 is the minimum, we would strongly suggest at least PHP 5.3 (>= 5.5 is even better).
 
-## How to halt the Docker environment
+It's very important to ensure that your WordPress installation is kept up-to-date at all times and that a regular (and secure) backup of your data is made.
 
- - Run project root path `# docker-compose down`
+### Install the ACF Pro Plugin
 
+The Advanced Custom Fields Pro plugin is required for the theme to function as intended. You can download it here: http://downloads.codeclubworld.org/wp-advanced-custom-fields-pro.zip
 
-## How to reset the Docker environment
+Once you have the plugin ZIP file, extract it and place the resulting directory in your WordPress installation's `wp-content/plugins` directory. Then:
 
- - Run `# ./clear.sh`
+* Log in to the WordPress Administration panel (usually http://yoursiteurl/wp-admin)
+* Select the Plugins panel, then click on 'Activate' beneath 'Advanced Custom Fields Pro'
 
-## How try it fast
+### Install the Theme
 
-- Log in to https://labs.play-with-docker.com/
-- Add a new instance
-- Run `$ git clone https://github.com/CodeClubBrasil/ccbr-wordpress-theme.git && cd ccbr-wordpress-theme && git checkout develop && ./build.sh`
-- Wait for it and when it stops click on the link 9000 at the top of the page.
+Download the `Source code (zip)` file from the latest release on the [releases page](https://github.com/CodeClub/ccw-countries-wordpress-theme/releases).
 
----
+Once you have the ZIP file, extract it and place the resulting directory in your WordPress installation's `wp-content/themes` directory. Then:
 
- If you have any suggestion or doubt, please create an [issue](https://github.com/CodeClubBrasil/ccbr-wordpress-theme/issues).
-
- For any new please follow the [Code Club Guidelines](https://styleguide.codeclubworld.org/).
+* Log in to the WordPress Administration panel (usually http://yoursiteurl/wp-admin).
+* Select the Appearance panel, then Themes.
+* You'll see the 'CCW Countries' listed, select it and click on Activate.
 
 Making changes to the theme itself is the most basic way to get started, however it is *highly* recommended that instead of modifying the source theme, you utilise a child theme instead. This will allow you to make changes / additions to your theme without modifying the source theme (ie. this one) in any way, allowing it to be overwritten easily as and when we publish updates.
 
 The full WordPress child theme documentation is available here: https://codex.wordpress.org/Child_Themes but the main steps are:
 
-* Create a new folder within the `wp-content/themes` directory and name it whatever you'd like your theme to be called eg. `cci-child-theme`.
-* Within `cci-child-theme` create the file `style.css` and place the following inside:
+* Create a new folder within the `wp-content/themes` directory and name it whatever you'd like your theme to be called eg. `ccw-child-theme`.
+* Within `ccw-child-theme` create the file `style.css` and place the following inside:
 ```
 /*
- Theme Name:   CCI Child Theme
+ Theme Name:   CCW Countries Child Theme
  Theme URI:
- Description:  A child theme based on the CCI Countries/Communities theme
- Template:     cci-community-wordpress-theme
+ Description:  A child theme based on the CCW Countries theme
+ Template:     ccw-countries-wordpress-theme
  Version:      1.0.0
- Text Domain:  cci-child-theme
+ Text Domain:  ccw-child-theme
 */
 ```
-* Within `cci-child-theme` create the file `functions.php` and place the following inside:
+* Within `ccw-child-theme` create the file `functions.php` and place the following inside:
 ```
 <?php
 add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_styles' );
@@ -74,7 +72,7 @@ function child_theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
 ```
-* In the WordPress admin, go to Appearance > Themes and activate the theme `CCI Child Theme`
+* In the WordPress admin, go to Appearance > Themes and activate the theme `CCW Countries Child Theme`
 
 That's all! (don't forget to read the docs for extra info and path-related caveats: https://codex.wordpress.org/Child_Themes)
 
@@ -134,14 +132,14 @@ You may use the style guide assets for guidance, see: `bower_components/code-clu
 
 ### Fonts
 
-Museo Sans Rounded is used throughout (at varying weights) and is served via the CCI Typekit account using this snippet in `header.php`:
+Museo Sans Rounded is used throughout (at varying weights) and is served via the CCW Typekit account using this snippet in `header.php`:
 
 ```
 <script src="https://use.typekit.net/hos3npy.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 ```
 
-However, since Typekit performs domain name checks against a whitelist before serving any assets, fonts on your site won't be loaded until you inform the CCI team of the domain names you will be using (eg. `codeclub.org.uk`, `test.codeclub.org.uk`, `dev.codeclub.org.uk`) and we add them to Typekit's whitelist, so please let us know!
+However, since Typekit performs domain name checks against a whitelist before serving any assets, fonts on your site won't be loaded until you inform the CCW team of the domain names you will be using (eg. `codeclub.org.uk`, `test.codeclub.org.uk`, `dev.codeclub.org.uk`) and we add them to Typekit's whitelist, so please let us know!
 
 ## Menus
 
@@ -176,9 +174,9 @@ In particular, the club registration form (`template-parts/form-register-club.ph
 
 Right-to-left languages are supported via the `rtl.css` file. See https://codex.wordpress.org/Right_to_Left_Language_Support
 
-## Use of the CCW/CCI API
+## Use of the CCW API
 
-The CCW/CCI API can be used store new clubs and to retrieve club data. This theme includes examples of each to get you started, both examples utilise the `CCW_API` class located in `inc/ccw-api.php`.
+The CCW API can be used store new clubs and to retrieve club data. This theme includes examples of each to get you started, both examples utilise the `CCW_API` class located in `inc/ccw-api.php`.
 
 The full API documentation is available here: http://docs.codeclubworldapiv2.apiary.io/
 
@@ -188,9 +186,9 @@ Documentation on testing the API with a mock server is here: https://github.com/
 
 An example template for outputting a form which allows visitors to register their clubs via the Code Club World API is located in `template-parts/form-register-club.php`. It is completely self-contained to keep things as simple as possible. To use it:
 
-* First, ensure that _all_ of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' and 'Registration Success' pages in WordPress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the CCI team.
+* First, ensure that _all_ of the configuration values in `inc/country-config.php` are set (as part of this you'll need to create 'Terms & Conditions' and 'Registration Success' pages in WordPress so that you can supply paths to each). If you have any questions regarding the values in the config file, such as the API bearer tokens, please contact the CCW team.
 * Include the form in one of your page templates using: `<?php get_template_part( 'template-parts/form', 'register-club' ); ?>`
-* You're all set! The form will appear on the page and submissions to the form will be viewable in your CCI/CCW API admin account: https://api.codeclubworld.org/admin/clubs
+* You're all set! The form will appear on the page and submissions to the form will be viewable in your CCW API admin account: https://api.codeclubworld.org/admin/clubs
 
 **Note**: If using a child theme (see above), the `inc/country-config.php` file in the parent theme will need to be re-created within the child theme's directory, it can then be modified there. However, it won't automatically be included by `functions.php`  now that it exists in the child theme, so within your child theme's `functions.php` add the following:
 
