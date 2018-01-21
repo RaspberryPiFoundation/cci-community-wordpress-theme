@@ -184,3 +184,10 @@ require get_template_directory() . '/inc/club-session.php';
  * Set up
  */
 require get_template_directory() . '/inc/set-up/run-setup.php';
+
+/**
+ * Google maps functions
+ */
+if ( file_exists( get_template_directory() . '/inc/gmaps.php' ) ) {
+	require get_template_directory() . '/inc/gmaps.php';
+} 

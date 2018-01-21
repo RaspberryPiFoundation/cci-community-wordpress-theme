@@ -16,8 +16,7 @@ class Host_Volunteer_Matching {
 
   public function getCodeClubs($address) {
 
-    $url = GOOGLE_MAPS_ADDRESS_END_POINT . preg_replace('/\s+/', '+', $address);
-
+    $url = get_gmaps_address_url($address);
     $response = wp_remote_get($url);
 
     if (is_wp_error($response)) {
@@ -27,13 +26,11 @@ class Host_Volunteer_Matching {
       $location = $geocode_data['results']['0']['geometry']['location'];
       $ccw_api = new CCW_API();
       $ccw_api_response = $ccw_api->getNearbyCodeClubs($location['lat'], $location['lng'], 1);
-
       if (!is_wp_error($ccw_api_response)) {
         $_SESSION['code_clubs'] = json_decode(wp_remote_retrieve_body($ccw_api_response), true);
       } else {
         $this->flash_messages->createError(__("No code clubs found.", 'ccw_countries'));
       }
-
     }
 
     $this->flash_messages->display();

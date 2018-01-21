@@ -21,15 +21,13 @@ ob_start();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php wp_head(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
-<script src="https://use.typekit.net/hos3npy.js"></script>
+<script src="https://use.typekit.net/<?php echo TYPEKIT_ID ?>.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
 <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" sizes="32x32">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <script>sitepath='<?php echo get_template_directory_uri(); ?>'</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoZFn11-WmecouAx2hVxfrAt5wP-XjUPE&callback=initMap" async defer></script>
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
 </head>
 
 <body <?php body_class(); ?>>

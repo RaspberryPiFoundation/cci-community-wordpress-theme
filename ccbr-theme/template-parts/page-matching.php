@@ -29,7 +29,7 @@ if (empty( $_POST['body_text'] ) && !empty($_POST['address'])) {
         <p class="u-text--center u-margin-top--base">
           <button class="c-button c-button--green" type="submit" form="find-hosts">
             <?php esc_html_e("Search", 'ccw_countries'); ?>
-          </button>
+          </button> 
         </p>
       </form>
     </div>

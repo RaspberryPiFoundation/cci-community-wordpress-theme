@@ -11,8 +11,7 @@ class Host_Volunteer_Matching_Transient extends Host_Volunteer_Matching {
 
   public function getCodeClubs($address) {
 
-    $url = GOOGLE_MAPS_ADDRESS_END_POINT . preg_replace('/\s+/', '+', $address);
-
+    $url = get_gmaps_address_url($address);
     $response = wp_remote_get($url);
 
     if (is_wp_error($response)) {

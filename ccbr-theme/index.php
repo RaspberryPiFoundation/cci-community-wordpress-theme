@@ -12,7 +12,9 @@
  * @package CCW_Countries
  */
 
-get_header(); ?>
+get_header();
+get_gmaps('initMap');
+?>
 
 	<?php get_template_part('template-parts/page', 'header'); ?>
 
@@ -30,19 +32,6 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<?php wp_enqueue_script( 'maker scripts', get_template_directory_uri() . '/js/marker-clusterer.js' ); ?>
-	<?php wp_enqueue_script( 'parsley scripts', get_template_directory_uri() . '/js/parsley.js' ); ?>
-	<?php wp_enqueue_script( 'app maps scripts', get_template_directory_uri() . '/js/maps.js' ); ?>
-
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 300px;
-      }
-    </style>
-
-    <div id="map"></div>
-
 <?php
+get_gmaps_placehold("500px","100%");
 get_footer();	

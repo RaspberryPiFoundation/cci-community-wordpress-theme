@@ -3,6 +3,7 @@
  * Country-specific config
  */
 
+
 /* CCW API Constants */
 
 // The 2-character (Alpha-2) code of your country. For example: 'FR', 'DE', 'US'. See: https://www.iso.org/obp/ui/#search
@@ -12,10 +13,10 @@ define( 'CCW_API_COUNTRY_CODE', 'BR' );
 define( 'CCW_API_URL', 'https://api.codeclubworld.org' );
 
 // The read/write API bearer token assigned to you, visible in the CCW API admin
-define( 'CCW_API_READWRITE_TOKEN', 'RWd24531c067de3287813345b4fc538b6d2da9e858cf560de0cf34df286ed33e2d' );
+define( 'CCW_API_READWRITE_TOKEN', getenv('CCW_API_READWRITE_TOKEN', true) ?: getenv('CCW_API_READWRITE_TOKEN') );
 
 // The readonly API bearer token assigned to you, visible in the CCW API admin
-define( 'CCW_API_READONLY_TOKEN', 'RObf83e126283b38f1e512429cb4539ab360aabda9f41682348af5a8aed530c2aa' );
+define( 'CCW_API_READONLY_TOKEN', getenv('CCW_API_READONLY_TOKEN', true) ?: getenv('CCW_API_READONLY_TOKEN') );
 
 // The CCW API version, currently at '2'
 define( 'CCW_API_VERSION', '2' );
@@ -48,10 +49,12 @@ define( 'DISPLAY_ERRORS', false );
 
 
 /* GOOGLE MAPS API */
-
-define( 'GOOGLE_MAPS_ADDRESS_END_POINT', 'https://maps.googleapis.com/maps/api/geocode/json?address=');
-define( 'GOOGLE_MAPS_API_KEY', 'AIzaSyDoZFn11-WmecouAx2hVxfrAt5wP-XjUPE');
+define( 'GOOGLE_MAPS_API_KEY', getenv('GOOGLE_MAPS_API_KEY', true) ?: getenv('GOOGLE_MAPS_API_KEY'));
+define( 'GOOGLE_MAPS_API_END_POINT', 'https://maps.googleapis.com/maps/api/js?key=');
+define( 'GOOGLE_MAPS_ADDRESS_END_POINT', 'https://maps.googleapis.com/maps/api/geocode/json?key=');
 
 /* v2 Set up flags */
 define( 'GENERATE_LOG_IN_PAGES', false );
 define( 'GENERATE_FIND_VENUE_PAGES', false );
+
+define( 'TYPEKIT_ID', getenv('TYPEKIT_ID', true) ?: getenv('TYPEKIT_ID'));

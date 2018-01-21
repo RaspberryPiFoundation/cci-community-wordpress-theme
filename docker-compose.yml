@@ -29,6 +29,10 @@ services:
     environment:
       WORDPRESS_DB_HOST: wpdb:3306       
       WORDPRESS_DB_PASSWORD: somewordpress
+      GOOGLE_MAPS_API_KEY: AIzaSyDoZFn11-WmecouAx2hVxfrAt5wP-XjUPE
+      CCW_API_READWRITE_TOKEN: RWd24531c067de3287813345b4fc538b6d2da9e858cf560de0cf34df286ed33e2d
+      CCW_API_READONLY_TOKEN: RObf83e126283b38f1e512429cb4539ab360aabda9f41682348af5a8aed530c2aa
+      TYPEKIT_ID: hos3npy
 
 volumes:
     db-data:
